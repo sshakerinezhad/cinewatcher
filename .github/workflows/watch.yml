@@ -74,18 +74,6 @@ jobs:
             -d "${PREFIX}New IMAX 70mm showtimes just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
-          # Direct email alert via ntfy's email gateway.
-          # Enable by adding a repo secret named ALERT_EMAIL with your address
-          # (Settings -> Secrets and variables -> Actions -> New repository secret).
-          if [ -n "${{ secrets.ALERT_EMAIL }}" ]; then
-            curl -sS --max-time 20 \
-              -H "Email: ${{ secrets.ALERT_EMAIL }}" \
-              -H "Title: ${PREFIX}Odyssey IMAX 70mm tickets are UP (Aug 21)" \
-              -H "Priority: urgent" \
-              -d "${PREFIX}New IMAX 70mm showtimes for Aug 21 just appeared at Vaughan/Mississauga Square One. Book now: https://www.cineplex.com/movie/the-odyssey — full list on the status site and in the GitHub issue." \
-              "https://ntfy.sh/${NTFY_TOPIC}-email" || true
-          fi
-
           # GitHub issue (@mention triggers an email notification)
           gh label create odyssey-alert --color FF0000 --force || true
           existing=$(gh issue list --state open --label odyssey-alert --json number --jq '.[0].number' || echo "")
@@ -97,3 +85,14 @@ jobs:
               --label odyssey-alert \
               --body-file alert.md
           fi
+
+      # GitHub reliably emails (and pushes via the mobile app, if Actions
+      # notifications are enabled there) when a workflow run FAILS — unlike
+      # @mention notifications, which are suppressed for self-triggered
+      # activity. So after all alerts have gone out, fail the run on purpose:
+      # the "Run failed: Watch Odyssey IMAX 70mm" email IS the alert.
+      - name: Fail loudly so GitHub sends a run-failed email
+        if: steps.check.outputs.new70 == 'true'
+        run: |
+          echo "::error::🚨 ODYSSEY IMAX 70MM TICKETS ARE UP FOR AUG 21 — this failure is intentional, it is your email alert. Book: https://www.cineplex.com/movie/the-odyssey"
+          exit 1
