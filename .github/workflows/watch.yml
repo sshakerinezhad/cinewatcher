@@ -74,6 +74,14 @@ jobs:
             -d "${PREFIX}New IMAX 70mm showtimes just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
+          # Telegram push (primary channel). Needs two repo secrets:
+          # TELEGRAM_BOT_TOKEN (from @BotFather) and TELEGRAM_CHAT_ID (from @userinfobot).
+          if [ -n "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] && [ -n "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
+            curl -sS --max-time 20 "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+              --data-urlencode chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+              --data-urlencode text="${PREFIX}🚨 The Odyssey IMAX 70mm showtimes for Aug 21 are UP at Vaughan / Mississauga Square One — BOOK NOW: https://www.cineplex.com/movie/the-odyssey (details: https://github.com/sshakerinezhad/cinewatcher/issues)" || true
+          fi
+
           # GitHub issue (@mention triggers an email notification)
           gh label create odyssey-alert --color FF0000 --force || true
           existing=$(gh issue list --state open --label odyssey-alert --json number --jq '.[0].number' || echo "")
