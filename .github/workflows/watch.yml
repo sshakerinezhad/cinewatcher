@@ -24,15 +24,22 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check Cineplex showtimes
+      # The cron fires every 5 minutes (GitHub's floor); checking three times
+      # inside each run (at 0 / 2 / 4 min) gives ~2-minute effective polling.
+      - name: Check Cineplex showtimes (x3, 2 min apart)
         id: check
         env:
           CINEWATCHER_DATE: ${{ inputs.test_date }}
-        run: python3 checker.py
+        run: |
+          for i in 1 2 3; do
+            python3 checker.py
+            if grep -qE '^(changed|new70)=true$' "$GITHUB_OUTPUT"; then break; fi
+            [ "$i" -lt 3 ] && sleep 120
+          done
 
       # Notifications fire FIRST so a later git failure can never block them.
       - name: Alert on new IMAX 70mm showtimes
