@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Odyssey — IMAX 70mm Watch</title>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --panel: #141824;
+    --border: #232a3d;
+    --text: #e8e6df;
+    --muted: #8b93a7;
+    --gold: #d4a843;
+    --green: #3ecf8e;
+    --red: #e0564f;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: radial-gradient(1200px 600px at 50% -100px, #1a2033, var(--bg));
+    color: var(--text);
+    font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+  }
+  main { width: 100%; max-width: 720px; }
+  .kicker {
+    text-transform: uppercase; letter-spacing: .35em; font-size: .7rem;
+    color: var(--gold); text-align: center; margin-bottom: .6rem;
+  }
+  h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem); text-align: center;
+    font-weight: 700; letter-spacing: .02em;
+  }
+  .sub { text-align: center; color: var(--muted); margin-top: .4rem; font-size: .95rem; }
+  .banner {
+    margin: 2rem 0 1.5rem; padding: 1.6rem; border-radius: 14px;
+    text-align: center; font-size: 1.25rem; font-weight: 700;
+    border: 1px solid var(--border); background: var(--panel);
+  }
+  .banner.waiting { color: var(--muted); }
+  .banner.found {
+    color: #0b0d12; background: linear-gradient(135deg, var(--gold), #f0cf7a);
+    border-color: var(--gold); animation: pulse 1.6s ease-in-out infinite;
+  }
+  .banner.error { color: var(--red); border-color: var(--red); }
+  @keyframes pulse { 50% { box-shadow: 0 0 40px rgba(212,168,67,.45); } }
+  .banner .big { display: block; font-size: 1.6rem; margin-bottom: .3rem; }
+  section { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+  section h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); margin-bottom: .8rem; }
+  .session {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .7rem 0; border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .session:first-of-type { border-top: none; }
+  .session .time { font-size: 1.15rem; font-weight: 700; color: var(--gold); min-width: 6.5rem; }
+  .session .meta { color: var(--muted); font-size: .85rem; flex: 1; }
+  .session a.buy {
+    background: var(--gold); color: #0b0d12; text-decoration: none; font-weight: 700;
+    padding: .45rem .9rem; border-radius: 8px; font-size: .85rem;
+  }
+  .session .soldout { color: var(--red); font-weight: 700; font-size: .85rem; }
+  .theatre-name { font-weight: 700; margin: .8rem 0 .2rem; }
+  .theatre-name:first-child { margin-top: 0; }
+  ul.plain { list-style: none; }
+  ul.plain li { padding: .35rem 0; color: var(--muted); }
+  ul.plain b { color: var(--text); font-weight: 600; }
+  footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 1.5rem; line-height: 1.7; }
+  footer a { color: var(--gold); }
+  .dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); margin-right: .4rem; animation: blink 2s infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Cinewatcher</div>
+  <h1>The Odyssey · IMAX 70mm</h1>
+  <p class="sub">Watching for <b>August 21, 2026</b> showtimes at Vaughan &amp; Mississauga Square One</p>
+
+  <div id="banner" class="banner waiting">Loading status…</div>
+
+  <section id="showtimes" hidden>
+    <h2>IMAX 70mm showtimes — Aug 21</h2>
+    <div id="sessions"></div>
+  </section>
+
+  <section id="otherFormats" hidden>
+    <h2>Other Odyssey formats listed for Aug 21</h2>
+    <div id="otherSessions"></div>
+  </section>
+
+  <section>
+    <h2>Theatres being watched</h2>
+    <ul class="plain" id="theatres">
+      <li><b>Cineplex Cinemas Vaughan</b> — 3555 Highway 7 West, Vaughan</li>
+      <li><b>Cineplex Cinemas Mississauga Square One</b> — 169 Rathburn Rd W, Mississauga</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span class="dot"></span>Checked every 5 minutes by GitHub Actions ·
+    <span id="freshness">status age unknown</span><br>
+    <a href="https://www.cineplex.com/movie/the-odyssey" target="_blank" rel="noopener">Cineplex movie page</a> ·
+    <a href="https://github.com/sshakerinezhad/cinewatcher/actions" target="_blank" rel="noopener">bot run history</a>
+  </footer>
+</main>
+
+<script>
+const REPO = "sshakerinezhad/cinewatcher";
+
+function fmtTime(iso) {
+  return new Date(iso).toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" });
+}
+function ago(iso) {
+  const mins = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return mins + " min ago";
+  const h = Math.round(mins / 60);
+  return h < 48 ? h + " h ago" : Math.round(h / 24) + " days ago";
+}
+
+function renderSessions(el, sessions) {
+  const byTheatre = {};
+  for (const s of sessions) (byTheatre[s.theatre] ??= []).push(s);
+  el.innerHTML = "";
+  for (const [theatre, list] of Object.entries(byTheatre)) {
+    const h = document.createElement("div");
+    h.className = "theatre-name";
+    h.textContent = theatre;
+    el.appendChild(h);
+    for (const s of list) {
+      const row = document.createElement("div");
+      row.className = "session";
+      const seats = s.seatsRemaining != null ? ` · ${s.seatsRemaining} seats left` : "";
+      row.innerHTML = `
+        <span class="time">${fmtTime(s.start)}</span>
+        <span class="meta">${s.experience}${seats}</span>
+        ${s.soldOut
+          ? '<span class="soldout">SOLD OUT</span>'
+          : `<a class="buy" href="${s.ticketingUrl}" target="_blank" rel="noopener">Buy tickets</a>`}`;
+      el.appendChild(row);
+    }
+  }
+}
+
+async function refresh() {
+  const banner = document.getElementById("banner");
+  let status;
+  try {
+    const r = await fetch("status.json?t=" + Date.now(), { cache: "no-store" });
+    status = await r.json();
+  } catch {
+    banner.className = "banner error";
+    banner.textContent = "Could not load status.json";
+    return;
+  }
+
+  if (status.found) {
+    banner.className = "banner found";
+    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Aug 21 are on sale — book now.';
+    document.getElementById("showtimes").hidden = false;
+    renderSessions(document.getElementById("sessions"), status.imax70mm);
+  } else {
+    banner.className = "banner waiting";
+    banner.innerHTML = "⏳ No IMAX 70mm showtimes for Aug 21 yet.<br><small>You'll be notified the moment they appear.</small>";
+  }
+
+  if (status.otherFormats && status.otherFormats.length) {
+    document.getElementById("otherFormats").hidden = false;
+    renderSessions(document.getElementById("otherSessions"), status.otherFormats);
+  }
+
+  const errs = (status.theatres || []).filter(t => t.error);
+  if (errs.length && !status.found) {
+    banner.className = "banner error";
+    banner.textContent = "⚠️ Lookup problem at: " + errs.map(t => t.name).join(", ");
+  }
+
+  // Freshness: prefer the last Actions run time (works when repo is public),
+  // fall back to the last committed status change.
+  let freshnessText = "last status change " + ago(status.generatedAt);
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/watch.yml/runs?per_page=1&status=completed`);
+    if (r.ok) {
+      const d = await r.json();
+      const t = d.workflow_runs?.[0]?.updated_at;
+      if (t) freshnessText = "last check " + ago(t) + " · last status change " + ago(status.generatedAt);
+    }
+  } catch { /* private repo or rate limit — fall back silently */ }
+  document.getElementById("freshness").textContent = freshnessText;
+}
+
+refresh();
+setInterval(refresh, 60000);
+</script>
+</body>
+</html>

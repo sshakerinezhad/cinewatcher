@@ -1,0 +1,23 @@
+{
+ "generatedAt": "2026-07-21T21:16:02+00:00",
+ "targetDate": "2026-08-21",
+ "movie": "The Odyssey",
+ "format": "IMAX 70mm",
+ "theatres": [
+  {
+   "id": 7408,
+   "name": "Cineplex Cinemas Vaughan",
+   "url": "https://www.cineplex.com/theatre/cineplex-cinemas-vaughan",
+   "error": null
+  },
+  {
+   "id": 7420,
+   "name": "Cineplex Cinemas Mississauga Square One",
+   "url": "https://www.cineplex.com/theatre/cineplex-cinemas-mississauga-square-one",
+   "error": null
+  }
+ ],
+ "found": false,
+ "imax70mm": [],
+ "otherFormats": []
+}

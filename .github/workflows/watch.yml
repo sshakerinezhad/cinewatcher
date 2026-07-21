@@ -1,0 +1,67 @@
+name: Watch Odyssey IMAX 70mm
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+env:
+  NTFY_TOPIC: odyssey-imax-70mm-88955e30
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Cineplex showtimes
+        id: check
+        run: python3 checker.py
+
+      - name: Commit status update
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "cinewatcher-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/status.json state.json
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "status: update showtime state"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Alert on new IMAX 70mm showtimes
+        if: steps.check.outputs.new70 == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Instant phone push via ntfy.sh (subscribe to the topic in the ntfy app)
+          curl -sS --max-time 20 \
+            -H "Title: Odyssey IMAX 70mm tickets are UP (Aug 21)" \
+            -H "Priority: urgent" \
+            -H "Tags: rotating_light,clapper" \
+            -d "New IMAX 70mm showtimes for Aug 21 just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
+            "https://ntfy.sh/${NTFY_TOPIC}" || true
+
+          # GitHub issue (@mention triggers an email notification)
+          gh label create odyssey-alert --color FF0000 --force || true
+          existing=$(gh issue list --state open --label odyssey-alert --json number --jq '.[0].number' || echo "")
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file alert.md
+          else
+            gh issue create \
+              --title "🚨 The Odyssey IMAX 70mm showtimes are UP for Aug 21" \
+              --label odyssey-alert \
+              --body-file alert.md
+          fi
