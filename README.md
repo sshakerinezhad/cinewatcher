@@ -1,72 +1,59 @@
 # 🎬 Cinewatcher — The Odyssey IMAX 70mm ticket bot
 
-Watches Cineplex for **The Odyssey** in **IMAX 70mm** on **August 21, 2026** at:
+Watches Cineplex for **The Odyssey** in **IMAX 70mm** on **August 21, 2026** at the only
+two GTA theatres with 70mm IMAX projectors:
 
 | Theatre | Cineplex location ID |
 |---|---|
 | Cineplex Cinemas Vaughan | 7408 |
 | Cineplex Cinemas Mississauga Square One | 7420 |
 
-(These are the only two GTA theatres with 70mm IMAX projectors — Courtney Park's IMAX is digital-only.)
+**Status website:** https://sshakerinezhad.github.io/cinewatcher/
+(append `?demo` to preview what the alert state looks like)
 
 ## How it works
 
-A GitHub Actions workflow ([`.github/workflows/watch.yml`](.github/workflows/watch.yml)) runs
-**every 5 minutes** and calls the same Cineplex showtimes API the cineplex.com website uses
-([`checker.py`](checker.py)). The moment IMAX 70mm sessions appear for Aug 21, it:
+[`checker.py`](checker.py) calls the same Cineplex showtimes API the cineplex.com website
+uses. A GitHub Actions workflow ([`.github/workflows/watch.yml`](.github/workflows/watch.yml))
+runs it **every 5 minutes**. The moment IMAX 70mm sessions appear for Aug 21 it fires, in
+order:
 
-1. **📱 Pushes an instant phone notification** via [ntfy.sh](https://ntfy.sh) to topic
-   **`odyssey-imax-70mm-88955e30`**
-2. **📧 Opens a GitHub issue** @mentioning you (triggers a GitHub email notification)
-3. **🌐 Updates the status website** in [`docs/`](docs/) with the showtimes and direct
-   *Buy tickets* links
+1. **Telegram message** (primary) — full showtime list with seat availability and buy
+   links, sent by [@odyssey_watcher_bot](https://t.me/odyssey_watcher_bot)
+2. **ntfy push** (secondary) — topic `odyssey-imax-70mm-88955e30`
+3. **GitHub issue** — showtimes, seats remaining, buy links, and seat-map links
+4. **Status site update** — `docs/status.json` is committed, flipping the site to the
+   alert view with per-session *Buy tickets* buttons and live seat counts
+5. **Intentional run failure** — GitHub's "Run failed" email doubles as an email alert
+   (CI-failure emails aren't suppressed the way @mention notifications are)
 
-If a *second wave* of showtimes drops later, new sessions are detected individually and a
-comment is added to the same issue (plus another push notification).
+New sessions in a later wave are detected individually and alert again (as a comment on
+the existing alert issue). Seat-count fluctuations alone don't re-alert; sold-out
+transitions update the site.
 
-## ⚠️ One-time setup (do these!)
+An independent **Claude watchdog routine** also checks hourly and sends a Claude
+push/email if tickets appear or if the workflow has stalled.
 
-1. **Get instant phone alerts:** install the [ntfy app](https://ntfy.sh/) (iOS/Android),
-   tap *Add subscription*, and subscribe to the topic `odyssey-imax-70mm-88955e30`.
-   No account needed. (Or just open <https://ntfy.sh/odyssey-imax-70mm-88955e30> in a browser tab.)
-2. **Make this repo public** (Settings → General → Danger Zone → Change visibility).
-   Strongly recommended — there's nothing sensitive here, and:
-   - Public repos get **unlimited free** Actions minutes. Private repos get 2,000/month,
-     which a 5-minute cron burns through in ~1 week (then the bot silently stops).
-   - GitHub Pages (the status website) is free on public repos.
-3. **Enable the status website:** Settings → Pages → *Deploy from a branch* →
-   branch `main`, folder `/docs`.
-   The site will be at `https://sshakerinezhad.github.io/cinewatcher/`.
-4. **Check your GitHub notification settings** (Settings → Notifications) so that
-   *Participating / @mentions* delivers email — the alert issue @mentions you.
+## Configuration
 
-If you'd rather keep the repo private, edit the `cron` line in
-`.github/workflows/watch.yml` to `*/30 * * * *` so free minutes last the month
-(and skip the Pages site, or open `docs/index.html` locally).
+- Repo secrets (Settings → Secrets and variables → Actions): `TELEGRAM_BOT_TOKEN`,
+  `TELEGRAM_CHAT_ID`. If they're absent the Telegram step is skipped.
+- The Cineplex API key in `checker.py` is Cineplex's own public frontend key, not a secret.
+- A workflow run fails only when (a) tickets are found — intentional, see above — or
+  (b) **both** theatre lookups error, which means the API or key changed and the bot
+  needs fixing.
 
-## Status website
+## Testing
 
-`docs/index.html` reads `docs/status.json` (committed by the bot whenever showtime state
-changes) and auto-refreshes every 60 seconds. It shows a big **SHOWTIMES ARE UP** banner
-with per-session *Buy tickets* buttons once tickets drop, and also lists any *other*
-Odyssey formats (UltraAVX, regular, etc.) that appear for Aug 21 — often a leading
-indicator that the 70mm drop is imminent.
+Run the full alert path against a date that already has showtimes (today, for instance):
+Actions → *Watch Odyssey IMAX 70mm* → *Run workflow* → set *test_date* to e.g.
+`2026-07-21`. Test runs prefix alerts with `[TEST]` and never commit state, so the
+status site keeps showing the real Aug 21 situation. Close the `[TEST]` issue afterwards
+so a real alert opens a fresh issue.
 
-## Notes
+Locally: `CINEWATCHER_DATE=2026-07-21 python3 checker.py && cat alert.txt`
 
-- The API key in `checker.py` is Cineplex's own public key, embedded in their website
-  frontend for anonymous use — not a secret.
-- The checker only commits when state actually changes (new sessions or sold-out
-  transitions), so history stays clean.
-- A workflow run fails only if *both* theatre lookups error — a signal the API or key
-  changed and the bot needs fixing.
-- After August 21, disable the workflow (Actions → Watch Odyssey IMAX 70mm → ⋯ → Disable).
+## After August 21
 
-## Test it
-
-Run a manual check any time: Actions → *Watch Odyssey IMAX 70mm* → *Run workflow*.
-To test the full alert path, run locally with today's date (showtimes exist now):
-
-```bash
-CINEWATCHER_DATE=2026-07-21 python3 checker.py && cat alert.md
-```
+Disable the workflow (Actions → *Watch Odyssey IMAX 70mm* → ⋯ → *Disable workflow*) and
+delete the "Odyssey IMAX 70mm watchdog" routine in Claude.

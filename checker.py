@@ -39,7 +39,11 @@ THEATRES = {
 ROOT = os.path.dirname(os.path.abspath(__file__))
 STATE_PATH = os.path.join(ROOT, "state.json")
 STATUS_PATH = os.path.join(ROOT, "docs", "status.json")
-ALERT_PATH = os.path.join(ROOT, "alert.md")
+ALERT_MD_PATH = os.path.join(ROOT, "alert.md")      # GitHub issue body
+ALERT_TXT_PATH = os.path.join(ROOT, "alert.txt")    # Telegram message body
+
+TEST_MODE = bool(os.environ.get("CINEWATCHER_DATE"))
+PREFIX = "[TEST] " if TEST_MODE else ""
 
 
 def api_date(iso_date):
@@ -72,6 +76,13 @@ def is_70mm(experience_types):
     return any("imax" in t for t in types) and any("70" in t for t in types)
 
 
+def is_target_movie(name):
+    # Match Nolan's "The Odyssey" (incl. variants like "The Odyssey: The IMAX
+    # Experience") without false-positives on "2001: A Space Odyssey" reruns.
+    n = name.lower()
+    return MOVIE_MATCH in n and "2001" not in n and "space odyssey" not in n
+
+
 def collect_sessions(payload, theatre_id):
     """Return (imax70mm, other) session lists for the target date."""
     imax, other = [], []
@@ -80,7 +91,7 @@ def collect_sessions(payload, theatre_id):
             continue
         for date in theatre.get("dates", []):
             for movie in date.get("movies", []):
-                if MOVIE_MATCH not in movie.get("name", "").lower():
+                if not is_target_movie(movie.get("name", "")):
                     continue
                 for exp in movie.get("experiences", []):
                     types = exp.get("experienceTypes", [])
@@ -166,25 +177,35 @@ def main():
             json.dump(new_state, f, indent=1, sort_keys=True)
 
     if new_70mm:
-        lines = [
-            "@sshakerinezhad **The Odyssey — IMAX 70mm showtimes for "
-            f"{TARGET_DATE} are UP!** \U0001f3ac",
-            "",
-        ]
         by_theatre = {}
         for s in new_70mm:
             by_theatre.setdefault(s["theatre"], []).append(s)
+
+        md = [f"@sshakerinezhad **The Odyssey — IMAX 70mm showtimes for {TARGET_DATE} are UP!** \U0001f3ac", ""]
+        txt = [f"{PREFIX}\U0001f6a8 The Odyssey — IMAX 70mm showtimes for {TARGET_DATE} are UP! BOOK NOW.", ""]
         for theatre, sessions in by_theatre.items():
-            lines.append(f"### {theatre}")
+            md.append(f"### {theatre}")
+            txt.append(f"{theatre}:")
             for s in sessions:
-                sold = " — **SOLD OUT**" if s["soldOut"] else ""
-                lines.append(f"- **{fmt_time(s['start'])}** ({s['experience']}){sold} — [Buy tickets]({s['ticketingUrl']})")
-            lines.append("")
-        lines.append("Book fast — first drops sold out within hours.")
-        lines.append("")
-        lines.append("Movie page: https://www.cineplex.com/movie/the-odyssey")
-        with open(ALERT_PATH, "w") as f:
-            f.write("\n".join(lines))
+                t = fmt_time(s["start"])
+                if s["soldOut"]:
+                    avail = "SOLD OUT"
+                elif s["seatsRemaining"] is not None:
+                    avail = f"{s['seatsRemaining']} seats left"
+                else:
+                    avail = "on sale"
+                md.append(f"- **{t}** ({s['experience']}) — {avail} — "
+                          f"[Buy tickets]({s['ticketingUrl']}) · [Seat map]({s['seatMapUrl']})")
+                txt.append(f"  {t} — {avail} — {s['ticketingUrl']}")
+            md.append("")
+            txt.append("")
+        md += ["Book fast — first drops sold out within hours.", "",
+               "Movie page: https://www.cineplex.com/movie/the-odyssey"]
+        txt.append("Movie page: https://www.cineplex.com/movie/the-odyssey")
+        with open(ALERT_MD_PATH, "w") as f:
+            f.write("\n".join(md))
+        with open(ALERT_TXT_PATH, "w") as f:
+            f.write("\n".join(txt))
 
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
