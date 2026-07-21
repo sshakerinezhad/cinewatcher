@@ -74,6 +74,18 @@ jobs:
             -d "${PREFIX}New IMAX 70mm showtimes just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
+          # Direct email alert via ntfy's email gateway.
+          # Enable by adding a repo secret named ALERT_EMAIL with your address
+          # (Settings -> Secrets and variables -> Actions -> New repository secret).
+          if [ -n "${{ secrets.ALERT_EMAIL }}" ]; then
+            curl -sS --max-time 20 \
+              -H "Email: ${{ secrets.ALERT_EMAIL }}" \
+              -H "Title: ${PREFIX}Odyssey IMAX 70mm tickets are UP (Aug 21)" \
+              -H "Priority: urgent" \
+              -d "${PREFIX}New IMAX 70mm showtimes for Aug 21 just appeared at Vaughan/Mississauga Square One. Book now: https://www.cineplex.com/movie/the-odyssey — full list on the status site and in the GitHub issue." \
+              "https://ntfy.sh/${NTFY_TOPIC}-email" || true
+          fi
+
           # GitHub issue (@mention triggers an email notification)
           gh label create odyssey-alert --color FF0000 --force || true
           existing=$(gh issue list --state open --label odyssey-alert --json number --jq '.[0].number' || echo "")
