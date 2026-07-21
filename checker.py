@@ -22,7 +22,7 @@ API = "https://apis.cineplex.com/prod/cpx/theatrical/api/v1/showtimes"
 # Public subscription key embedded in the cineplex.com web frontend.
 KEY = os.environ.get("CINEPLEX_API_KEY", "dcdac5601d864addbc2675a2e96cb1f8")
 
-TARGET_DATE = os.environ.get("CINEWATCHER_DATE", "2026-08-21")  # YYYY-MM-DD
+TARGET_DATE = os.environ.get("CINEWATCHER_DATE") or "2026-08-21"  # YYYY-MM-DD
 MOVIE_MATCH = os.environ.get("CINEWATCHER_MOVIE", "odyssey").lower()
 
 THEATRES = {

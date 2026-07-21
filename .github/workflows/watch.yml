@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      test_date:
+        description: "Override target date (YYYY-MM-DD) for an end-to-end alert test"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -35,10 +40,12 @@ jobs:
 
       - name: Check Cineplex showtimes
         id: check
+        env:
+          CINEWATCHER_DATE: ${{ inputs.test_date }}
         run: python3 checker.py
 
       - name: Commit status update
-        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true' && (inputs.test_date == '' || inputs.test_date == null)
         run: |
           git config user.name "cinewatcher-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -56,12 +63,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          PREFIX=""
+          if [ -n "${{ inputs.test_date }}" ]; then PREFIX="[TEST] "; fi
+
           # Instant phone push via ntfy.sh (subscribe to the topic in the ntfy app)
           curl -sS --max-time 20 \
-            -H "Title: Odyssey IMAX 70mm tickets are UP (Aug 21)" \
+            -H "Title: ${PREFIX}Odyssey IMAX 70mm tickets are UP (Aug 21)" \
             -H "Priority: urgent" \
             -H "Tags: rotating_light,clapper" \
-            -d "New IMAX 70mm showtimes for Aug 21 just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
+            -d "${PREFIX}New IMAX 70mm showtimes just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
           # GitHub issue (@mention triggers an email notification)
@@ -71,7 +81,7 @@ jobs:
             gh issue comment "$existing" --body-file alert.md
           else
             gh issue create \
-              --title "🚨 The Odyssey IMAX 70mm showtimes are UP for Aug 21" \
+              --title "${PREFIX}🚨 The Odyssey IMAX 70mm showtimes are UP for Aug 21" \
               --label odyssey-alert \
               --body-file alert.md
           fi
