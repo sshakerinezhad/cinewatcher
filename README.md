@@ -35,7 +35,7 @@ comment is added to the same issue (plus another push notification).
      which a 5-minute cron burns through in ~1 week (then the bot silently stops).
    - GitHub Pages (the status website) is free on public repos.
 3. **Enable the status website:** Settings → Pages → *Deploy from a branch* →
-   branch `claude/odyssey-imax-showtime-bot-1t1cvo`, folder `/docs`.
+   branch `main`, folder `/docs`.
    The site will be at `https://sshakerinezhad.github.io/cinewatcher/`.
 4. **Check your GitHub notification settings** (Settings → Notifications) so that
    *Participating / @mentions* delivers email — the alert issue @mentions you.
