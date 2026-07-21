@@ -145,6 +145,21 @@ function renderSessions(el, sessions) {
   }
 }
 
+// Open the page with ?demo appended (…/cinewatcher/?demo) to preview what the
+// alert state will look like once real showtimes drop. Sample data only.
+const DEMO = new URLSearchParams(location.search).has("demo");
+const DEMO_STATUS = {
+  found: true,
+  otherFormats: [],
+  theatres: [],
+  imax70mm: [
+    { theatre: "Cineplex Cinemas Vaughan", start: "2026-08-21T19:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 214, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
+    { theatre: "Cineplex Cinemas Vaughan", start: "2026-08-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 377, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
+    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-08-21T19:00:00", experience: "IMAX 70mm", soldOut: true, seatsRemaining: 0, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
+    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-08-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 98, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
+  ],
+};
+
 async function refresh() {
   const banner = document.getElementById("banner");
   let status;
@@ -156,10 +171,12 @@ async function refresh() {
     banner.textContent = "Could not load status.json";
     return;
   }
+  if (DEMO) status = { ...status, ...DEMO_STATUS, generatedAt: new Date().toISOString() };
 
   if (status.found) {
     banner.className = "banner found";
-    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Aug 21 are on sale — book now.';
+    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Aug 21 are on sale — book now.'
+      + (DEMO ? '<br><small style="font-weight:400">DEMO PREVIEW — sample data, remove ?demo from the URL for live status</small>' : '');
     document.getElementById("showtimes").hidden = false;
     renderSessions(document.getElementById("sessions"), status.imax70mm);
   } else {
