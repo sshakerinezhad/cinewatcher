@@ -23,6 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: First-run liveness marker
+        if: hashFiles('.bot-alive') == ''
+        run: |
+          git config user.name "cinewatcher-bot"
+          git config user.email "actions@users.noreply.github.com"
+          date -u +%FT%TZ > .bot-alive
+          git add .bot-alive
+          git commit -m "bot: first scheduled run OK"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
       - name: Check Cineplex showtimes
         id: check
         run: python3 checker.py
