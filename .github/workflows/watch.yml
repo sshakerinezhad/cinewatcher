@@ -38,7 +38,7 @@ jobs:
           for i in 1 2 3; do
             python3 checker.py
             if grep -qE '^(changed|new70)=true$' "$GITHUB_OUTPUT"; then break; fi
-            [ "$i" -lt 3 ] && sleep 120
+            if [ "$i" -lt 3 ]; then sleep 120; fi
           done
 
       # Notifications fire FIRST so a later git failure can never block them.
