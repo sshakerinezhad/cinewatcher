@@ -90,6 +90,25 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
+      # Self-chain: GitHub's */5 cron proved unreliable here (observed 60-90
+      # minute gaps), so each finished run dispatches the next one, making the
+      # ~5-minute cadence self-sustaining. Requires a fine-grained PAT with
+      # Actions:write stored as the DISPATCH_PAT secret — the built-in
+      # GITHUB_TOKEN cannot trigger new workflow runs. Without the secret this
+      # step is a no-op and the cron remains the (sparse) driver; with it, the
+      # cron is just a backstop that restarts the chain if it ever breaks.
+      - name: Chain the next run
+        if: always() && inputs.test_date == ''
+        run: |
+          if [ -n "${{ secrets.DISPATCH_PAT }}" ]; then
+            sleep 30
+            curl -sS --max-time 20 -X POST \
+              -H "Authorization: Bearer ${{ secrets.DISPATCH_PAT }}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/watch.yml/dispatches" \
+              -d '{"ref":"main"}' || true
+          fi
+
       # GitHub reliably emails on failed runs (and pushes via the mobile app if
       # Actions notifications are enabled there) — unlike @mention
       # notifications, which are suppressed for self-triggered activity. After
