@@ -35,15 +35,20 @@ jobs:
         env:
           CINEWATCHER_DATE: ${{ inputs.test_date }}
         run: |
+          ALERT=false; CHANGED=false
           for i in 1 2 3; do
             python3 checker.py
-            if grep -qE '^(changed|new70)=true$' "$GITHUB_OUTPUT"; then break; fi
+            if [ "$(jq -r .alert result.json)" = "true" ]; then ALERT=true; fi
+            if [ "$(jq -r .changed result.json)" = "true" ]; then CHANGED=true; fi
+            if [ "$ALERT" = true ] || [ "$CHANGED" = true ]; then break; fi
             if [ "$i" -lt 3 ]; then sleep 120; fi
           done
+          echo "alert=$ALERT" >> "$GITHUB_OUTPUT"
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
 
       # Notifications fire FIRST so a later git failure can never block them.
       - name: Alert on new IMAX 70mm showtimes
-        if: steps.check.outputs.new70 == 'true'
+        if: steps.check.outputs.alert == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PREFIX: ${{ inputs.test_date != '' && '[TEST] ' || '' }}
@@ -56,12 +61,20 @@ jobs:
               --data-urlencode "text@alert.txt" || true
           fi
 
+          # Headline depends on whether actual IMAX 70mm sessions were tagged,
+          # or the date merely went live in other formats.
+          if [ "$(jq -r .has70mm result.json)" = "true" ]; then
+            HEAD="🚨 Odyssey IMAX 70mm tickets are UP (Aug 21)"
+          else
+            HEAD="👀 Odyssey Aug 21 listings went live (no 70mm tag yet — check now)"
+          fi
+
           # ntfy push (secondary; subscribe to the topic in the ntfy app)
           curl -sS --max-time 20 \
-            -H "Title: ${PREFIX}Odyssey IMAX 70mm tickets are UP (Aug 21)" \
+            -H "Title: ${PREFIX}${HEAD}" \
             -H "Priority: urgent" \
             -H "Tags: rotating_light,clapper" \
-            -d "${PREFIX}New IMAX 70mm showtimes just appeared at Vaughan/Mississauga. Book now: https://www.cineplex.com/movie/the-odyssey" \
+            --data-binary @alert.txt \
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
           # GitHub issue with the full showtime list and buy links
@@ -71,7 +84,7 @@ jobs:
             gh issue comment "$existing" --body-file alert.md
           else
             gh issue create \
-              --title "${PREFIX}🚨 The Odyssey IMAX 70mm showtimes are UP for Aug 21" \
+              --title "${PREFIX}${HEAD}" \
               --label odyssey-alert \
               --body-file alert.md
           fi
@@ -115,7 +128,7 @@ jobs:
       # all alerts have gone out, fail the run on purpose: the
       # "Run failed: Watch Odyssey IMAX 70mm" email IS the alert.
       - name: Fail loudly so GitHub sends a run-failed email
-        if: always() && steps.check.outputs.new70 == 'true'
+        if: always() && steps.check.outputs.alert == 'true'
         run: |
           echo "::error::🚨 ODYSSEY IMAX 70MM TICKETS ARE UP FOR AUG 21 — this failure is intentional, it is your email alert. Book: https://www.cineplex.com/movie/the-odyssey"
           exit 1
