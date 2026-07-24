@@ -15,6 +15,7 @@ Outputs for GitHub Actions (via $GITHUB_OUTPUT):
 import json
 import os
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 
@@ -51,7 +52,13 @@ def api_date(iso_date):
     return f"{m}/{d}/{y}"
 
 
-def fetch(theatre_id):
+def fetch(theatre_id, attempts=4):
+    """Fetch showtimes, retrying transient failures.
+
+    Runner-side network blips are common enough that a single failed request
+    must not be reported as an outage: a theatre marked errored is a theatre
+    we are not actually watching.
+    """
     url = f"{API}?language=en&locationId={theatre_id}&date={api_date(TARGET_DATE)}"
     req = urllib.request.Request(
         url,
@@ -64,11 +71,17 @@ def fetch(theatre_id):
             ),
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        body = r.read()
-    if not body:
-        return []
-    return json.loads(body)
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = r.read()
+            return json.loads(body) if body else []
+        except Exception as e:  # noqa: BLE001 - retry any transient failure
+            if attempt == attempts:
+                raise
+            print(f"  theatre {theatre_id} attempt {attempt}/{attempts} failed "
+                  f"({type(e).__name__}), retrying in {2 ** attempt}s")
+            time.sleep(2 ** attempt)
 
 
 def is_70mm(experience_types):
@@ -138,18 +151,26 @@ def main():
     all_imax.sort(key=lambda s: (s["theatreId"], s["start"]))
     all_other.sort(key=lambda s: (s["theatreId"], s["start"]))
 
-    # State used for change detection: session ids + sold-out flags only, so
-    # routine seat-count fluctuations don't generate a commit every run.
-    new_state = {
-        "imax70mm": {s["id"]: {"soldOut": s["soldOut"]} for s in all_imax},
-        "other": {s["id"]: {"soldOut": s["soldOut"]} for s in all_other},
-        "errorTheatres": sorted(e["theatreId"] for e in errors),
-    }
     try:
         with open(STATE_PATH) as f:
             old_state = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         old_state = None
+
+    # State used for change detection: session ids, sold-out flags and owning
+    # theatre only, so routine seat-count fluctuations don't commit every run.
+    errored = {e["theatreId"] for e in errors}
+    new_state = {
+        "imax70mm": {s["id"]: {"soldOut": s["soldOut"], "theatreId": s["theatreId"]} for s in all_imax},
+        "other": {s["id"]: {"soldOut": s["soldOut"], "theatreId": s["theatreId"]} for s in all_other},
+    }
+    # A theatre we failed to reach tells us nothing — carry its last known
+    # sessions forward. Otherwise they'd look deleted now and brand new (a
+    # duplicate alert) the moment the theatre comes back.
+    for key in ("imax70mm", "other"):
+        for sid, entry in (old_state or {}).get(key, {}).items():
+            if entry.get("theatreId") in errored and sid not in new_state[key]:
+                new_state[key][sid] = entry
 
     changed = new_state != old_state
     known_70mm = set((old_state or {}).get("imax70mm", {}))

@@ -48,6 +48,11 @@
   .banner.error { color: var(--red); border-color: var(--red); }
   @keyframes pulse { 50% { box-shadow: 0 0 40px rgba(212,168,67,.45); } }
   .banner .big { display: block; font-size: 1.6rem; margin-bottom: .3rem; }
+  .notice {
+    margin: -0.9rem 0 1.5rem; padding: .6rem .9rem; border-radius: 10px;
+    font-size: .82rem; color: var(--muted);
+    border: 1px solid var(--border); background: rgba(255,255,255,.02);
+  }
   section { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
   section h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); margin-bottom: .8rem; }
   .session {
@@ -80,6 +85,7 @@
   <p class="sub">Watching for <b>August 21, 2026</b> showtimes at Vaughan &amp; Mississauga Square One</p>
 
   <div id="banner" class="banner waiting">Loading status…</div>
+  <div id="notice" class="notice" hidden></div>
 
   <section id="showtimes" hidden>
     <h2>IMAX 70mm showtimes — Aug 21</h2>
@@ -189,10 +195,17 @@ async function refresh() {
     renderSessions(document.getElementById("otherSessions"), status.otherFormats);
   }
 
+  // A theatre we couldn't reach on the last check is a transient blip, not an
+  // outage — the checker retries and the next run is seconds away. Note it,
+  // but never let it replace the actual showtime status.
+  const notice = document.getElementById("notice");
   const errs = (status.theatres || []).filter(t => t.error);
-  if (errs.length && !status.found) {
-    banner.className = "banner error";
-    banner.textContent = "⚠️ Lookup problem at: " + errs.map(t => t.name).join(", ");
+  if (errs.length) {
+    notice.hidden = false;
+    notice.textContent = "Couldn't reach " + errs.map(t => t.name).join(", ")
+      + " on the last check — retrying automatically. Last known showtimes are still shown.";
+  } else {
+    notice.hidden = true;
   }
 
   // Freshness: prefer the last Actions run time (works when repo is public),
