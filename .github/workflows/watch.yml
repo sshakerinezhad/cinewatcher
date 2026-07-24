@@ -15,7 +15,10 @@ permissions:
   issues: write
 
 concurrency:
-  group: watch
+  # Test runs get their own lane. Sharing one group meant a manual test and a
+  # chained production run could cancel each other while queued — a cancelled
+  # production run also never chains its successor, which can stall the loop.
+  group: watch-${{ inputs.test_date != '' && 'test' || 'live' }}
   cancel-in-progress: false
 
 env:
