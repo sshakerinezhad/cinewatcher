@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-24T17:42:30+00:00",
+ "generatedAt": "2026-07-24T17:43:09+00:00",
  "targetDate": "2026-08-21",
  "movie": "The Odyssey",
  "format": "IMAX 70mm",
@@ -8,7 +8,7 @@
    "id": 7408,
    "name": "Cineplex Cinemas Vaughan",
    "url": "https://www.cineplex.com/theatre/cineplex-cinemas-vaughan",
-   "error": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+   "error": null
   },
   {
    "id": 7420,
