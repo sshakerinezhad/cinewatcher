@@ -1,6 +1,5 @@
 {
- "imax70mm": {},
- "other": {
+ "imax70mm": {
   "387248": {
    "soldOut": false,
    "theatreId": 7420
@@ -17,5 +16,6 @@
    "soldOut": false,
    "theatreId": 7420
   }
- }
+ },
+ "other": {}
 }
