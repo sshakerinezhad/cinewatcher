@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-30T07:01:19+00:00",
+ "generatedAt": "2026-07-30T07:02:00+00:00",
  "targetDate": "2026-08-21",
  "movie": "The Odyssey",
  "format": "IMAX 70mm",
@@ -17,15 +17,16 @@
    "error": null
   }
  ],
- "found": true,
- "imax70mm": [
+ "found": false,
+ "imax70mm": [],
+ "otherFormats": [
   {
    "id": "387248",
    "theatreId": 7420,
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "movie": "The Odyssey",
    "start": "2026-08-21T11:00:00",
-   "experience": "IMAX 70mm",
+   "experience": "Regular",
    "soldOut": false,
    "seatsRemaining": 263,
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=387248&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
@@ -37,7 +38,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "movie": "The Odyssey",
    "start": "2026-08-21T15:00:00",
-   "experience": "IMAX 70mm",
+   "experience": "Regular",
    "soldOut": false,
    "seatsRemaining": 263,
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=387249&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
@@ -49,9 +50,9 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "movie": "The Odyssey",
    "start": "2026-08-21T19:00:00",
-   "experience": "IMAX 70mm",
+   "experience": "Regular",
    "soldOut": false,
-   "seatsRemaining": 263,
+   "seatsRemaining": 257,
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=387250&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=387250&dbox=False"
   },
@@ -61,12 +62,11 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "movie": "The Odyssey",
    "start": "2026-08-21T23:00:00",
-   "experience": "IMAX 70mm",
+   "experience": "Regular",
    "soldOut": false,
    "seatsRemaining": 263,
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=387251&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=387251&dbox=False"
   }
- ],
- "otherFormats": []
+ ]
 }
