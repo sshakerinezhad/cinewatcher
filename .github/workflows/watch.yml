@@ -1,8 +1,10 @@
 name: Watch Odyssey IMAX 70mm
 
+# RETIRED — tickets for Aug 21 are secured, so the watcher no longer runs on
+# its own: both the 5-minute cron and the self-chaining dispatch below are
+# gone. The job is left intact and manually dispatchable. To revive the watch,
+# restore the `schedule:` trigger and the "Chain the next run" step.
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       test_date:
@@ -106,24 +108,11 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
-      # Self-chain: GitHub's */5 cron proved unreliable here (observed 60-90
-      # minute gaps), so each finished run dispatches the next one, making the
-      # ~5-minute cadence self-sustaining. Requires a fine-grained PAT with
-      # Actions:write stored as the DISPATCH_PAT secret — the built-in
-      # GITHUB_TOKEN cannot trigger new workflow runs. Without the secret this
-      # step is a no-op and the cron remains the (sparse) driver; with it, the
-      # cron is just a backstop that restarts the chain if it ever breaks.
-      - name: Chain the next run
-        if: always() && inputs.test_date == ''
-        run: |
-          if [ -n "${{ secrets.DISPATCH_PAT }}" ]; then
-            sleep 30
-            curl -sS --max-time 20 -X POST \
-              -H "Authorization: Bearer ${{ secrets.DISPATCH_PAT }}" \
-              -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/watch.yml/dispatches" \
-              -d '{"ref":"main"}' || true
-          fi
+      # The self-chain step lived here: each finished run dispatched the next
+      # one via the DISPATCH_PAT secret, because GitHub's */5 cron proved
+      # unreliable (observed 60-90 minute gaps). Removing it is what actually
+      # stops the watcher — deleting the cron alone would not have, since the
+      # chain kept re-dispatching itself independently of the schedule.
 
       # GitHub reliably emails on failed runs (and pushes via the mobile app if
       # Actions notifications are enabled there) — unlike @mention

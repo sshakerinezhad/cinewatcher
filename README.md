@@ -1,5 +1,11 @@
 # 🎬 Cinewatcher — The Odyssey IMAX 70mm ticket bot
 
+> **🎟️ Retired — tickets secured.** The watch is off: the workflow's cron and
+> self-chaining dispatch are removed (it only runs now if dispatched by hand),
+> and the Claude watchdog routine is disabled. Everything below describes the
+> bot as it ran; see [Reviving the watch](#reviving-the-watch) to switch it
+> back on.
+
 Watches Cineplex for **The Odyssey** in **IMAX 70mm** on **August 21, 2026** at the only
 two GTA theatres with 70mm IMAX projectors:
 
@@ -53,7 +59,17 @@ so a real alert opens a fresh issue.
 
 Locally: `CINEWATCHER_DATE=2026-07-21 python3 checker.py && cat alert.txt`
 
-## After August 21
+## Reviving the watch
 
-Disable the workflow (Actions → *Watch Odyssey IMAX 70mm* → ⋯ → *Disable workflow*) and
-delete the "Odyssey IMAX 70mm watchdog" routine in Claude.
+The bot is off. To turn it back on:
+
+1. Restore the `schedule:` trigger and the "Chain the next run" step in
+   [`.github/workflows/watch.yml`](.github/workflows/watch.yml) — the chain step is the
+   one that matters, since GitHub's `*/5` cron alone ran with 60–90 minute gaps.
+2. Point `TARGET_DATE` in [`checker.py`](checker.py) at the new date.
+3. Re-enable the "Odyssey IMAX 70mm watchdog" routine in Claude (it is disabled, not
+   deleted), and update the date in its prompt.
+
+Note that stopping the watcher takes more than deleting the cron: while the
+`DISPATCH_PAT` secret exists, any run that still contains the chain step will keep
+dispatching its own successor on `main`.
