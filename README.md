@@ -1,13 +1,7 @@
-# 🎬 Cinewatcher — The Odyssey IMAX 70mm ticket bot
+# 🎬 Cinewatcher — Dune: Part 3 IMAX 70mm ticket bot
 
-> **🎟️ Retired — tickets secured.** The watch is off: the workflow's cron and
-> self-chaining dispatch are removed (it only runs now if dispatched by hand),
-> and the Claude watchdog routine is disabled. Everything below describes the
-> bot as it ran; see [Reviving the watch](#reviving-the-watch) to switch it
-> back on.
-
-Watches Cineplex for **The Odyssey** in **IMAX 70mm** on **August 21, 2026** at the only
-two GTA theatres with 70mm IMAX projectors:
+Watches Cineplex for **Dune: Part 3** in **IMAX 70mm** on **December 21, 2026** at the
+only two GTA theatres with 70mm IMAX projectors:
 
 | Theatre | Cineplex location ID |
 |---|---|
@@ -17,11 +11,18 @@ two GTA theatres with 70mm IMAX projectors:
 **Status website:** https://sshakerinezhad.github.io/cinewatcher/
 (append `?demo` to preview what the alert state looks like)
 
+## What it's waiting for
+
+Cineplex has IMAX 70mm sessions on sale for **Dec 17-20** (Vaughan only, 2 per day);
+Dec 21 onward has no Dune listing yet. Note that Dec 21 is *not* a closed booking date —
+other films are already listed on it — so the signal is the film appearing on the board
+for the 21st, not the date opening up. Once the 21st drops, the dates after it follow.
+
 ## How it works
 
 [`checker.py`](checker.py) calls the same Cineplex showtimes API the cineplex.com website
 uses. A GitHub Actions workflow ([`.github/workflows/watch.yml`](.github/workflows/watch.yml))
-runs it **every 5 minutes**. The moment IMAX 70mm sessions appear for Aug 21 it fires, in
+runs it **every 30 minutes**. The moment IMAX 70mm sessions appear for Dec 21 it fires, in
 order:
 
 1. **Telegram message** (primary) — full showtime list with seat availability and buy
@@ -37,8 +38,9 @@ New sessions in a later wave are detected individually and alert again (as a com
 the existing alert issue). Seat-count fluctuations alone don't re-alert; sold-out
 transitions update the site.
 
-An independent **Claude watchdog routine** also checks hourly and sends a Claude
-push/email if tickets appear or if the workflow has stalled.
+The bot name and ntfy topic still say "odyssey" — they're just identifiers carried over
+from the previous watch, and renaming them would mean re-pairing the Telegram bot and
+re-subscribing the ntfy topic for no benefit.
 
 ## Configuration
 
@@ -51,25 +53,21 @@ push/email if tickets appear or if the workflow has stalled.
 
 ## Testing
 
-Run the full alert path against a date that already has showtimes (today, for instance):
-Actions → *Watch Odyssey IMAX 70mm* → *Run workflow* → set *test_date* to e.g.
-`2026-07-21`. Test runs prefix alerts with `[TEST]` and never commit state, so the
-status site keeps showing the real Aug 21 situation. Close the `[TEST]` issue afterwards
-so a real alert opens a fresh issue.
+Run the full alert path against a date that already has showtimes:
+Actions → *Watch Dune Part 3 IMAX 70mm* → *Run workflow* → set *test_date* to
+`2026-12-17` (Vaughan has two IMAX 70mm sessions that day). Test runs prefix alerts with
+`[TEST]` and never commit state, so the status site keeps showing the real Dec 21
+situation. Close the `[TEST]` issue afterwards so a real alert opens a fresh issue.
 
-Locally: `CINEWATCHER_DATE=2026-07-21 python3 checker.py && cat alert.txt`
+Locally: `CINEWATCHER_DATE=2026-12-17 python3 checker.py && cat alert.txt`
 
-## Reviving the watch
+## After the drop
 
-The bot is off. To turn it back on:
+Disable the workflow (Actions → *Watch Dune Part 3 IMAX 70mm* → ⋯ → *Disable workflow*),
+or remove the `schedule:` trigger from the workflow. There is no self-chaining dispatch in
+this version, so stopping the cron is sufficient.
 
-1. Restore the `schedule:` trigger and the "Chain the next run" step in
-   [`.github/workflows/watch.yml`](.github/workflows/watch.yml) — the chain step is the
-   one that matters, since GitHub's `*/5` cron alone ran with 60–90 minute gaps.
-2. Point `TARGET_DATE` in [`checker.py`](checker.py) at the new date.
-3. Re-enable the "Odyssey IMAX 70mm watchdog" routine in Claude (it is disabled, not
-   deleted), and update the date in its prompt.
-
-Note that stopping the watcher takes more than deleting the cron: while the
-`DISPATCH_PAT` secret exists, any run that still contains the chain step will keep
-dispatching its own successor on `main`.
+To retarget at a different film or date afterwards: `TARGET_DATE` and `MOVIE_MATCH` at the
+top of [`checker.py`](checker.py), reset [`state.json`](state.json) to
+`{"imax70mm": {}, "other": {}}`, and update the headline strings in `checker.py` and the
+workflow.

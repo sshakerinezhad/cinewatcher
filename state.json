@@ -1,21 +1,4 @@
 {
- "imax70mm": {
-  "387248": {
-   "soldOut": false,
-   "theatreId": 7420
-  },
-  "387249": {
-   "soldOut": false,
-   "theatreId": 7420
-  },
-  "387250": {
-   "soldOut": false,
-   "theatreId": 7420
-  },
-  "387251": {
-   "soldOut": false,
-   "theatreId": 7420
-  }
- },
+ "imax70mm": {},
  "other": {}
 }
