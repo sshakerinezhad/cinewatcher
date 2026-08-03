@@ -22,8 +22,17 @@ for the 21st, not the date opening up. Once the 21st drops, the dates after it f
 
 [`checker.py`](checker.py) calls the same Cineplex showtimes API the cineplex.com website
 uses. A GitHub Actions workflow ([`.github/workflows/watch.yml`](.github/workflows/watch.yml))
-runs it **every 30 minutes**, at :07 and :37 — deliberately off the hour, since GitHub
-delays scheduled runs most at :00/:30. It alerts on **IMAX 70mm only** — Cineplex tags those
+is scheduled **every 30 minutes**, at :07 and :37 — off the hour, since GitHub delays
+scheduled runs most at :00/:30.
+
+**Expect the real interval to be longer than 30 minutes.** GitHub throttles scheduled
+runs hard on this repo: measured across the last 30 scheduled runs while the cron was
+`*/5`, actual delivery ranged from **53 to 212 minutes apart, median 98**. The cron is a
+best-effort trigger, not a guarantee. This is a deliberate trade — see
+[Cadence](#cadence) — and the reason the previous Odyssey watch self-chained through a
+PAT instead of trusting the schedule.
+
+It alerts on **IMAX 70mm only** — Cineplex tags those
 sessions `["IMAX", "70mm"]`, and a Dune session on Dec 21 in any other format (plain
 IMAX, standard digital) is tracked and shown on the status site but never notifies. The
 moment IMAX 70mm sessions appear for Dec 21 it fires, in order:
@@ -44,6 +53,22 @@ transitions update the site.
 The bot name and ntfy topic still say "odyssey" — they're just identifiers carried over
 from the previous watch, and renaming them would mean re-pairing the Telegram bot and
 re-subscribing the ntfy topic for no benefit.
+
+## Cadence
+
+The watch runs on GitHub's cron alone, accepting that checks may land 1-3 hours apart
+rather than every 30 minutes. Two alternatives were considered and rejected:
+
+- **Self-chaining dispatch** (what the Odyssey watch used): each run dispatches its
+  successor via a `DISPATCH_PAT` secret. Genuinely reliable — it produced 2,780 runs at a
+  steady ~5-minute cadence — but holding a 30-minute gap means each run sleeping ~28
+  minutes first, burning roughly 24 runner-hours per day indefinitely.
+- **An external driver** (e.g. a scheduled Claude routine dispatching the workflow):
+  reliable and cheap, but more moving parts to maintain and to remember to switch off.
+
+For a single anticipated drop, being a couple of hours late is an acceptable cost against
+that complexity. If the cadence ever needs to be real, restoring the self-chain is the
+proven route — the git history for the Odyssey watch has the exact step.
 
 ## Configuration
 
