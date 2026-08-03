@@ -7,7 +7,11 @@ name: Watch Dune Part 3 IMAX 70mm
 # for 60 days — expect the occasional gap wider than 30 minutes.
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # Every 30 minutes, deliberately off the hour. GitHub delays scheduled
+    # runs when Actions is under load, and :00 and :30 — where a plain */30
+    # lands — are the most contended minutes on the platform. Odd offsets
+    # queue behind far less.
+    - cron: "7,37 * * * *"
   workflow_dispatch:
     inputs:
       test_date:
