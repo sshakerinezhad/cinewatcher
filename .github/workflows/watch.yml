@@ -1,10 +1,13 @@
-name: Watch Odyssey IMAX 70mm
+name: Watch Dune Part 3 IMAX 70mm
 
-# RETIRED — tickets for Aug 21 are secured, so the watcher no longer runs on
-# its own: both the 5-minute cron and the self-chaining dispatch below are
-# gone. The job is left intact and manually dispatchable. To revive the watch,
-# restore the `schedule:` trigger and the "Chain the next run" step.
+# Half-hourly watch. The Odyssey watch ran every ~5 minutes and had to
+# self-chain via a PAT because GitHub's cron was unreliable; this one is not
+# time-critical, so plain cron is enough. Note that GitHub deprioritises
+# scheduled runs under load and skips them outright when a repo is inactive
+# for 60 days — expect the occasional gap wider than 30 minutes.
 on:
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
       test_date:
@@ -33,23 +36,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The cron fires every 5 minutes (GitHub's floor); checking three times
-      # inside each run (at 0 / 2 / 4 min) gives ~2-minute effective polling.
-      - name: Check Cineplex showtimes (x3, 2 min apart)
+      # One check per run. The Odyssey watch checked three times per run to
+      # tighten a 5-minute cron into ~2-minute polling; at a 30-minute cadence
+      # that buys nothing, since a drop between checks waits for the next run
+      # either way.
+      - name: Check Cineplex showtimes
         id: check
         env:
           CINEWATCHER_DATE: ${{ inputs.test_date }}
         run: |
-          ALERT=false; CHANGED=false
-          for i in 1 2 3; do
-            python3 checker.py
-            if [ "$(jq -r .alert result.json)" = "true" ]; then ALERT=true; fi
-            if [ "$(jq -r .changed result.json)" = "true" ]; then CHANGED=true; fi
-            if [ "$ALERT" = true ] || [ "$CHANGED" = true ]; then break; fi
-            if [ "$i" -lt 3 ]; then sleep 120; fi
-          done
-          echo "alert=$ALERT" >> "$GITHUB_OUTPUT"
-          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          python3 checker.py
+          echo "alert=$(jq -r .alert result.json)" >> "$GITHUB_OUTPUT"
+          echo "changed=$(jq -r .changed result.json)" >> "$GITHUB_OUTPUT"
 
       # Notifications fire FIRST so a later git failure can never block them.
       - name: Alert on new IMAX 70mm showtimes
@@ -69,9 +67,9 @@ jobs:
           # Headline depends on whether actual IMAX 70mm sessions were tagged,
           # or the date merely went live in other formats.
           if [ "$(jq -r .has70mm result.json)" = "true" ]; then
-            HEAD="🚨 Odyssey IMAX 70mm tickets are UP (Aug 21)"
+            HEAD="🚨 Dune: Part 3 IMAX 70mm tickets are UP (Dec 21)"
           else
-            HEAD="👀 Odyssey Aug 21 listings went live (no 70mm tag yet — check now)"
+            HEAD="👀 Dune: Part 3 listed for Dec 21 (no 70mm tag yet — check now)"
           fi
 
           # ntfy push (secondary; subscribe to the topic in the ntfy app)
@@ -83,14 +81,14 @@ jobs:
             "https://ntfy.sh/${NTFY_TOPIC}" || true
 
           # GitHub issue with the full showtime list and buy links
-          gh label create odyssey-alert --color FF0000 --force || true
-          existing=$(gh issue list --state open --label odyssey-alert --json number --jq '.[0].number' || echo "")
+          gh label create dune3-alert --color FF0000 --force || true
+          existing=$(gh issue list --state open --label dune3-alert --json number --jq '.[0].number' || echo "")
           if [ -n "$existing" ]; then
             gh issue comment "$existing" --body-file alert.md
           else
             gh issue create \
               --title "${PREFIX}${HEAD}" \
-              --label odyssey-alert \
+              --label dune3-alert \
               --body-file alert.md
           fi
 
@@ -108,12 +106,6 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
-      # The self-chain step lived here: each finished run dispatched the next
-      # one via the DISPATCH_PAT secret, because GitHub's */5 cron proved
-      # unreliable (observed 60-90 minute gaps). Removing it is what actually
-      # stops the watcher — deleting the cron alone would not have, since the
-      # chain kept re-dispatching itself independently of the schedule.
-
       # GitHub reliably emails on failed runs (and pushes via the mobile app if
       # Actions notifications are enabled there) — unlike @mention
       # notifications, which are suppressed for self-triggered activity. After
@@ -122,5 +114,5 @@ jobs:
       - name: Fail loudly so GitHub sends a run-failed email
         if: always() && steps.check.outputs.alert == 'true'
         run: |
-          echo "::error::🚨 ODYSSEY IMAX 70MM TICKETS ARE UP FOR AUG 21 — this failure is intentional, it is your email alert. Book: https://www.cineplex.com/movie/the-odyssey"
+          echo "::error::🚨 DUNE: PART 3 IMAX 70MM TICKETS ARE UP FOR DEC 21 — this failure is intentional, it is your email alert. Book: https://www.cineplex.com/Movie/dune-part-3"
           exit 1

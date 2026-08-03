@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Odyssey — IMAX 70mm Watch</title>
+<title>Dune: Part 3 — IMAX 70mm Watch</title>
 <style>
   :root {
     --bg: #0b0d12;
@@ -81,19 +81,20 @@
 <body>
 <main>
   <div class="kicker">Cinewatcher</div>
-  <h1>The Odyssey · IMAX 70mm</h1>
-  <p class="sub">Watching for <b>August 21, 2026</b> showtimes at Vaughan &amp; Mississauga Square One</p>
+  <h1>Dune: Part 3 · IMAX 70mm</h1>
+  <p class="sub">Watching for <b>December 21, 2026</b> showtimes at Vaughan &amp; Mississauga Square One<br>
+     <small>Dec 17-20 is already on sale; the 21st is the first date still unlisted.</small></p>
 
   <div id="banner" class="banner waiting">Loading status…</div>
   <div id="notice" class="notice" hidden></div>
 
   <section id="showtimes" hidden>
-    <h2>IMAX 70mm showtimes — Aug 21</h2>
+    <h2>IMAX 70mm showtimes — Dec 21</h2>
     <div id="sessions"></div>
   </section>
 
   <section id="otherFormats" hidden>
-    <h2>Other Odyssey formats listed for Aug 21</h2>
+    <h2>Other Dune: Part 3 formats listed for Dec 21</h2>
     <div id="otherSessions"></div>
   </section>
 
@@ -106,9 +107,9 @@
   </section>
 
   <footer>
-    <span class="dot"></span>Checked every ~2 minutes by GitHub Actions ·
+    <span class="dot"></span>Checked every ~30 minutes by GitHub Actions ·
     <span id="freshness">status age unknown</span><br>
-    <a href="https://www.cineplex.com/movie/the-odyssey" target="_blank" rel="noopener">Cineplex movie page</a> ·
+    <a href="https://www.cineplex.com/Movie/dune-part-3" target="_blank" rel="noopener">Cineplex movie page</a> ·
     <a href="https://github.com/sshakerinezhad/cinewatcher/actions" target="_blank" rel="noopener">bot run history</a>
   </footer>
 </main>
@@ -159,10 +160,10 @@ const DEMO_STATUS = {
   otherFormats: [],
   theatres: [],
   imax70mm: [
-    { theatre: "Cineplex Cinemas Vaughan", start: "2026-08-21T19:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 214, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
-    { theatre: "Cineplex Cinemas Vaughan", start: "2026-08-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 377, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
-    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-08-21T19:00:00", experience: "IMAX 70mm", soldOut: true, seatsRemaining: 0, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
-    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-08-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 98, ticketingUrl: "https://www.cineplex.com/movie/the-odyssey" },
+    { theatre: "Cineplex Cinemas Vaughan", start: "2026-12-21T19:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 214, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
+    { theatre: "Cineplex Cinemas Vaughan", start: "2026-12-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 377, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
+    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-12-21T19:00:00", experience: "IMAX 70mm", soldOut: true, seatsRemaining: 0, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
+    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-12-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 98, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
   ],
 };
 
@@ -181,13 +182,13 @@ async function refresh() {
 
   if (status.found) {
     banner.className = "banner found";
-    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Aug 21 are on sale — book now.'
+    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Dec 21 are on sale — book now.'
       + (DEMO ? '<br><small style="font-weight:400">DEMO PREVIEW — sample data, remove ?demo from the URL for live status</small>' : '');
     document.getElementById("showtimes").hidden = false;
     renderSessions(document.getElementById("sessions"), status.imax70mm);
   } else {
     banner.className = "banner waiting";
-    banner.innerHTML = "⏳ No IMAX 70mm showtimes for Aug 21 yet.<br><small>You'll be notified the moment they appear.</small>";
+    banner.innerHTML = "⏳ No IMAX 70mm showtimes for Dec 21 yet.<br><small>You'll be notified the moment they appear.</small>";
   }
 
   if (status.otherFormats && status.otherFormats.length) {

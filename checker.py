@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Poll the Cineplex showtimes API for The Odyssey in IMAX 70mm.
+"""Poll the Cineplex showtimes API for Dune: Part 3 in IMAX 70mm.
 
 Watches Cineplex Cinemas Vaughan (7408) and Cineplex Cinemas Mississauga
 Square One (7420) for showtimes on the target date. Writes docs/status.json
@@ -23,8 +23,12 @@ API = "https://apis.cineplex.com/prod/cpx/theatrical/api/v1/showtimes"
 # Public subscription key embedded in the cineplex.com web frontend.
 KEY = os.environ.get("CINEPLEX_API_KEY", "dcdac5601d864addbc2675a2e96cb1f8")
 
-TARGET_DATE = os.environ.get("CINEWATCHER_DATE") or "2026-08-21"  # YYYY-MM-DD
-MOVIE_MATCH = os.environ.get("CINEWATCHER_MOVIE", "odyssey").lower()
+# Dec 17-20 already has IMAX 70mm sessions; Dec 21 is the first date that does
+# not. Booking for Dec 21 is already open at both theatres (other films are
+# listed) — so what we are waiting for is Dune: Part 3 itself to appear on that
+# date, not for the date to open. Once the 21st drops, later dates follow.
+TARGET_DATE = os.environ.get("CINEWATCHER_DATE") or "2026-12-21"  # YYYY-MM-DD
+MOVIE_MATCH = os.environ.get("CINEWATCHER_MOVIE", "dune").lower()
 
 THEATRES = {
     7408: {
@@ -90,11 +94,16 @@ def is_70mm(experience_types):
     return any("imax" in t for t in types) and any("70" in t for t in types)
 
 
+# Re-releases of the first two films would otherwise match a bare "dune".
+# Cineplex lists the new one as exactly "Dune: Part 3".
+MOVIE_EXCLUDE = ("part one", "part two", "part 1", "part 2")
+
+
 def is_target_movie(name):
-    # Match Nolan's "The Odyssey" (incl. variants like "The Odyssey: The IMAX
-    # Experience") without false-positives on "2001: A Space Odyssey" reruns.
+    # Match "Dune: Part 3" (incl. variants like "Dune: Part 3: The IMAX
+    # Experience") without false-positives on earlier-instalment reruns.
     n = name.lower()
-    return MOVIE_MATCH in n and "2001" not in n and "space odyssey" not in n
+    return MOVIE_MATCH in n and not any(x in n for x in MOVIE_EXCLUDE)
 
 
 def collect_sessions(payload, theatre_id):
@@ -177,17 +186,17 @@ def main():
     known_70mm = set((old_state or {}).get("imax70mm", {}))
     known_other = set((old_state or {}).get("other", {}))
     new_70mm = [s for s in all_imax if s["id"] not in known_70mm]
-    # Also alert on non-70mm Odyssey sessions appearing for the target date.
-    # We can't assume Cineplex tags the 70mm screening exactly "IMAX"+"70mm"
-    # on day one — if the label differs or lands late, an alert that says
-    # "the date went live, go look" still gets you there in time. Missing the
-    # drop is unrecoverable; an extra notification is not.
+    # Also alert on non-70mm Dune sessions appearing for the target date. We
+    # can't assume Cineplex tags the 70mm screening exactly "IMAX"+"70mm" on
+    # day one — if the label differs or lands late, an alert that says "the
+    # film is on the board for that date, go look" still gets you there in
+    # time. Missing the drop is unrecoverable; an extra notification is not.
     new_other = [s for s in all_other if s["id"] not in known_other]
 
     status = {
         "generatedAt": now,
         "targetDate": TARGET_DATE,
-        "movie": "The Odyssey",
+        "movie": "Dune: Part 3",
         "format": "IMAX 70mm",
         "theatres": [
             {"id": tid, **info, "error": next((e["error"] for e in errors if e["theatreId"] == tid), None)}
@@ -212,13 +221,13 @@ def main():
             by_theatre.setdefault(s["theatre"], []).append(s)
 
         if new_70mm:
-            head_md = f"@sshakerinezhad **The Odyssey — IMAX 70mm showtimes for {TARGET_DATE} are UP!** \U0001f3ac"
-            head_txt = f"{PREFIX}\U0001f6a8 The Odyssey — IMAX 70mm showtimes for {TARGET_DATE} are UP! BOOK NOW."
+            head_md = f"@sshakerinezhad **Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP!** \U0001f3ac"
+            head_txt = f"{PREFIX}\U0001f6a8 Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP! BOOK NOW."
         else:
-            head_md = (f"@sshakerinezhad **The Odyssey listings for {TARGET_DATE} just went live** "
-                       "— no IMAX 70mm sessions tagged yet, but the date is open. Check now; "
-                       "70mm often appears within minutes.")
-            head_txt = (f"{PREFIX}\U0001f440 The Odyssey — {TARGET_DATE} listings just went live at your theatres. "
+            head_md = (f"@sshakerinezhad **Dune: Part 3 just appeared on the board for {TARGET_DATE}** "
+                       "— no IMAX 70mm sessions tagged yet. Check now; 70mm often follows "
+                       "within minutes.")
+            head_txt = (f"{PREFIX}\U0001f440 Dune: Part 3 just appeared for {TARGET_DATE} at your theatres. "
                         "No IMAX 70mm tagged yet, but CHECK NOW — 70mm often follows within minutes.")
         md = [head_md, ""]
         txt = [head_txt, ""]
@@ -238,9 +247,10 @@ def main():
                 txt.append(f"  {t} — {avail} — {s['ticketingUrl']}")
             md.append("")
             txt.append("")
-        md += ["Book fast — first drops sold out within hours.", "",
-               "Movie page: https://www.cineplex.com/movie/the-odyssey"]
-        txt.append("Movie page: https://www.cineplex.com/movie/the-odyssey")
+        md += ["Book fast — the Dec 17-20 IMAX 70mm sessions sold down to single-digit "
+               "seat counts.", "",
+               "Movie page: https://www.cineplex.com/Movie/dune-part-3"]
+        txt.append("Movie page: https://www.cineplex.com/Movie/dune-part-3")
         with open(ALERT_MD_PATH, "w") as f:
             f.write("\n".join(md))
         with open(ALERT_TXT_PATH, "w") as f:
