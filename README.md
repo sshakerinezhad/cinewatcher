@@ -22,8 +22,10 @@ for the 21st, not the date opening up. Once the 21st drops, the dates after it f
 
 [`checker.py`](checker.py) calls the same Cineplex showtimes API the cineplex.com website
 uses. A GitHub Actions workflow ([`.github/workflows/watch.yml`](.github/workflows/watch.yml))
-runs it **every 30 minutes**. The moment IMAX 70mm sessions appear for Dec 21 it fires, in
-order:
+runs it **every 30 minutes**. It alerts on **IMAX 70mm only** — Cineplex tags those
+sessions `["IMAX", "70mm"]`, and a Dune session on Dec 21 in any other format (plain
+IMAX, standard digital) is tracked and shown on the status site but never notifies. The
+moment IMAX 70mm sessions appear for Dec 21 it fires, in order:
 
 1. **Telegram message** (primary) — full showtime list with seat availability and buy
    links, sent by [@odyssey_watcher_bot](https://t.me/odyssey_watcher_bot)

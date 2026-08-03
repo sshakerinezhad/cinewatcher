@@ -184,14 +184,14 @@ def main():
 
     changed = new_state != old_state
     known_70mm = set((old_state or {}).get("imax70mm", {}))
-    known_other = set((old_state or {}).get("other", {}))
     new_70mm = [s for s in all_imax if s["id"] not in known_70mm]
-    # Also alert on non-70mm Dune sessions appearing for the target date. We
-    # can't assume Cineplex tags the 70mm screening exactly "IMAX"+"70mm" on
-    # day one — if the label differs or lands late, an alert that says "the
-    # film is on the board for that date, go look" still gets you there in
-    # time. Missing the drop is unrecoverable; an extra notification is not.
-    new_other = [s for s in all_other if s["id"] not in known_other]
+    # IMAX 70mm only — a Dune session in any other format is not what we're
+    # waiting for and must not notify. The Odyssey watch did alert on other
+    # formats as a hedge against Cineplex labelling the 70mm screening
+    # differently on day one; that hedge is unnecessary here, because the
+    # Dec 17-20 sessions already on sale are tagged exactly ["IMAX", "70mm"],
+    # so the label this checker matches on is confirmed rather than assumed.
+    # Non-70mm sessions are still tracked and shown on the status site.
 
     status = {
         "generatedAt": now,
@@ -214,21 +214,14 @@ def main():
         with open(STATE_PATH, "w") as f:
             json.dump(new_state, f, indent=1, sort_keys=True)
 
-    alert_sessions = new_70mm + new_other
+    alert_sessions = new_70mm
     if alert_sessions:
         by_theatre = {}
         for s in alert_sessions:
             by_theatre.setdefault(s["theatre"], []).append(s)
 
-        if new_70mm:
-            head_md = f"@sshakerinezhad **Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP!** \U0001f3ac"
-            head_txt = f"{PREFIX}\U0001f6a8 Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP! BOOK NOW."
-        else:
-            head_md = (f"@sshakerinezhad **Dune: Part 3 just appeared on the board for {TARGET_DATE}** "
-                       "— no IMAX 70mm sessions tagged yet. Check now; 70mm often follows "
-                       "within minutes.")
-            head_txt = (f"{PREFIX}\U0001f440 Dune: Part 3 just appeared for {TARGET_DATE} at your theatres. "
-                        "No IMAX 70mm tagged yet, but CHECK NOW — 70mm often follows within minutes.")
+        head_md = f"@sshakerinezhad **Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP!** \U0001f3ac"
+        head_txt = f"{PREFIX}\U0001f6a8 Dune: Part 3 — IMAX 70mm showtimes for {TARGET_DATE} are UP! BOOK NOW."
         md = [head_md, ""]
         txt = [head_txt, ""]
         for theatre, sessions in by_theatre.items():
@@ -256,17 +249,16 @@ def main():
         with open(ALERT_TXT_PATH, "w") as f:
             f.write("\n".join(txt))
 
-    # The workflow reads this file rather than $GITHUB_OUTPUT: the check step
-    # runs this script up to three times, and relying on which duplicate
-    # output key wins would risk silently dropping an alert found on a later
-    # pass. The workflow accumulates these results explicitly instead.
+    # The workflow reads this file rather than $GITHUB_OUTPUT, so the outcome
+    # of a run is inspectable as a single artifact rather than reconstructed
+    # from step outputs.
     with open(RESULT_PATH, "w") as f:
         json.dump({"changed": changed, "alert": bool(alert_sessions),
-                   "has70mm": bool(new_70mm), "found": bool(all_imax)}, f)
+                   "found": bool(all_imax)}, f)
 
     print(f"[{now}] target={TARGET_DATE} imax70mm={len(all_imax)} "
           f"other={len(all_other)} new70mm={len(new_70mm)} "
-          f"newOther={len(new_other)} changed={changed} errors={errors}")
+          f"changed={changed} errors={errors}")
 
     # Fail the run only if every theatre errored (likely API/key breakage).
     if errors and len(errors) == len(THEATRES):

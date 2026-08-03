@@ -64,13 +64,9 @@ jobs:
               --data-urlencode "text@alert.txt" || true
           fi
 
-          # Headline depends on whether actual IMAX 70mm sessions were tagged,
-          # or the date merely went live in other formats.
-          if [ "$(jq -r .has70mm result.json)" = "true" ]; then
-            HEAD="🚨 Dune: Part 3 IMAX 70mm tickets are UP (Dec 21)"
-          else
-            HEAD="👀 Dune: Part 3 listed for Dec 21 (no 70mm tag yet — check now)"
-          fi
+          # An alert only ever fires for IMAX 70mm sessions, so there is one
+          # headline.
+          HEAD="🚨 Dune: Part 3 IMAX 70mm tickets are UP (Dec 21)"
 
           # ntfy push (secondary; subscribe to the topic in the ntfy app)
           curl -sS --max-time 20 \
