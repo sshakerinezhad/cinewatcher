@@ -12,11 +12,13 @@ Outputs for GitHub Actions (via $GITHUB_OUTPUT):
   found    - "true" if any IMAX 70mm sessions currently exist
 """
 
+import gzip
 import json
 import os
 import sys
 import time
 import urllib.request
+import zlib
 from datetime import datetime, timezone
 
 API = "https://apis.cineplex.com/prod/cpx/theatrical/api/v1/showtimes"
@@ -57,6 +59,27 @@ def api_date(iso_date):
     return f"{m}/{d}/{y}"
 
 
+def decompress(body, encoding):
+    """Undo Content-Encoding. urllib, unlike curl, never does this for us.
+
+    Cineplex began serving gzip regardless of the request's Accept-Encoding,
+    which made json.loads() fail on the gzip magic bytes with a
+    UnicodeDecodeError. It varies by CDN edge, so it broke some runs and not
+    others. Sniff the magic bytes as well as trusting the header: an edge that
+    compresses without announcing it must not be able to break the watch.
+    """
+    if not body:
+        return body
+    if encoding == "gzip" or body[:2] == b"\x1f\x8b":
+        return gzip.decompress(body)
+    if encoding == "deflate":
+        try:
+            return zlib.decompress(body)
+        except zlib.error:  # raw deflate, no zlib wrapper
+            return zlib.decompress(body, -zlib.MAX_WBITS)
+    return body
+
+
 def fetch(theatre_id, attempts=4):
     """Fetch showtimes, retrying transient failures.
 
@@ -70,6 +93,10 @@ def fetch(theatre_id, attempts=4):
         headers={
             "Ocp-Apim-Subscription-Key": KEY,
             "Accept": "application/json",
+            # Cineplex's CDN returns gzip whether or not it is asked to, so
+            # ask deliberately and decompress below rather than depending on
+            # which edge serves the request.
+            "Accept-Encoding": "gzip",
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -80,6 +107,8 @@ def fetch(theatre_id, attempts=4):
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 body = r.read()
+                encoding = (r.headers.get("Content-Encoding") or "").lower()
+            body = decompress(body, encoding)
             return json.loads(body) if body else []
         except Exception as e:  # noqa: BLE001 - retry any transient failure
             if attempt == attempts:

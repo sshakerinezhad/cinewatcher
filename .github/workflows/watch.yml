@@ -55,6 +55,7 @@ jobs:
 
       # Notifications fire FIRST so a later git failure can never block them.
       - name: Alert on new IMAX 70mm showtimes
+        id: alert
         if: steps.check.outputs.alert == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -62,11 +63,28 @@ jobs:
         run: |
           # Telegram push (primary channel). Secrets: TELEGRAM_BOT_TOKEN (from
           # @BotFather) and TELEGRAM_CHAT_ID (from @userinfobot).
+          #
+          # The response is checked rather than discarded. This used to end in
+          # `|| true`, which meant a revoked token, a blocked bot or a wrong
+          # chat id all looked exactly like a successful send: the alert that
+          # matters most would fail in the one way nobody would ever notice.
+          TELEGRAM=skipped
           if [ -n "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] && [ -n "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
-            curl -sS --max-time 20 "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            TG=$(curl -sS --max-time 20 "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
               --data-urlencode chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-              --data-urlencode "text@alert.txt" || true
+              --data-urlencode "text@alert.txt") || TG='{"ok":false,"description":"curl failed"}'
+            if printf '%s' "$TG" | jq -e '.ok == true' >/dev/null 2>&1; then
+              TELEGRAM="delivered (message_id $(printf '%s' "$TG" | jq -r '.result.message_id'))"
+            else
+              TELEGRAM="FAILED"
+              echo "::error::Telegram delivery FAILED — $(printf '%s' "$TG" | jq -r '.description // .' 2>/dev/null || printf '%s' "$TG")"
+            fi
+          else
+            TELEGRAM="FAILED (secrets missing)"
+            echo "::error::TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set — no Telegram alert sent"
           fi
+          echo "telegram=$TELEGRAM" >> "$GITHUB_OUTPUT"
+          echo "Telegram: $TELEGRAM"
 
           # An alert only ever fires for IMAX 70mm sessions, so there is one
           # headline.
@@ -114,5 +132,5 @@ jobs:
       - name: Fail loudly so GitHub sends a run-failed email
         if: always() && steps.check.outputs.alert == 'true'
         run: |
-          echo "::error::🚨 DUNE: PART 3 IMAX 70MM TICKETS ARE UP FOR DEC 21 — this failure is intentional, it is your email alert. Book: https://www.cineplex.com/Movie/dune-part-3"
+          echo "::error::🚨 DUNE: PART 3 IMAX 70MM TICKETS ARE UP FOR DEC 21 — this failure is intentional, it is your email alert. Telegram: ${{ steps.alert.outputs.telegram }}. Book: https://www.cineplex.com/Movie/dune-part-3"
           exit 1
