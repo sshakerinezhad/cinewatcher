@@ -174,12 +174,18 @@ async function refresh() {
   const dates = new Set(sessions.map(s => s.start.slice(0, 10)));
   const withGood = sessions.filter(s => (s.goodSeatsFree || []).length);
   const goodCount = withGood.reduce((n, s) => n + s.goodSeatsFree.length, 0);
-  const zone = status.goodZone
-    ? `rows ${status.goodZone.rows[0]}–${status.goodZone.rows.at(-1)}, ≤${status.goodZone.radius} of centre` : "";
+  const gz = status.goodZone || {};
+  const zone = gz.rows
+    ? `rows ${gz.rows[0]}–${gz.rows.at(-1)}, ≤${gz.radius} of centre` : "";
+  const blockCount = sessions.reduce((n, s) => n + (s.centreBlocks || []).length, 0);
+  const alertLine = gz.group
+    ? `Alerts on: ${gz.group}+ seats together at dead centre · ${blockCount} such block${blockCount === 1 ? "" : "s"} right now`
+    : "";
 
   banner.className = "banner";
   banner.innerHTML = `<span class="big">${sessions.length} showtimes · ${dates.size} dates</span>`
-    + `${goodCount} good-zone seat${goodCount === 1 ? "" : "s"} (${zone}) currently free across ${withGood.length} showtimes`;
+    + `${goodCount} good-zone seat${goodCount === 1 ? "" : "s"} (${zone}) currently free across ${withGood.length} showtimes`
+    + (alertLine ? `<br><small style="color:var(--muted);font-weight:400">${alertLine}</small>` : "");
 
   if (withGood.length) {
     document.getElementById("goodSeatsSection").hidden = false;

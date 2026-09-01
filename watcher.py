@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Watch Cineplex for Dune: Part 3 IMAX 70mm — new showtimes AND freed good seats.
+"""Watch Cineplex for Dune: Part 3 IMAX 70mm — new showtimes AND dead-centre blocks.
 
 Two things trigger an alert, checked in a sweep that repeats every
 SWEEP_INTERVAL_SECONDS for RUN_MINUTES per workflow run:
@@ -8,9 +8,15 @@ SWEEP_INTERVAL_SECONDS for RUN_MINUTES per workflow run:
    opening, or extra showtimes added to existing dates). One schedule call per
    theatre with no date parameter returns the theatre's entire calendar, so no
    date window ever has to be guessed.
-2. A seat inside the "good zone" — rows GOOD_ROWS, within GOOD_RADIUS columns
-   of the auditorium's centre — flipping from not-purchasable to Available on
-   any tracked session (a refund, or held inventory being released).
+2. A dead-centre block opening up: GROUP_SIZE+ contiguous Available seats in
+   one good row (GOOD_ROWS) whose best GROUP_SIZE-wide window sits within
+   CENTRE_TOL columns of the row centre — a refund of a group booking, or held
+   inventory being released.
+
+Both are filtered by time_eligible(): weekday shows must start between
+WEEKDAY_EARLIEST and LATEST_START, Sunday shows by LATEST_START, Saturdays
+unrestricted. Ineligible sessions are tracked and shown on the status site
+but never notify.
 
 Alerts go Telegram -> ntfy -> GitHub issue, all sent directly from here so a
 failure in one channel can never block the others. The workflow adds a fourth
@@ -19,11 +25,14 @@ channel by failing the run on purpose (GitHub's run-failed email).
 State lives in state.json (schema 2):
   sessions  - id -> {theatreId, start, soldOut, auditorium}
   goodSeats - id -> sorted list of currently-Available good-zone seat labels
-  goodZone  - the zone config the snapshot was taken with; if the config
-              changes, seat snapshots are rebuilt without alerting
-  alertLog  - "sessionId:seatLabel" -> last alert time, for the re-alert
-              cooldown (a freed seat gets carted and released repeatedly;
-              each release is real but repeats within the cooldown stay quiet)
+              (status-site display; not what alerts)
+  centreBlocks - id -> sorted qualifying-block signatures ("G:11-16"); a
+              signature appearing that wasn't there before is the seat alert
+  goodZone  - the zone/time config the snapshot was taken with; if the config
+              changes, seat snapshots are rebuilt without seat alerts
+  alertLog  - "sessionId:row" -> last alert time, for the re-alert cooldown
+              (blocks flicker as carts come and go; repeats within the
+              cooldown stay quiet)
 
 Modes (env):
   CINEWATCHER_TEST=1 - one sweep, then a synthetic [TEST] alert through every
@@ -79,6 +88,35 @@ THEATRES = {
 # means "as good as or better than anything currently buyable".
 GOOD_ROWS = os.environ.get("GOOD_ROWS", "FGHIJ").upper()
 GOOD_RADIUS = int(os.environ.get("GOOD_RADIUS", "6"))
+
+# What actually alerts: a contiguous block of GROUP_SIZE seats in one good row
+# whose best GROUP_SIZE-wide window sits within GROUP_CENTRE_TOLERANCE columns
+# of the row's true centre — i.e. 4+ tickets together, dead centre. Loose
+# singles freeing up are tracked for the status site but never notify.
+GROUP_SIZE = int(os.environ.get("GROUP_SIZE", "4"))
+CENTRE_TOL = float(os.environ.get("GROUP_CENTRE_TOLERANCE", "2"))
+
+# Showtimes worth going to. Weekdays must be post-work and not too late;
+# Sundays just not too late; Saturdays anything goes. Sessions outside these
+# windows are tracked and shown on the site but never alert — not for new
+# dates, not for freed seats. Times compare against the showtime's local
+# start, HH:MM.
+WEEKDAY_EARLIEST = os.environ.get("WEEKDAY_EARLIEST_START", "17:30")
+LATEST_START = os.environ.get("LATEST_START", "21:00")
+
+
+def time_eligible(start_iso):
+    try:
+        d = datetime.fromisoformat(start_iso)
+    except ValueError:
+        return True  # unparseable start: never silently drop an alert
+    hhmm = d.strftime("%H:%M")
+    wd = d.weekday()  # Mon=0 .. Sun=6
+    if wd == 5:  # Saturday
+        return True
+    if wd == 6:  # Sunday: matinees fine, just not too late
+        return hhmm <= LATEST_START
+    return WEEKDAY_EARLIEST <= hhmm <= LATEST_START
 
 SWEEP_INTERVAL = int(os.environ.get("SWEEP_INTERVAL_SECONDS", "120"))
 RUN_MINUTES = float(os.environ.get("RUN_MINUTES", "25"))
@@ -255,7 +293,39 @@ def good_seats_available(session):
         if row in GOOD_ROWS and off <= GOOD_RADIUS:
             out.append({"label": label, "row": row, "col": col, "offCentre": off})
     out.sort(key=lambda s: (s["row"], s["col"]))
-    return out
+    return {"seats": out, "blocks": centre_blocks(out, centre)}
+
+
+def centre_blocks(seats, centre):
+    """Qualifying blocks: >= GROUP_SIZE contiguous available seats in one row
+    with at least one GROUP_SIZE-wide window whose midpoint is within
+    CENTRE_TOL columns of the row centre. Returns block dicts sorted by row."""
+    by_row = {}
+    for s in seats:
+        by_row.setdefault(s["row"], []).append(s)
+    blocks = []
+    for row, row_seats in sorted(by_row.items()):
+        row_seats.sort(key=lambda s: s["col"])
+        run = []
+        for seat in row_seats + [None]:
+            if run and (seat is None or seat["col"] != run[-1]["col"] + 1):
+                if len(run) >= GROUP_SIZE:
+                    # best GROUP_SIZE-window: the one whose midpoint is
+                    # closest to centre
+                    best = min(
+                        (abs((run[i]["col"] + run[i + GROUP_SIZE - 1]["col"]) / 2 - centre)
+                         for i in range(len(run) - GROUP_SIZE + 1)))
+                    if best <= CENTRE_TOL:
+                        blocks.append({
+                            "row": row,
+                            "labels": [s["label"] for s in run],
+                            "sig": f"{row}:{run[0]['col']}-{run[-1]['col']}",
+                            "midOff": best,
+                        })
+                run = []
+            if seat is not None:
+                run.append(seat)
+    return blocks
 
 
 # ------------------------------------------------------------ notifications
@@ -421,31 +491,22 @@ def build_new_sessions_alert(new_sessions):
     return "\n".join(txt), "\n".join(md)
 
 
-def build_freed_seats_alert(freed):
-    """freed: list of (session, [seat dicts], all_available_labels_set)."""
-    zone = f"rows {GOOD_ROWS[0]}-{GOOD_ROWS[-1]}, within {GOOD_RADIUS} of centre"
-    txt = [f"{PREFIX}\U0001f39f GOOD SEATS JUST FREED UP ({zone}) — someone cancelled. GO.", ""]
-    md = [f"@sshakerinezhad **{PREFIX}Good seats freed up** \U0001f39f ({zone})", ""]
-    for session, seats, avail_by_col in freed:
+def build_block_alert(hits):
+    """hits: list of (session, [block dicts])."""
+    what = f"{GROUP_SIZE}+ seats together, dead centre, rows {GOOD_ROWS[0]}-{GOOD_ROWS[-1]}"
+    txt = [f"{PREFIX}\U0001f39f {GROUP_SIZE}+ DEAD-CENTRE SEATS JUST OPENED UP — GO NOW.",
+           f"({what})", ""]
+    md = [f"@sshakerinezhad **{PREFIX}{GROUP_SIZE}+ dead-centre seats opened up** \U0001f39f ({what})", ""]
+    for session, blocks in hits:
         day, t = fmt_dt(session["start"])
         head = f"{day} {t} — {short_theatre(session['theatre'])}"
         txt.append(head)
         md.append(f"### {head}")
-        shown = seats[:20]
-        for seat in shown:
-            off = seat["offCentre"]
-            pos = "dead centre" if off < 1 else f"{off:.0f} off centre"
-            pair = ""
-            neighbours = [avail_by_col.get((seat["row"], seat["col"] - 1)),
-                          avail_by_col.get((seat["row"], seat["col"] + 1))]
-            mates = [n for n in neighbours if n and n != seat["label"]]
-            if mates:
-                pair = f" — PAIR with {'/'.join(mates)}"
-            txt.append(f"  {seat['label']} ({pos}){pair}")
-            md.append(f"- **{seat['label']}** ({pos}){pair}")
-        if len(seats) > len(shown):
-            txt.append(f"  …and {len(seats) - len(shown)} more")
-            md.append(f"- …and {len(seats) - len(shown)} more")
+        for b in blocks:
+            span = f"{b['labels'][0]}-{b['labels'][-1]}" if len(b["labels"]) > 1 else b["labels"][0]
+            pos = "dead centre" if b["midOff"] < 1 else f"{b['midOff']:g} off centre"
+            txt.append(f"  Row {b['row']}: {span} ({len(b['labels'])} seats, {pos})")
+            md.append(f"- **Row {b['row']}: {span}** — {len(b['labels'])} seats together, {pos}")
         txt.append(f"  Buy: {session['ticketingUrl']}")
         md.append(f"- [Buy tickets]({session['ticketingUrl']}) · [Seat map]({session['seatMapUrl']})")
         txt.append("")
@@ -505,7 +566,9 @@ def sweep(old_state, totals):
     """One full pass. Returns the new state (or None if the sweep failed)."""
     now = now_utc().isoformat(timespec="seconds")
     baseline = old_state.get("schema") != 2
-    zone_cfg = {"rows": GOOD_ROWS, "radius": GOOD_RADIUS}
+    zone_cfg = {"rows": GOOD_ROWS, "radius": GOOD_RADIUS,
+                "group": GROUP_SIZE, "centreTol": CENTRE_TOL,
+                "weekdayEarliest": WEEKDAY_EARLIEST, "latestStart": LATEST_START}
     zone_changed = old_state.get("goodZone") != zone_cfg
 
     sessions, errors = {}, {}
@@ -548,54 +611,66 @@ def sweep(old_state, totals):
         except Exception as e:  # noqa: BLE001
             seat_errors[sid] = f"{type(e).__name__}: {e}"
 
-    good_seats = {}
+    old_blocks = old_state.get("centreBlocks", {})
+    good_seats, blocks = {}, {}
     for sid in sessions:
         if sid in seat_results:
-            good_seats[sid] = sorted(s["label"] for s in seat_results[sid])
-        elif sid in old_good:
-            good_seats[sid] = old_good[sid]  # carry forward, no false diffs
-        else:
-            good_seats[sid] = []
+            good_seats[sid] = sorted(s["label"] for s in seat_results[sid]["seats"])
+            blocks[sid] = sorted(b["sig"] for b in seat_results[sid]["blocks"])
+        else:  # carry forward, no false diffs
+            good_seats[sid] = old_good.get(sid, [])
+            blocks[sid] = old_blocks.get(sid, [])
 
-    # Freed-seat detection: only for sessions whose seat check succeeded and
-    # that already had a snapshot under the same zone config.
+    # Block detection: a qualifying dead-centre block appearing on a session
+    # that did not have that block before. Only sessions whose seat check
+    # succeeded, that already had a snapshot under the same zone config, and
+    # whose showtime passes the time-of-week filter.
     alert_log = dict(old_state.get("alertLog", {}))
     cutoff = (now_utc() - timedelta(minutes=COOLDOWN_MIN)).isoformat(timespec="seconds")
     alert_log = {k: v for k, v in alert_log.items()
                  if v >= cutoff and k.split(":", 1)[0] in sessions}
 
-    freed = []
+    block_hits = []
     if not baseline and not zone_changed:
-        for sid, current in seat_results.items():
-            if sid not in old_good or sid in new_ids:
+        for sid, result in seat_results.items():
+            if sid not in old_blocks or sid in new_ids:
                 continue
-            previous = set(old_good[sid])
-            newly = [s for s in current if s["label"] not in previous]
-            newly = [s for s in newly
-                     if alert_log.get(f"{sid}:{s['label']}", "") < cutoff]
+            if not time_eligible(sessions[sid]["start"]):
+                continue
+            previous = set(old_blocks[sid])
+            newly = [b for b in result["blocks"]
+                     if b["sig"] not in previous
+                     and alert_log.get(f"{sid}:{b['row']}", "") < cutoff]
             if newly:
-                avail_by_col = {(s["row"], s["col"]): s["label"] for s in current}
-                freed.append((sessions[sid], newly, avail_by_col))
-                for s in newly:
-                    alert_log[f"{sid}:{s['label']}"] = now
+                block_hits.append((sessions[sid], newly))
+                for b in newly:
+                    alert_log[f"{sid}:{b['row']}"] = now
 
-    # Alerts.
+    # Alerts. A baseline pass records everything silently; a zone-config
+    # change re-snapshots the seat side without alerting but still lets
+    # new-session alerts through.
     telegram_status = None
     if baseline:
         print(f"[{now}] BASELINE established — {len(sessions)} sessions recorded, "
               "no alerts this sweep")
-    elif zone_changed:
-        print(f"[{now}] good-zone config changed — seat snapshots rebuilt without alerting")
     else:
-        if new_ids:
-            txt, md = build_new_sessions_alert([sessions[i] for i in new_ids])
+        if zone_changed:
+            print(f"[{now}] good-zone config changed — seat snapshots rebuilt "
+                  "without seat alerts this sweep")
+        eligible_new = [sessions[i] for i in new_ids
+                        if time_eligible(sessions[i]["start"])]
+        if new_ids and not eligible_new:
+            print(f"[{now}] {len(new_ids)} new sessions all outside the "
+                  "time windows — tracked, not alerted")
+        if eligible_new:
+            txt, md = build_new_sessions_alert(eligible_new)
             telegram_status = dispatch_alert(
                 "Dune: Part 3 — NEW IMAX 70mm showtimes are UP", txt, md)
             totals["alerts"] += 1
-        if freed:
-            txt, md = build_freed_seats_alert(freed)
+        if block_hits:
+            txt, md = build_block_alert(block_hits)
             telegram_status = dispatch_alert(
-                "Dune: Part 3 — good IMAX 70mm seats just FREED UP", txt, md)
+                f"Dune: Part 3 — {GROUP_SIZE}+ dead-centre IMAX 70mm seats OPEN", txt, md)
             totals["alerts"] += 1
 
     new_state = {
@@ -605,6 +680,7 @@ def sweep(old_state, totals):
                            "soldOut": s["soldOut"], "auditorium": s.get("auditorium", "")}
                      for sid, s in sessions.items()},
         "goodSeats": good_seats,
+        "centreBlocks": blocks,
         "alertLog": alert_log,
     }
 
@@ -623,6 +699,8 @@ def sweep(old_state, totals):
                                            "soldOut", "seatsRemaining", "experience",
                                            "ticketingUrl", "seatMapUrl")},
                   "goodSeatsFree": good_seats.get(s["id"], []),
+                  "centreBlocks": blocks.get(s["id"], []),
+                  "timeEligible": time_eligible(s["start"]),
                   "seatCheckError": seat_errors.get(s["id"])}
                  for s in sessions.values()),
                 key=lambda s: (s["start"], s["theatreId"])),
@@ -638,7 +716,7 @@ def sweep(old_state, totals):
         totals["telegram"] = telegram_status
     n_dates = len({s["start"][:10] for s in sessions.values()})
     print(f"[{now}] sweep ok — sessions={len(sessions)} dates={n_dates} "
-          f"new={len(new_ids)} freedAlerts={len(freed)} "
+          f"new={len(new_ids)} blockAlerts={len(block_hits)} "
           f"seatErrors={len(seat_errors)} theatreErrors={errors or 'none'}"
           + (" [BASELINE]" if baseline else ""))
     return new_state
