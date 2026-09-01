@@ -40,10 +40,18 @@ concurrency:
 
 env:
   NTFY_TOPIC: odyssey-imax-70mm-88955e30
-  # Watch tuning — the good zone is "as good as or better than anything
-  # currently buyable": rear-half rows, close to centre.
+  # Watch tuning. What alerts: GROUP_SIZE+ contiguous seats in one good row,
+  # dead centre (best window midpoint within GROUP_CENTRE_TOLERANCE columns
+  # of the row centre), on a time-eligible showtime. Weekday shows must start
+  # in [WEEKDAY_EARLIEST_START, LATEST_START]; Sundays by LATEST_START;
+  # Saturdays unrestricted. Changing any of these re-baselines seat
+  # snapshots without alerting.
   GOOD_ROWS: "FGHIJ"
   GOOD_RADIUS: "6"
+  GROUP_SIZE: "4"
+  GROUP_CENTRE_TOLERANCE: "2"
+  WEEKDAY_EARLIEST_START: "17:30"
+  LATEST_START: "21:00"
   SWEEP_INTERVAL_SECONDS: "120"
   RUN_MINUTES: "25"
   ALERT_COOLDOWN_MINUTES: "90"

@@ -15,18 +15,26 @@ are not obvious from the code.
 
 ## What triggers an alert
 
-Checked in a sweep every **~2 minutes**, around the clock:
+Checked in a sweep every **~2 minutes**, around the clock — but only for showtimes worth
+going to:
 
-1. **New showtimes / new dates.** One schedule call per theatre (no `date` parameter)
-   returns the theatre's *entire* calendar, so a run extension or a fresh on-sale date is
-   caught on the next sweep, whatever date it lands on.
-2. **A good seat freeing up** — someone cancelling, or held inventory being released.
-   Every tracked session's seat map is checked seat-by-seat; a seat flipping to
-   `Available` inside the good zone (rows `F`–`J`, within 6 columns of the auditorium
-   centre — as good as or better than anything that was still buyable when this was
-   built) alerts with the exact seat labels, how far off centre they are, whether they
-   form a pair, and the buy link. A re-freed seat re-alerts after a 90-minute cooldown
-   (seats bounce when carts expire). Wheelchair/companion spots don't count.
+- **Weekdays (Mon–Fri):** start between **5:30 PM and 9:00 PM** (post-work, not too late)
+- **Sunday:** start by **9:00 PM** (matinees fine)
+- **Saturday:** any time
+
+Two events alert (anything else is tracked on the status site, silently):
+
+1. **New showtimes / new dates** in an eligible slot. One schedule call per theatre (no
+   `date` parameter) returns the theatre's *entire* calendar, so a run extension or a
+   fresh on-sale date is caught on the next sweep, whatever date it lands on.
+2. **A dead-centre block of 4+ seats opening up** — a group refund, or held inventory
+   being released. Every tracked session's seat map is checked seat-by-seat; the alert
+   condition is **4 or more contiguous seats in one rear row (`F`–`J`) whose best 4-seat
+   window sits within 2 columns of the row's true centre**. Loose singles freeing up do
+   not notify. The alert carries the exact seat range, block size, offset from centre,
+   and the buy link. A row that keeps flickering re-alerts after a 90-minute cooldown.
+   Wheelchair/companion spots don't count. As of 2026-09-01 **zero** such blocks exist
+   anywhere in the run, so every one of these alerts is a real event.
 
 `seatsRemaining` from the showtimes API counts the whole auditorium and is misleading —
 sessions report "78 seats left" with the entire rear half gone. That's why the watch is
@@ -86,8 +94,10 @@ the health check itself.
   (defaults to Cineplex's public frontend key; set it if they rotate the key — grab the
   new one from any API request the cineplex.com showtimes page makes).
 - Watch tuning lives in the `env:` block at the top of `watch.yml`: `GOOD_ROWS`,
-  `GOOD_RADIUS`, `SWEEP_INTERVAL_SECONDS`, `RUN_MINUTES`, `ALERT_COOLDOWN_MINUTES`.
-  Changing the good zone re-baselines seat snapshots without alerting.
+  `GOOD_RADIUS`, `GROUP_SIZE` (seats together), `GROUP_CENTRE_TOLERANCE` (columns off
+  centre), `WEEKDAY_EARLIEST_START`, `LATEST_START`, `SWEEP_INTERVAL_SECONDS`,
+  `RUN_MINUTES`, `ALERT_COOLDOWN_MINUTES`. Changing any zone/time value re-baselines
+  seat snapshots without alerting.
 - `state.json` (schema 2) is the change-detection state. If it's ever reset or the
   schema bumps, the next sweep records a baseline **without alerting**, and alerts
   resume on the sweep after.
