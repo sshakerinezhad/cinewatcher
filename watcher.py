@@ -54,7 +54,9 @@ TICKETING = f"{API_BASE}/prod/ticketing/api/v1/theatre"
 # Public subscription key embedded in the cineplex.com web frontend, not a
 # secret. If Cineplex rotates it, pull the new one from any request the
 # cineplex.com showtimes page makes and set it as a CINEPLEX_API_KEY secret.
-KEY = os.environ.get("CINEPLEX_API_KEY", "dcdac5601d864addbc2675a2e96cb1f8")
+# `or`, not a get() default: the workflow sets the env var to "" when the
+# secret is absent, and an empty key means 401 on every request.
+KEY = os.environ.get("CINEPLEX_API_KEY") or "dcdac5601d864addbc2675a2e96cb1f8"
 
 MOVIE_MATCH = os.environ.get("CINEWATCHER_MOVIE", "dune").lower()
 # Re-releases of the first two films would otherwise match a bare "dune".

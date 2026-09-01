@@ -34,7 +34,8 @@ GH_REPO = os.environ.get("GITHUB_REPOSITORY", "sshakerinezhad/cinewatcher")
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "")
-CINEPLEX_KEY = os.environ.get("CINEPLEX_API_KEY", "dcdac5601d864addbc2675a2e96cb1f8")
+# `or`, not a get() default — the workflow sets this to "" when the secret is absent.
+CINEPLEX_KEY = os.environ.get("CINEPLEX_API_KEY") or "dcdac5601d864addbc2675a2e96cb1f8"
 
 MIN_RUNS_24H = int(os.environ.get("MIN_RUNS_24H", "20"))
 MAX_LAST_RUN_MIN = int(os.environ.get("MAX_LAST_RUN_MIN", "90"))
