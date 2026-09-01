@@ -11,12 +11,19 @@ only two GTA theatres with 70mm IMAX projectors:
 **Status website:** https://sshakerinezhad.github.io/cinewatcher/
 (append `?demo` to preview what the alert state looks like)
 
-## What it's waiting for
+**Picking up this project?** Read [HANDOFF.md](HANDOFF.md) first — current state, open
+questions, and the gotchas that are not obvious from the code.
 
-Cineplex has IMAX 70mm sessions on sale for **Dec 17-20** (Vaughan only, 2 per day);
-Dec 21 onward has no Dune listing yet. Note that Dec 21 is *not* a closed booking date —
-other films are already listed on it — so the signal is the film appearing on the board
-for the 21st, not the date opening up. Once the 21st drops, the dates after it follow.
+## Status: the drop already happened
+
+**Dec 21 IMAX 70mm went on sale on 2026-08-18** and the watcher caught it — see
+[issue #13](https://github.com/sshakerinezhad/cinewatcher/issues/13). The alert did not
+reach a human in time; [HANDOFF.md](HANDOFF.md) covers why and what is still unresolved.
+
+The watch is left running because it still reports new sessions, but its original purpose
+is served. Note that `seatsRemaining` counts the whole auditorium and is misleading on its
+own — Dec 21 shows 78-97 seats free per session while the entire rear half is gone. Use
+[`tools/seatmap.py`](tools/seatmap.py) for the real picture.
 
 ## How it works
 
