@@ -1,136 +1,133 @@
 name: Watch Dune Part 3 IMAX 70mm
 
-# Half-hourly watch. The Odyssey watch ran every ~5 minutes and had to
-# self-chain via a PAT because GitHub's cron was unreliable; this one is not
-# time-critical, so plain cron is enough. Note that GitHub deprioritises
-# scheduled runs under load and skips them outright when a repo is inactive
-# for 60 days — expect the occasional gap wider than 30 minutes.
+# ~2-minute effective polling, the way the Odyssey watch proved out:
+# GitHub's cron is unreliable on this repo (measured 53-212 min between
+# scheduled runs, median 98), so the cron is only a backstop that revives the
+# chain. The real cadence comes from each run dispatching its successor and
+# then sweeping every SWEEP_INTERVAL_SECONDS for RUN_MINUTES.
+#
+# The successor is dispatched at the START of the run, not the end: it sits
+# queued behind this run's concurrency group and starts the moment this run
+# ends — including when this run is killed by a lost runner or a timeout, the
+# one case an end-of-run dispatch cannot survive. A crash-loop guard below
+# stops the chain from spinning if the code itself is broken.
+#
+# Expect most SCHEDULED runs to show as "cancelled": while the chain is
+# healthy, a queued cron run is displaced by the chain's own successor. That
+# is by design and not a failure — chain (workflow_dispatch) runs are the
+# ones doing the work. tools/health.py watches the real cadence daily.
+
 on:
   schedule:
-    # Every 30 minutes, deliberately off the hour. GitHub delays scheduled
-    # runs when Actions is under load, and :00 and :30 — where a plain */30
-    # lands — are the most contended minutes on the platform. Odd offsets
-    # queue behind far less.
-    - cron: "7,37 * * * *"
+    - cron: "7,37 * * * *" # backstop only; odd minutes queue faster than :00/:30
   workflow_dispatch:
     inputs:
-      test_date:
-        description: "Override target date (YYYY-MM-DD) for an end-to-end alert test"
+      test:
+        description: "Set to 'true' for one [TEST] sweep + synthetic alert through all channels (no state commit, no chain)"
         required: false
         default: ""
 
 permissions:
   contents: write
   issues: write
+  actions: write
 
 concurrency:
-  # Test runs get their own lane. Sharing one group meant a manual test and a
-  # chained production run could cancel each other while queued — a cancelled
-  # production run also never chains its successor, which can stall the loop.
-  group: watch-${{ inputs.test_date != '' && 'test' || 'live' }}
+  # Test runs get their own lane so a manual test can never displace the
+  # queued successor of the live chain.
+  group: watch-${{ inputs.test != '' && 'test' || 'live' }}
   cancel-in-progress: false
 
 env:
   NTFY_TOPIC: odyssey-imax-70mm-88955e30
+  # Watch tuning — the good zone is "as good as or better than anything
+  # currently buyable": rear-half rows, close to centre.
+  GOOD_ROWS: "FGHIJ"
+  GOOD_RADIUS: "6"
+  SWEEP_INTERVAL_SECONDS: "120"
+  RUN_MINUTES: "25"
+  ALERT_COOLDOWN_MINUTES: "90"
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 31
     steps:
       - uses: actions/checkout@v4
 
-      # One check per run. The Odyssey watch checked three times per run to
-      # tighten a 5-minute cron into ~2-minute polling; at a 30-minute cadence
-      # that buys nothing, since a drop between checks waits for the next run
-      # either way.
-      - name: Check Cineplex showtimes
-        id: check
-        env:
-          CINEWATCHER_DATE: ${{ inputs.test_date }}
-        run: |
-          python3 checker.py
-          echo "alert=$(jq -r .alert result.json)" >> "$GITHUB_OUTPUT"
-          echo "changed=$(jq -r .changed result.json)" >> "$GITHUB_OUTPUT"
-
-      # Notifications fire FIRST so a later git failure can never block them.
-      - name: Alert on new IMAX 70mm showtimes
-        id: alert
-        if: steps.check.outputs.alert == 'true'
+      # Chain first — see the header comment. DISPATCH_PAT is a fine-grained
+      # PAT with Actions:write (the mechanism the Odyssey watch ran 2,780 runs
+      # on); the built-in token is tried as a fallback in case the PAT expires.
+      - name: Dispatch the next run in the chain
+        if: github.ref == 'refs/heads/main' && inputs.test == ''
         env:
           GH_TOKEN: ${{ github.token }}
-          PREFIX: ${{ inputs.test_date != '' && '[TEST] ' || '' }}
+          PAT: ${{ secrets.DISPATCH_PAT }}
         run: |
-          # Telegram push (primary channel). Secrets: TELEGRAM_BOT_TOKEN (from
-          # @BotFather) and TELEGRAM_CHAT_ID (from @userinfobot).
-          #
-          # The response is checked rather than discarded. This used to end in
-          # `|| true`, which meant a revoked token, a blocked bot or a wrong
-          # chat id all looked exactly like a successful send: the alert that
-          # matters most would fail in the one way nobody would ever notice.
-          TELEGRAM=skipped
-          if [ -n "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] && [ -n "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
-            TG=$(curl -sS --max-time 20 "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
-              --data-urlencode chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-              --data-urlencode "text@alert.txt") || TG='{"ok":false,"description":"curl failed"}'
-            if printf '%s' "$TG" | jq -e '.ok == true' >/dev/null 2>&1; then
-              TELEGRAM="delivered (message_id $(printf '%s' "$TG" | jq -r '.result.message_id'))"
-            else
-              TELEGRAM="FAILED"
-              echo "::error::Telegram delivery FAILED — $(printf '%s' "$TG" | jq -r '.description // .' 2>/dev/null || printf '%s' "$TG")"
-            fi
-          else
-            TELEGRAM="FAILED (secrets missing)"
-            echo "::error::TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set — no Telegram alert sent"
-          fi
-          echo "telegram=$TELEGRAM" >> "$GITHUB_OUTPUT"
-          echo "Telegram: $TELEGRAM"
-
-          # An alert only ever fires for IMAX 70mm sessions, so there is one
-          # headline.
-          HEAD="🚨 Dune: Part 3 IMAX 70mm tickets are UP (Dec 21)"
-
-          # ntfy push (secondary; subscribe to the topic in the ntfy app)
-          curl -sS --max-time 20 \
-            -H "Title: ${PREFIX}${HEAD}" \
-            -H "Priority: urgent" \
-            -H "Tags: rotating_light,clapper" \
-            --data-binary @alert.txt \
-            "https://ntfy.sh/${NTFY_TOPIC}" || true
-
-          # GitHub issue with the full showtime list and buy links
-          gh label create dune3-alert --color FF0000 --force || true
-          existing=$(gh issue list --state open --label dune3-alert --json number --jq '.[0].number' || echo "")
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body-file alert.md
-          else
-            gh issue create \
-              --title "${PREFIX}${HEAD}" \
-              --label dune3-alert \
-              --body-file alert.md
+          # Crash-loop guard: if the last 3 completed live runs all failed in
+          # under 5 minutes and all started within the last 30 minutes, the
+          # watcher itself is broken — stop chaining and let the cron backstop
+          # (and the daily health check) take it from here. Real alert runs
+          # also conclude "failure" on purpose, but they run ~25 minutes, so
+          # they can never trip the duration test.
+          RECENT=$(curl -sS --max-time 20 \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/watch.yml/runs?status=completed&per_page=10" \
+            | jq '[.workflow_runs[] | select(.conclusion != "cancelled")][:3]')
+          LOOPING=$(echo "$RECENT" | jq --argjson now "$(date +%s)" '
+            length == 3 and ([.[] | select(
+              .conclusion == "failure"
+              and ((.updated_at | fromdateiso8601) - (.run_started_at | fromdateiso8601)) < 300
+              and ($now - (.run_started_at | fromdateiso8601)) < 1800
+            )] | length) == 3')
+          if [ "$LOOPING" = "true" ]; then
+            echo "::error::crash-loop guard tripped — last 3 runs all failed fast; not dispatching a successor. Fix the watcher; the cron backstop keeps sparse coverage."
+            exit 0
           fi
 
-      - name: Commit status update
-        if: steps.check.outputs.changed == 'true' && inputs.test_date == ''
-        run: |
-          git config user.name "cinewatcher-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add docs/status.json state.json
-          if git diff --cached --quiet; then
-            echo "Nothing to commit"
+          dispatch() {
+            curl -sS -o /dev/null -w "%{http_code}" --max-time 20 -X POST \
+              -H "Authorization: Bearer $1" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/watch.yml/dispatches" \
+              -d '{"ref":"main"}'
+          }
+          CODE=000
+          if [ -n "$PAT" ]; then
+            CODE=$(dispatch "$PAT") || CODE=000
+          fi
+          if [ "$CODE" != "204" ]; then
+            echo "PAT dispatch returned $CODE — retrying with the built-in token"
+            CODE=$(dispatch "$GH_TOKEN") || CODE=000
+          fi
+          if [ "$CODE" = "204" ]; then
+            echo "successor dispatched (it waits in the concurrency queue until this run ends)"
           else
-            git commit -m "status: update showtime state"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            echo "::error::could not dispatch the next run (HTTP $CODE) — DISPATCH_PAT may be expired. The cron backstop keeps sparse coverage; the daily health check will flag the dropped cadence."
           fi
 
-      # GitHub reliably emails on failed runs (and pushes via the mobile app if
-      # Actions notifications are enabled there) — unlike @mention
-      # notifications, which are suppressed for self-triggered activity. After
-      # all alerts have gone out, fail the run on purpose: the
-      # "Run failed: Watch Odyssey IMAX 70mm" email IS the alert.
+      - name: Watch (sweep every ~2 min for ~25 min)
+        id: watch
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GH_TOKEN: ${{ github.token }}
+          CINEPLEX_API_KEY: ${{ secrets.CINEPLEX_API_KEY }}
+          # Any non-empty value of the test input means test mode, matching
+          # every other condition in this file.
+          CINEWATCHER_TEST: ${{ inputs.test != '' && '1' || '' }}
+        run: python3 watcher.py
+
+      # GitHub reliably emails on failed runs (and pushes via the mobile app
+      # if Actions notifications are enabled there). After the in-run alerts
+      # have gone out, fail the run on purpose: the "Run failed" email IS the
+      # fourth alert channel. Never fires for [TEST] runs.
       - name: Fail loudly so GitHub sends a run-failed email
-        if: always() && steps.check.outputs.alert == 'true'
+        if: always() && inputs.test == ''
         run: |
-          echo "::error::🚨 DUNE: PART 3 IMAX 70MM TICKETS ARE UP FOR DEC 21 — this failure is intentional, it is your email alert. Telegram: ${{ steps.alert.outputs.telegram }}. Book: https://www.cineplex.com/Movie/dune-part-3"
-          exit 1
+          [ -f result.json ] || exit 0
+          if [ "$(jq -r '.alerts > 0' result.json)" = "true" ]; then
+            echo "::error::🚨 DUNE: PART 3 IMAX 70MM — new showtimes or freed good seats were detected this run. This failure is intentional; it is your email alert. Telegram: $(jq -r '.telegram' result.json). Book: https://www.cineplex.com/Movie/dune-part-3"
+            exit 1
+          fi

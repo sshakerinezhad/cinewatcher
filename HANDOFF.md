@@ -1,5 +1,15 @@
 # Cinewatcher — handoff
 
+> **2026-09-01 (later):** largely superseded. The watcher was rebuilt on the user's
+> instruction: it now watches **all dates** (not just Dec 21), adds the **seat-level
+> good-seat watch** proposed in *Unresolved #3*, runs at ~2-minute cadence on the
+> revived self-chain, and has a daily health check + heartbeat. See `README.md`.
+> Still accurate below: the seat-availability findings, the API reference, the
+> Aug 18 alert mystery (*Unresolved #1* — the daily Telegram heartbeat now bounds it
+> to 24h), and the squash-merge gotcha. The gzip fix described below turned out to be
+> incomplete — some CDN edges **double-gzip** (killed the Aug 31 23:20 and Sep 1 02:00
+> runs); `decompress()` now unwraps in a loop.
+
 Written 2026-09-01. Everything described here is merged to `main` (`94ec096` + this commit).
 
 ## TL;DR

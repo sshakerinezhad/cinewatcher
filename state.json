@@ -1,37 +1,1757 @@
 {
- "imax70mm": {
-  "388031": {
+ "alertLog": {
+  "540800:F9": "2026-09-01T16:34:41+00:00"
+ },
+ "goodSeats": {
+  "388016": [],
+  "388017": [],
+  "388018": [],
+  "388019": [],
+  "388020": [],
+  "388021": [],
+  "388022": [],
+  "388023": [],
+  "388024": [],
+  "388025": [],
+  "388026": [],
+  "388027": [],
+  "388028": [],
+  "388029": [],
+  "388030": [],
+  "388031": [],
+  "388032": [],
+  "388033": [],
+  "388034": [],
+  "388035": [],
+  "388036": [],
+  "388037": [],
+  "388038": [],
+  "388039": [],
+  "388040": [],
+  "388041": [],
+  "388042": [],
+  "388043": [],
+  "388044": [],
+  "388045": [],
+  "388046": [],
+  "388047": [],
+  "388048": [],
+  "388049": [],
+  "388050": [],
+  "388051": [],
+  "388052": [],
+  "388053": [],
+  "388054": [],
+  "388055": [],
+  "388056": [],
+  "388057": [],
+  "388058": [],
+  "388059": [],
+  "388060": [],
+  "388061": [],
+  "388062": [],
+  "388063": [],
+  "388064": [],
+  "388065": [],
+  "388066": [],
+  "388067": [],
+  "388068": [],
+  "388069": [],
+  "388070": [],
+  "388071": [],
+  "388072": [],
+  "388073": [],
+  "388074": [],
+  "388075": [],
+  "388076": [],
+  "388077": [],
+  "388078": [],
+  "388079": [],
+  "388080": [],
+  "388081": [],
+  "388082": [],
+  "388083": [],
+  "388084": [],
+  "388085": [],
+  "388086": [],
+  "388087": [
+   "F21",
+   "G9",
+   "I21"
+  ],
+  "388088": [],
+  "388089": [
+   "F9",
+   "G21",
+   "H21",
+   "J21"
+  ],
+  "388090": [],
+  "388091": [],
+  "388092": [
+   "F21",
+   "G21"
+  ],
+  "388093": [
+   "F19",
+   "F20",
+   "F21",
+   "F9",
+   "G21",
+   "H20",
+   "H21",
+   "I20",
+   "I21",
+   "J21",
+   "J9"
+  ],
+  "388094": [
+   "F20",
+   "F21",
+   "F9"
+  ],
+  "388095": [
+   "F9",
+   "G10",
+   "G20",
+   "G21",
+   "G9",
+   "H9",
+   "I21",
+   "J10",
+   "J21",
+   "J9"
+  ],
+  "388096": [
+   "F20",
+   "F21",
+   "G10",
+   "G19",
+   "G20",
+   "G21",
+   "G9",
+   "H21",
+   "I20",
+   "I21",
+   "I9",
+   "J21",
+   "J9"
+  ],
+  "388097": [
+   "F21",
+   "F9"
+  ],
+  "388098": [
+   "F10",
+   "F20",
+   "F21",
+   "F9",
+   "G10",
+   "G11",
+   "G21",
+   "G9",
+   "H20",
+   "H9",
+   "I20",
+   "I21"
+  ],
+  "388099": [],
+  "388100": [
+   "F10",
+   "F20",
+   "F21",
+   "F9",
+   "G19",
+   "G20",
+   "G21",
+   "H20",
+   "H21",
+   "H9",
+   "J20",
+   "J21"
+  ],
+  "388101": [
+   "F20",
+   "F21",
+   "F9",
+   "G20",
+   "G21",
+   "G9"
+  ],
+  "388102": [],
+  "388103": [],
+  "388104": [],
+  "388105": [],
+  "388106": [],
+  "388107": [
+   "F10",
+   "F19",
+   "F20",
+   "F21",
+   "F9"
+  ],
+  "388108": [],
+  "388109": [],
+  "388110": [],
+  "388111": [
+   "F20",
+   "F21",
+   "G21"
+  ],
+  "388112": [
+   "F10",
+   "F20",
+   "F21",
+   "F9",
+   "G10",
+   "G19",
+   "G9",
+   "H21",
+   "H9",
+   "I19",
+   "I20",
+   "I21",
+   "I9",
+   "J10",
+   "J20",
+   "J21",
+   "J9"
+  ],
+  "388113": [
+   "F19",
+   "F20",
+   "F21",
+   "G19",
+   "G20",
+   "G21",
+   "G9",
+   "H20",
+   "H21",
+   "I19",
+   "I20",
+   "I21"
+  ],
+  "388114": [],
+  "388115": [
+   "F10",
+   "F19",
+   "F20",
+   "F21",
+   "F9",
+   "G20",
+   "G21",
+   "G9",
+   "I21",
+   "J21"
+  ],
+  "388116": [],
+  "388117": [
+   "F10",
+   "F21",
+   "F9",
+   "G10",
+   "G9",
+   "I20",
+   "I21",
+   "J20",
+   "J21"
+  ],
+  "388118": [
+   "F19",
+   "F20",
+   "F21",
+   "G20",
+   "G21",
+   "G9",
+   "H21",
+   "H9",
+   "I10",
+   "I19",
+   "I20",
+   "I21",
+   "I9",
+   "J10",
+   "J20",
+   "J21",
+   "J9"
+  ],
+  "388119": [
+   "F20",
+   "F21",
+   "G21",
+   "J21"
+  ],
+  "388120": [
+   "F20",
+   "F21",
+   "G21",
+   "H21",
+   "I9",
+   "J9"
+  ],
+  "388121": [
+   "F10",
+   "F11",
+   "F18",
+   "F19",
+   "F20",
+   "F21",
+   "F9",
+   "G19",
+   "G20",
+   "G21",
+   "G9",
+   "H10",
+   "H20",
+   "H21",
+   "H9",
+   "I21",
+   "I9",
+   "J20",
+   "J21",
+   "J9"
+  ],
+  "388122": [
+   "F21"
+  ],
+  "388123": [],
+  "388124": [],
+  "530758": [],
+  "530759": [],
+  "530760": [],
+  "530761": [],
+  "531220": [],
+  "531221": [],
+  "531222": [],
+  "531223": [],
+  "540721": [],
+  "540722": [],
+  "540723": [],
+  "540724": [],
+  "540725": [],
+  "540726": [],
+  "540727": [],
+  "540728": [],
+  "540729": [],
+  "540730": [],
+  "540731": [],
+  "540732": [],
+  "540733": [],
+  "540734": [],
+  "540735": [],
+  "540736": [],
+  "540737": [],
+  "540738": [],
+  "540739": [],
+  "540740": [],
+  "540741": [],
+  "540742": [],
+  "540743": [],
+  "540744": [],
+  "540745": [],
+  "540746": [],
+  "540747": [],
+  "540748": [],
+  "540749": [],
+  "540750": [],
+  "540751": [],
+  "540752": [],
+  "540753": [],
+  "540754": [],
+  "540755": [],
+  "540756": [],
+  "540757": [],
+  "540758": [],
+  "540759": [],
+  "540760": [],
+  "540761": [],
+  "540762": [],
+  "540763": [],
+  "540764": [],
+  "540765": [],
+  "540766": [],
+  "540767": [],
+  "540768": [],
+  "540769": [],
+  "540770": [],
+  "540771": [],
+  "540772": [],
+  "540773": [],
+  "540774": [],
+  "540775": [],
+  "540776": [],
+  "540777": [],
+  "540778": [],
+  "540779": [],
+  "540780": [],
+  "540781": [],
+  "540782": [],
+  "540783": [],
+  "540784": [],
+  "540785": [],
+  "540786": [],
+  "540787": [],
+  "540788": [],
+  "540789": [
+   "F20",
+   "F21",
+   "G21"
+  ],
+  "540790": [],
+  "540791": [
+   "F21"
+  ],
+  "540792": [],
+  "540793": [],
+  "540794": [],
+  "540795": [
+   "F10",
+   "F21",
+   "F9",
+   "J9"
+  ],
+  "540796": [],
+  "540797": [
+   "F10",
+   "F9",
+   "G21",
+   "G9"
+  ],
+  "540798": [],
+  "540799": [],
+  "540800": [
+   "F9"
+  ],
+  "540801": [
+   "F20",
+   "F21",
+   "G21",
+   "G9",
+   "H9",
+   "J21"
+  ],
+  "540802": [],
+  "540803": [
+   "F20",
+   "F21",
+   "F9",
+   "G21",
+   "G9",
+   "H9"
+  ],
+  "540804": [],
+  "540805": [],
+  "540806": [
+   "F21"
+  ],
+  "540807": [],
+  "540809": [],
+  "540810": [],
+  "540811": [],
+  "540812": [],
+  "540813": [],
+  "540814": [],
+  "540815": [],
+  "540816": [],
+  "540817": [],
+  "540818": [],
+  "541300": []
+ },
+ "goodZone": {
+  "radius": 6,
+  "rows": "FGHIJ"
+ },
+ "schema": 2,
+ "sessions": {
+  "388016": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-17T15:55:00",
+   "theatreId": 7420
+  },
+  "388017": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-17T19:25:00",
+   "theatreId": 7420
+  },
+  "388018": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-17T22:45:00",
+   "theatreId": 7420
+  },
+  "388019": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T22:45:00",
+   "theatreId": 7420
+  },
+  "388020": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T19:25:00",
+   "theatreId": 7420
+  },
+  "388021": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T15:55:00",
+   "theatreId": 7420
+  },
+  "388022": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T12:35:00",
+   "theatreId": 7420
+  },
+  "388023": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T12:35:00",
+   "theatreId": 7420
+  },
+  "388024": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T22:45:00",
+   "theatreId": 7420
+  },
+  "388025": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T19:25:00",
+   "theatreId": 7420
+  },
+  "388026": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T15:55:00",
+   "theatreId": 7420
+  },
+  "388027": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T15:55:00",
+   "theatreId": 7420
+  },
+  "388028": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T19:25:00",
+   "theatreId": 7420
+  },
+  "388029": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T22:45:00",
+   "theatreId": 7420
+  },
+  "388030": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T12:35:00",
+   "theatreId": 7420
+  },
+  "388031": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-21T12:35:00",
    "theatreId": 7420
   },
   "388032": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T22:45:00",
    "theatreId": 7420
   },
   "388033": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T19:25:00",
    "theatreId": 7420
   },
   "388034": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T15:55:00",
    "theatreId": 7420
   },
-  "540727": {
+  "388035": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-22T15:55:00",
+   "theatreId": 7420
+  },
+  "388036": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T19:25:00",
+   "theatreId": 7420
+  },
+  "388037": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T22:45:00",
+   "theatreId": 7420
+  },
+  "388038": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T12:35:00",
+   "theatreId": 7420
+  },
+  "388039": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T15:55:00",
+   "theatreId": 7420
+  },
+  "388040": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T19:25:00",
+   "theatreId": 7420
+  },
+  "388041": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T22:45:00",
+   "theatreId": 7420
+  },
+  "388042": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T12:35:00",
+   "theatreId": 7420
+  },
+  "388043": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T12:35:00",
+   "theatreId": 7420
+  },
+  "388044": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T22:45:00",
+   "theatreId": 7420
+  },
+  "388045": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T19:25:00",
+   "theatreId": 7420
+  },
+  "388046": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T15:55:00",
+   "theatreId": 7420
+  },
+  "388047": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T19:25:00",
+   "theatreId": 7420
+  },
+  "388048": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T15:55:00",
+   "theatreId": 7420
+  },
+  "388049": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T12:35:00",
+   "theatreId": 7420
+  },
+  "388050": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T22:45:00",
+   "theatreId": 7420
+  },
+  "388051": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T22:45:00",
+   "theatreId": 7420
+  },
+  "388052": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T12:35:00",
+   "theatreId": 7420
+  },
+  "388053": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T15:55:00",
+   "theatreId": 7420
+  },
+  "388054": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T19:25:00",
+   "theatreId": 7420
+  },
+  "388055": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T22:45:00",
+   "theatreId": 7420
+  },
+  "388056": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T12:35:00",
+   "theatreId": 7420
+  },
+  "388057": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T15:55:00",
+   "theatreId": 7420
+  },
+  "388058": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T19:25:00",
+   "theatreId": 7420
+  },
+  "388059": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T12:35:00",
+   "theatreId": 7420
+  },
+  "388060": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T22:45:00",
+   "theatreId": 7420
+  },
+  "388061": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T19:25:00",
+   "theatreId": 7420
+  },
+  "388062": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T15:55:00",
+   "theatreId": 7420
+  },
+  "388063": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T15:55:00",
+   "theatreId": 7420
+  },
+  "388064": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T19:25:00",
+   "theatreId": 7420
+  },
+  "388065": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T22:45:00",
+   "theatreId": 7420
+  },
+  "388066": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T12:35:00",
+   "theatreId": 7420
+  },
+  "388067": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T15:55:00",
+   "theatreId": 7420
+  },
+  "388068": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T19:25:00",
+   "theatreId": 7420
+  },
+  "388069": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T22:45:00",
+   "theatreId": 7420
+  },
+  "388070": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T12:35:00",
+   "theatreId": 7420
+  },
+  "388071": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T15:55:00",
+   "theatreId": 7420
+  },
+  "388072": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T19:25:00",
+   "theatreId": 7420
+  },
+  "388073": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T22:45:00",
+   "theatreId": 7420
+  },
+  "388074": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T12:35:00",
+   "theatreId": 7420
+  },
+  "388075": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T18:55:00",
+   "theatreId": 7420
+  },
+  "388076": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T15:05:00",
+   "theatreId": 7420
+  },
+  "388077": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T11:15:00",
+   "theatreId": 7420
+  },
+  "388078": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T22:45:00",
+   "theatreId": 7420
+  },
+  "388079": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T22:45:00",
+   "theatreId": 7420
+  },
+  "388080": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T11:15:00",
+   "theatreId": 7420
+  },
+  "388081": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T15:05:00",
+   "theatreId": 7420
+  },
+  "388082": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T18:55:00",
+   "theatreId": 7420
+  },
+  "388083": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T22:30:00",
+   "theatreId": 7420
+  },
+  "388084": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T11:00:00",
+   "theatreId": 7420
+  },
+  "388085": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T14:50:00",
+   "theatreId": 7420
+  },
+  "388086": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T18:40:00",
+   "theatreId": 7420
+  },
+  "388087": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T14:00:00",
+   "theatreId": 7420
+  },
+  "388088": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T18:00:00",
+   "theatreId": 7420
+  },
+  "388089": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T22:00:00",
+   "theatreId": 7420
+  },
+  "388090": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T22:00:00",
+   "theatreId": 7420
+  },
+  "388091": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T18:00:00",
+   "theatreId": 7420
+  },
+  "388092": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T14:00:00",
+   "theatreId": 7420
+  },
+  "388093": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T22:00:00",
+   "theatreId": 7420
+  },
+  "388094": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T18:00:00",
+   "theatreId": 7420
+  },
+  "388095": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T14:00:00",
+   "theatreId": 7420
+  },
+  "388096": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T22:00:00",
+   "theatreId": 7420
+  },
+  "388097": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T18:00:00",
+   "theatreId": 7420
+  },
+  "388098": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T14:00:00",
+   "theatreId": 7420
+  },
+  "388099": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T22:45:00",
+   "theatreId": 7420
+  },
+  "388100": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T11:15:00",
+   "theatreId": 7420
+  },
+  "388101": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T15:05:00",
+   "theatreId": 7420
+  },
+  "388102": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T18:55:00",
+   "theatreId": 7420
+  },
+  "388103": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T18:55:00",
+   "theatreId": 7420
+  },
+  "388104": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T15:05:00",
+   "theatreId": 7420
+  },
+  "388105": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T11:15:00",
+   "theatreId": 7420
+  },
+  "388106": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T22:45:00",
+   "theatreId": 7420
+  },
+  "388107": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T22:30:00",
+   "theatreId": 7420
+  },
+  "388108": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T18:40:00",
+   "theatreId": 7420
+  },
+  "388109": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T14:50:00",
+   "theatreId": 7420
+  },
+  "388110": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T11:00:00",
+   "theatreId": 7420
+  },
+  "388111": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T18:00:00",
+   "theatreId": 7420
+  },
+  "388112": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T14:00:00",
+   "theatreId": 7420
+  },
+  "388113": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T22:00:00",
+   "theatreId": 7420
+  },
+  "388114": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T22:00:00",
+   "theatreId": 7420
+  },
+  "388115": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T14:00:00",
+   "theatreId": 7420
+  },
+  "388116": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T18:00:00",
+   "theatreId": 7420
+  },
+  "388117": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T22:00:00",
+   "theatreId": 7420
+  },
+  "388118": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T14:00:00",
+   "theatreId": 7420
+  },
+  "388119": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T18:00:00",
+   "theatreId": 7420
+  },
+  "388120": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T22:00:00",
+   "theatreId": 7420
+  },
+  "388121": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T14:00:00",
+   "theatreId": 7420
+  },
+  "388122": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T18:00:00",
+   "theatreId": 7420
+  },
+  "388123": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-14T18:00:00",
+   "theatreId": 7420
+  },
+  "388124": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-15T18:00:00",
+   "theatreId": 7420
+  },
+  "530758": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-17T19:00:00",
+   "theatreId": 7408
+  },
+  "530759": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T19:00:00",
+   "theatreId": 7408
+  },
+  "530760": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T19:00:00",
+   "theatreId": 7408
+  },
+  "530761": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T19:00:00",
+   "theatreId": 7408
+  },
+  "531220": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-17T22:55:00",
+   "theatreId": 7408
+  },
+  "531221": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T23:00:00",
+   "theatreId": 7408
+  },
+  "531222": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T23:00:00",
+   "theatreId": 7408
+  },
+  "531223": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T23:00:00",
+   "theatreId": 7408
+  },
+  "540721": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T11:15:00",
+   "theatreId": 7408
+  },
+  "540722": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-18T15:05:00",
+   "theatreId": 7408
+  },
+  "540723": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T15:05:00",
+   "theatreId": 7408
+  },
+  "540724": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-19T11:15:00",
+   "theatreId": 7408
+  },
+  "540725": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T11:15:00",
+   "theatreId": 7408
+  },
+  "540726": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-20T15:05:00",
+   "theatreId": 7408
+  },
+  "540727": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-21T15:55:00",
    "theatreId": 7408
   },
   "540728": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T12:35:00",
    "theatreId": 7408
   },
   "540729": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T19:25:00",
    "theatreId": 7408
   },
   "540730": {
+   "auditorium": "IMAX",
    "soldOut": false,
+   "start": "2026-12-21T22:45:00",
+   "theatreId": 7408
+  },
+  "540731": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T22:45:00",
+   "theatreId": 7408
+  },
+  "540732": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T19:25:00",
+   "theatreId": 7408
+  },
+  "540733": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T15:55:00",
+   "theatreId": 7408
+  },
+  "540734": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-22T12:35:00",
+   "theatreId": 7408
+  },
+  "540735": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T12:35:00",
+   "theatreId": 7408
+  },
+  "540736": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T15:55:00",
+   "theatreId": 7408
+  },
+  "540737": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T19:25:00",
+   "theatreId": 7408
+  },
+  "540738": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-23T22:45:00",
+   "theatreId": 7408
+  },
+  "540739": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T22:45:00",
+   "theatreId": 7408
+  },
+  "540740": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T19:25:00",
+   "theatreId": 7408
+  },
+  "540741": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T15:55:00",
+   "theatreId": 7408
+  },
+  "540742": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-24T12:35:00",
+   "theatreId": 7408
+  },
+  "540743": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T12:35:00",
+   "theatreId": 7408
+  },
+  "540744": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T15:55:00",
+   "theatreId": 7408
+  },
+  "540745": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T19:25:00",
+   "theatreId": 7408
+  },
+  "540746": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-25T22:45:00",
+   "theatreId": 7408
+  },
+  "540747": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T22:45:00",
+   "theatreId": 7408
+  },
+  "540748": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T19:25:00",
+   "theatreId": 7408
+  },
+  "540749": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T15:55:00",
+   "theatreId": 7408
+  },
+  "540750": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-26T12:35:00",
+   "theatreId": 7408
+  },
+  "540751": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T12:35:00",
+   "theatreId": 7408
+  },
+  "540752": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T15:55:00",
+   "theatreId": 7408
+  },
+  "540753": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T19:25:00",
+   "theatreId": 7408
+  },
+  "540754": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-27T22:45:00",
+   "theatreId": 7408
+  },
+  "540755": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T15:55:00",
+   "theatreId": 7408
+  },
+  "540756": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T12:35:00",
+   "theatreId": 7408
+  },
+  "540757": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T19:25:00",
+   "theatreId": 7408
+  },
+  "540758": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-28T22:45:00",
+   "theatreId": 7408
+  },
+  "540759": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T22:45:00",
+   "theatreId": 7408
+  },
+  "540760": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T19:25:00",
+   "theatreId": 7408
+  },
+  "540761": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T12:35:00",
+   "theatreId": 7408
+  },
+  "540762": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-29T15:55:00",
+   "theatreId": 7408
+  },
+  "540763": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T15:55:00",
+   "theatreId": 7408
+  },
+  "540764": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T12:35:00",
+   "theatreId": 7408
+  },
+  "540765": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T19:25:00",
+   "theatreId": 7408
+  },
+  "540766": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-30T22:45:00",
+   "theatreId": 7408
+  },
+  "540767": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T22:45:00",
+   "theatreId": 7408
+  },
+  "540768": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T19:25:00",
+   "theatreId": 7408
+  },
+  "540769": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T12:35:00",
+   "theatreId": 7408
+  },
+  "540770": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-31T15:55:00",
+   "theatreId": 7408
+  },
+  "540771": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T15:55:00",
+   "theatreId": 7408
+  },
+  "540772": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T12:35:00",
+   "theatreId": 7408
+  },
+  "540773": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T19:25:00",
+   "theatreId": 7408
+  },
+  "540774": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-01T22:45:00",
+   "theatreId": 7408
+  },
+  "540775": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T22:45:00",
+   "theatreId": 7408
+  },
+  "540776": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T19:25:00",
+   "theatreId": 7408
+  },
+  "540777": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T12:35:00",
+   "theatreId": 7408
+  },
+  "540778": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-02T15:55:00",
+   "theatreId": 7408
+  },
+  "540779": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T15:40:00",
+   "theatreId": 7408
+  },
+  "540780": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T12:20:00",
+   "theatreId": 7408
+  },
+  "540781": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T19:10:00",
+   "theatreId": 7408
+  },
+  "540782": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-03T22:30:00",
+   "theatreId": 7408
+  },
+  "540783": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T14:00:00",
+   "theatreId": 7408
+  },
+  "540784": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T18:00:00",
+   "theatreId": 7408
+  },
+  "540785": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-04T22:00:00",
+   "theatreId": 7408
+  },
+  "540786": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T22:00:00",
+   "theatreId": 7408
+  },
+  "540787": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T18:00:00",
+   "theatreId": 7408
+  },
+  "540788": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-05T14:00:00",
+   "theatreId": 7408
+  },
+  "540789": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T14:00:00",
+   "theatreId": 7408
+  },
+  "540790": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T18:00:00",
+   "theatreId": 7408
+  },
+  "540791": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-06T22:00:00",
+   "theatreId": 7408
+  },
+  "540792": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T22:00:00",
+   "theatreId": 7408
+  },
+  "540793": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T18:00:00",
+   "theatreId": 7408
+  },
+  "540794": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-07T14:00:00",
+   "theatreId": 7408
+  },
+  "540795": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T14:00:00",
+   "theatreId": 7408
+  },
+  "540796": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T18:00:00",
+   "theatreId": 7408
+  },
+  "540797": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-11T22:00:00",
+   "theatreId": 7408
+  },
+  "540798": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T22:00:00",
+   "theatreId": 7408
+  },
+  "540799": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T18:00:00",
+   "theatreId": 7408
+  },
+  "540800": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-12T14:00:00",
+   "theatreId": 7408
+  },
+  "540801": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T14:00:00",
+   "theatreId": 7408
+  },
+  "540802": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T18:00:00",
+   "theatreId": 7408
+  },
+  "540803": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-13T22:00:00",
+   "theatreId": 7408
+  },
+  "540804": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T22:00:00",
+   "theatreId": 7408
+  },
+  "540805": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T18:00:00",
+   "theatreId": 7408
+  },
+  "540806": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-14T14:00:00",
+   "theatreId": 7408
+  },
+  "540807": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T15:05:00",
+   "theatreId": 7408
+  },
+  "540809": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T22:45:00",
+   "theatreId": 7408
+  },
+  "540810": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-08T18:55:00",
+   "theatreId": 7408
+  },
+  "540811": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T19:25:00",
+   "theatreId": 7408
+  },
+  "540812": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T22:45:00",
+   "theatreId": 7408
+  },
+  "540813": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T12:35:00",
+   "theatreId": 7408
+  },
+  "540814": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-09T15:55:00",
+   "theatreId": 7408
+  },
+  "540815": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T15:40:00",
+   "theatreId": 7408
+  },
+  "540816": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T12:20:00",
+   "theatreId": 7408
+  },
+  "540817": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T22:30:00",
+   "theatreId": 7408
+  },
+  "540818": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2027-01-10T19:10:00",
+   "theatreId": 7408
+  },
+  "541300": {
+   "auditorium": "IMAX",
+   "soldOut": false,
+   "start": "2026-12-17T15:05:00",
    "theatreId": 7408
   }
- },
- "other": {}
+ }
 }
