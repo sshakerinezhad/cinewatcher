@@ -25,7 +25,7 @@
     justify-content: center;
     padding: 3rem 1rem;
   }
-  main { width: 100%; max-width: 720px; }
+  main { width: 100%; max-width: 760px; }
   .kicker {
     text-transform: uppercase; letter-spacing: .35em; font-size: .7rem;
     color: var(--gold); text-align: center; margin-bottom: .6rem;
@@ -36,18 +36,12 @@
   }
   .sub { text-align: center; color: var(--muted); margin-top: .4rem; font-size: .95rem; }
   .banner {
-    margin: 2rem 0 1.5rem; padding: 1.6rem; border-radius: 14px;
-    text-align: center; font-size: 1.25rem; font-weight: 700;
+    margin: 2rem 0 1.5rem; padding: 1.4rem; border-radius: 14px;
+    text-align: center; font-size: 1.05rem; font-weight: 600;
     border: 1px solid var(--border); background: var(--panel);
   }
-  .banner.waiting { color: var(--muted); }
-  .banner.found {
-    color: #0b0d12; background: linear-gradient(135deg, var(--gold), #f0cf7a);
-    border-color: var(--gold); animation: pulse 1.6s ease-in-out infinite;
-  }
+  .banner .big { display: block; font-size: 1.5rem; margin-bottom: .3rem; color: var(--gold); }
   .banner.error { color: var(--red); border-color: var(--red); }
-  @keyframes pulse { 50% { box-shadow: 0 0 40px rgba(212,168,67,.45); } }
-  .banner .big { display: block; font-size: 1.6rem; margin-bottom: .3rem; }
   .notice {
     margin: -0.9rem 0 1.5rem; padding: .6rem .9rem; border-radius: 10px;
     font-size: .82rem; color: var(--muted);
@@ -55,23 +49,24 @@
   }
   section { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
   section h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); margin-bottom: .8rem; }
+  .date-head { font-weight: 700; margin: 1rem 0 .2rem; color: var(--gold); }
+  .date-head:first-of-type { margin-top: 0; }
   .session {
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    padding: .7rem 0; border-top: 1px solid var(--border); flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+    padding: .55rem 0; border-top: 1px solid var(--border); flex-wrap: wrap;
   }
-  .session:first-of-type { border-top: none; }
-  .session .time { font-size: 1.15rem; font-weight: 700; color: var(--gold); min-width: 6.5rem; }
+  .session .time { font-size: 1.05rem; font-weight: 700; min-width: 5.5rem; }
   .session .meta { color: var(--muted); font-size: .85rem; flex: 1; }
   .session a.buy {
     background: var(--gold); color: #0b0d12; text-decoration: none; font-weight: 700;
-    padding: .45rem .9rem; border-radius: 8px; font-size: .85rem;
+    padding: .4rem .8rem; border-radius: 8px; font-size: .8rem;
   }
-  .session .soldout { color: var(--red); font-weight: 700; font-size: .85rem; }
-  .theatre-name { font-weight: 700; margin: .8rem 0 .2rem; }
-  .theatre-name:first-child { margin-top: 0; }
-  ul.plain { list-style: none; }
-  ul.plain li { padding: .35rem 0; color: var(--muted); }
-  ul.plain b { color: var(--text); font-weight: 600; }
+  .session .soldout { color: var(--red); font-weight: 700; font-size: .8rem; }
+  .seats-badge {
+    display: inline-block; background: rgba(62,207,142,.12); color: var(--green);
+    border: 1px solid rgba(62,207,142,.4); border-radius: 6px;
+    font-size: .78rem; font-weight: 700; padding: .15rem .5rem; margin-left: .4rem;
+  }
   footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 1.5rem; line-height: 1.7; }
   footer a { color: var(--gold); }
   .dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); margin-right: .4rem; animation: blink 2s infinite; }
@@ -82,32 +77,32 @@
 <main>
   <div class="kicker">Cinewatcher</div>
   <h1>Dune: Part 3 · IMAX 70mm</h1>
-  <p class="sub">Watching for <b>December 21, 2026</b> showtimes at Vaughan &amp; Mississauga Square One<br>
-     <small>Dec 17-20 is already on sale; the 21st is the first date still unlisted.</small></p>
+  <p class="sub">Watching <b>every showtime, every date</b> at Vaughan &amp; Mississauga Square One —<br>
+     new dates the moment they open, and good seats the moment someone cancels.</p>
 
-  <div id="banner" class="banner waiting">Loading status…</div>
+  <div id="banner" class="banner">Loading status…</div>
   <div id="notice" class="notice" hidden></div>
 
-  <section id="showtimes" hidden>
-    <h2>IMAX 70mm showtimes — Dec 21</h2>
-    <div id="sessions"></div>
+  <section id="goodSeatsSection" hidden>
+    <h2 id="goodSeatsHead">Good seats available now</h2>
+    <div id="goodSeats"></div>
   </section>
 
-  <section id="otherFormats" hidden>
-    <h2>Other Dune: Part 3 formats listed for Dec 21</h2>
-    <div id="otherSessions"></div>
+  <section id="showtimes" hidden>
+    <h2>All IMAX 70mm showtimes</h2>
+    <div id="sessions"></div>
   </section>
 
   <section>
     <h2>Theatres being watched</h2>
-    <ul class="plain" id="theatres">
-      <li><b>Cineplex Cinemas Vaughan</b> — 3555 Highway 7 West, Vaughan</li>
-      <li><b>Cineplex Cinemas Mississauga Square One</b> — 169 Rathburn Rd W, Mississauga</li>
+    <ul style="list-style:none">
+      <li style="padding:.35rem 0;color:var(--muted)"><b style="color:var(--text)">Cineplex Cinemas Vaughan</b> — 3555 Highway 7 West, Vaughan</li>
+      <li style="padding:.35rem 0;color:var(--muted)"><b style="color:var(--text)">Cineplex Cinemas Mississauga Square One</b> — 169 Rathburn Rd W, Mississauga</li>
     </ul>
   </section>
 
   <footer>
-    <span class="dot"></span>Checked every ~30 minutes by GitHub Actions ·
+    <span class="dot"></span>Seat-level check every ~2 minutes (self-chaining GitHub Actions) ·
     <span id="freshness">status age unknown</span><br>
     <a href="https://www.cineplex.com/Movie/dune-part-3" target="_blank" rel="noopener">Cineplex movie page</a> ·
     <a href="https://github.com/sshakerinezhad/cinewatcher/actions" target="_blank" rel="noopener">bot run history</a>
@@ -120,6 +115,9 @@ const REPO = "sshakerinezhad/cinewatcher";
 function fmtTime(iso) {
   return new Date(iso).toLocaleTimeString("en-CA", { hour: "numeric", minute: "2-digit" });
 }
+function fmtDate(iso) {
+  return new Date(iso).toLocaleDateString("en-CA", { weekday: "short", month: "short", day: "numeric" });
+}
 function ago(iso) {
   const mins = Math.round((Date.now() - new Date(iso)) / 60000);
   if (mins < 1) return "just now";
@@ -127,45 +125,38 @@ function ago(iso) {
   const h = Math.round(mins / 60);
   return h < 48 ? h + " h ago" : Math.round(h / 24) + " days ago";
 }
-
-function renderSessions(el, sessions) {
-  const byTheatre = {};
-  for (const s of sessions) (byTheatre[s.theatre] ??= []).push(s);
-  el.innerHTML = "";
-  for (const [theatre, list] of Object.entries(byTheatre)) {
-    const h = document.createElement("div");
-    h.className = "theatre-name";
-    h.textContent = theatre;
-    el.appendChild(h);
-    for (const s of list) {
-      const row = document.createElement("div");
-      row.className = "session";
-      const seats = s.seatsRemaining != null ? ` · ${s.seatsRemaining} seats left` : "";
-      row.innerHTML = `
-        <span class="time">${fmtTime(s.start)}</span>
-        <span class="meta">${s.experience}${seats}</span>
-        ${s.soldOut
-          ? '<span class="soldout">SOLD OUT</span>'
-          : `<a class="buy" href="${s.ticketingUrl}" target="_blank" rel="noopener">Buy tickets</a>`}`;
-      el.appendChild(row);
-    }
-  }
+function short(theatre) {
+  return theatre.includes("Vaughan") ? "Vaughan" : "Square One";
 }
 
-// Open the page with ?demo appended (…/cinewatcher/?demo) to preview what the
-// alert state will look like once real showtimes drop. Sample data only.
-const DEMO = new URLSearchParams(location.search).has("demo");
-const DEMO_STATUS = {
-  found: true,
-  otherFormats: [],
-  theatres: [],
-  imax70mm: [
-    { theatre: "Cineplex Cinemas Vaughan", start: "2026-12-21T19:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 214, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
-    { theatre: "Cineplex Cinemas Vaughan", start: "2026-12-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 377, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
-    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-12-21T19:00:00", experience: "IMAX 70mm", soldOut: true, seatsRemaining: 0, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
-    { theatre: "Cineplex Cinemas Mississauga Square One", start: "2026-12-21T23:00:00", experience: "IMAX 70mm", soldOut: false, seatsRemaining: 98, ticketingUrl: "https://www.cineplex.com/Movie/dune-part-3" },
-  ],
-};
+function sessionRow(s, highlight) {
+  const row = document.createElement("div");
+  row.className = "session";
+  const seats = s.seatsRemaining != null ? `${s.seatsRemaining} seats` : "on sale";
+  const good = (s.goodSeatsFree || []).length && highlight
+    ? `<span class="seats-badge">${s.goodSeatsFree.join(" · ")}</span>` : "";
+  row.innerHTML = `
+    <span class="time">${fmtTime(s.start)}</span>
+    <span class="meta">${short(s.theatre)} · ${seats}${good}</span>
+    ${s.soldOut && !(s.goodSeatsFree || []).length
+      ? '<span class="soldout">SOLD OUT</span>'
+      : `<a class="buy" href="${s.ticketingUrl}" target="_blank" rel="noopener">Buy</a>`}`;
+  return row;
+}
+
+function renderByDate(el, sessions, highlight) {
+  el.innerHTML = "";
+  const byDate = {};
+  for (const s of sessions) (byDate[s.start.slice(0, 10)] ??= []).push(s);
+  for (const key of Object.keys(byDate).sort()) {
+    const h = document.createElement("div");
+    h.className = "date-head";
+    h.textContent = fmtDate(byDate[key][0].start);
+    el.appendChild(h);
+    for (const s of byDate[key].sort((a, b) => a.start.localeCompare(b.start) || a.theatreId - b.theatreId))
+      el.appendChild(sessionRow(s, highlight));
+  }
+}
 
 async function refresh() {
   const banner = document.getElementById("banner");
@@ -178,39 +169,37 @@ async function refresh() {
     banner.textContent = "Could not load status.json";
     return;
   }
-  if (DEMO) status = { ...status, ...DEMO_STATUS, generatedAt: new Date().toISOString() };
 
-  if (status.found) {
-    banner.className = "banner found";
-    banner.innerHTML = '<span class="big">🎬 SHOWTIMES ARE UP!</span>IMAX 70mm tickets for Dec 21 are on sale — book now.'
-      + (DEMO ? '<br><small style="font-weight:400">DEMO PREVIEW — sample data, remove ?demo from the URL for live status</small>' : '');
-    document.getElementById("showtimes").hidden = false;
-    renderSessions(document.getElementById("sessions"), status.imax70mm);
-  } else {
-    banner.className = "banner waiting";
-    banner.innerHTML = "⏳ No IMAX 70mm showtimes for Dec 21 yet.<br><small>You'll be notified the moment they appear.</small>";
+  const sessions = status.sessions || [];
+  const dates = new Set(sessions.map(s => s.start.slice(0, 10)));
+  const withGood = sessions.filter(s => (s.goodSeatsFree || []).length);
+  const goodCount = withGood.reduce((n, s) => n + s.goodSeatsFree.length, 0);
+  const zone = status.goodZone
+    ? `rows ${status.goodZone.rows[0]}–${status.goodZone.rows.at(-1)}, ≤${status.goodZone.radius} of centre` : "";
+
+  banner.className = "banner";
+  banner.innerHTML = `<span class="big">${sessions.length} showtimes · ${dates.size} dates</span>`
+    + `${goodCount} good-zone seat${goodCount === 1 ? "" : "s"} (${zone}) currently free across ${withGood.length} showtimes`;
+
+  if (withGood.length) {
+    document.getElementById("goodSeatsSection").hidden = false;
+    renderByDate(document.getElementById("goodSeats"), withGood, true);
   }
+  document.getElementById("showtimes").hidden = !sessions.length;
+  renderByDate(document.getElementById("sessions"), sessions, false);
 
-  if (status.otherFormats && status.otherFormats.length) {
-    document.getElementById("otherFormats").hidden = false;
-    renderSessions(document.getElementById("otherSessions"), status.otherFormats);
-  }
-
-  // A theatre we couldn't reach on the last check is a transient blip, not an
-  // outage — the checker retries and the next run is seconds away. Note it,
-  // but never let it replace the actual showtime status.
   const notice = document.getElementById("notice");
   const errs = (status.theatres || []).filter(t => t.error);
   if (errs.length) {
     notice.hidden = false;
     notice.textContent = "Couldn't reach " + errs.map(t => t.name).join(", ")
-      + " on the last check — retrying automatically. Last known showtimes are still shown.";
+      + " on the last check — retrying automatically. Last known data is shown.";
   } else {
     notice.hidden = true;
   }
 
-  // Freshness: prefer the last Actions run time (works when repo is public),
-  // fall back to the last committed status change.
+  // Freshness: the status file only commits when something changes, so the
+  // last Actions run is the honest "when did it last look" signal.
   let freshnessText = "last status change " + ago(status.generatedAt);
   try {
     const r = await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/watch.yml/runs?per_page=1&status=completed`);
@@ -219,7 +208,7 @@ async function refresh() {
       const t = d.workflow_runs?.[0]?.updated_at;
       if (t) freshnessText = "last check " + ago(t) + " · last status change " + ago(status.generatedAt);
     }
-  } catch { /* private repo or rate limit — fall back silently */ }
+  } catch { /* rate limit — fall back silently */ }
   document.getElementById("freshness").textContent = freshnessText;
 }
 

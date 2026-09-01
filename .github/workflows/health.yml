@@ -1,0 +1,32 @@
+name: Daily health check
+
+# Independent daily proof that the watch is actually working, with a Telegram
+# heartbeat either way — see tools/health.py for what is checked and why the
+# heartbeat is always sent. Scheduled off the hour like the watch cron.
+# GitHub's cron can skip or delay this too; the Claude watchdog routine
+# (fires daily, outside GitHub entirely) is the backstop for THIS check.
+
+on:
+  schedule:
+    - cron: "23 12 * * *" # ~08:23 Toronto in summer, ~07:23 in winter
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run health checks and send the daily heartbeat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CINEPLEX_API_KEY: ${{ secrets.CINEPLEX_API_KEY }}
+          NTFY_TOPIC: odyssey-imax-70mm-88955e30
+        run: python3 tools/health.py

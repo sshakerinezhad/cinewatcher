@@ -45,7 +45,10 @@ def get(url):
     with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=30) as r:
         body = r.read()
         encoding = (r.headers.get("Content-Encoding") or "").lower()
-    if encoding == "gzip" or body[:2] == b"\x1f\x8b":
+    # Some CDN edges double-gzip; unwrap until the magic bytes are gone.
+    for _ in range(5):
+        if body[:2] != b"\x1f\x8b":
+            break
         body = gzip.decompress(body)
     return json.loads(body) if body.strip() else None
 
