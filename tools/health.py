@@ -205,7 +205,28 @@ def post_issue(text):
         print(f"::error::could not file health issue: {e}")
 
 
+def already_ran_today():
+    """Dedupe guard for the cron backstop: the watch chain dispatches the
+    heartbeat when the cron is late (its first-ever tick on 2026-09-02 was
+    silently dropped by GitHub), so a late cron tick must not double-send.
+    Only schedule-triggered runs defer; manual dispatches always run."""
+    if os.environ.get("GITHUB_EVENT_NAME") != "schedule":
+        return False
+    try:
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        runs = gh(f"/repos/{GH_REPO}/actions/workflows/health.yml/runs"
+                  f"?created=%3E%3D{today}T00:00:00Z&per_page=10")["workflow_runs"]
+        me = os.environ.get("GITHUB_RUN_ID", "")
+        return any(str(r["id"]) != me for r in runs)
+    except Exception as e:  # noqa: BLE001 - when in doubt, run the check
+        print(f"dedupe lookup failed ({e}) — running anyway")
+        return False
+
+
 def main():
+    if already_ran_today():
+        print("heartbeat already sent today by another run — skipping duplicate")
+        return 0
     problems, lines = [], []
     for check in (check_cadence, check_cineplex, check_state):
         try:

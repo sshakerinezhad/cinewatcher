@@ -115,6 +115,37 @@ jobs:
             echo "::error::could not dispatch the next run (HTTP $CODE) — DISPATCH_PAT may be expired. The cron backstop keeps sparse coverage; the daily health check will flag the dropped cadence."
           fi
 
+      # The daily heartbeat must not depend on GitHub's cron: health.yml's
+      # very first scheduled tick (2026-09-02 12:23) was silently dropped,
+      # exactly the failure mode this repo's crons are known for. The chain
+      # runs reliably every ~25 minutes, so the first chain run after the
+      # heartbeat hour dispatches health.yml if nothing has run it today.
+      # health.yml's own cron stays as a backstop; a dedupe guard in
+      # tools/health.py keeps a late cron tick from double-sending.
+      - name: Trigger the daily heartbeat if it has not run today
+        if: github.ref == 'refs/heads/main' && inputs.test == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAT: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          [ "$(date -u +%H%M)" -ge 1223 ] || { echo "before heartbeat hour"; exit 0; }
+          TODAY=$(date -u +%Y-%m-%d)
+          N=$(curl -sS --max-time 20 \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/health.yml/runs?created=%3E%3D${TODAY}T00:00:00Z&per_page=1" \
+            | jq -r '.total_count')
+          if [ "$N" = "0" ]; then
+            CODE=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 20 -X POST \
+              -H "Authorization: Bearer ${PAT:-$GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/health.yml/dispatches" \
+              -d '{"ref":"main"}') || CODE=000
+            echo "health.yml had not run today — dispatched (HTTP $CODE)"
+          else
+            echo "health.yml already ran today ($N run(s))"
+          fi
+
       - name: Watch (sweep every ~2 min for ~25 min)
         id: watch
         env:
