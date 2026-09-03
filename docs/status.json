@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-03T09:29:05+00:00",
+ "generatedAt": "2026-09-03T13:29:31+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1532,7 +1532,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-29T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 95,
+   "seatsRemaining": 93,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540760&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540760&dbox=False",
@@ -2413,6 +2413,7 @@
     "G21",
     "G9",
     "H9",
+    "I16",
     "I21",
     "J21"
    ],
