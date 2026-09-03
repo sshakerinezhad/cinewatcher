@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-03T21:01:57+00:00",
+ "generatedAt": "2026-09-03T21:03:57+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -557,7 +557,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-21T15:55:00",
    "soldOut": false,
-   "seatsRemaining": 77,
+   "seatsRemaining": 80,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388034&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388034&dbox=False",
@@ -2305,7 +2305,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-05T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 185,
+   "seatsRemaining": 182,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388092&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388092&dbox=False",
@@ -3297,6 +3297,8 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388119&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388119&dbox=False",
    "goodSeatsFree": [
+    "F20",
+    "F21",
     "G21"
    ],
    "centreBlocks": [],
