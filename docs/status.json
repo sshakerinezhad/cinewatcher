@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-03T20:30:47+00:00",
+ "generatedAt": "2026-09-03T20:32:47+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -3454,8 +3454,8 @@
    "goodSeatsFree": [
     "F20",
     "F21",
-    "G21",
     "H21",
+    "I9",
     "J9"
    ],
    "centreBlocks": [],
