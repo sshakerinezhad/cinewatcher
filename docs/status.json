@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-05T18:54:31+00:00",
+ "generatedAt": "2026-09-05T19:17:38+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1249,7 +1249,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-27T12:35:00",
    "soldOut": false,
-   "seatsRemaining": 104,
+   "seatsRemaining": 103,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388056&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388056&dbox=False",
@@ -2516,7 +2516,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-07T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 206,
+   "seatsRemaining": 204,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388098&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388098&dbox=False",
@@ -3288,7 +3288,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-13T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 196,
+   "seatsRemaining": 194,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540803&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540803&dbox=False",
@@ -3333,8 +3333,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540806&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540806&dbox=False",
    "goodSeatsFree": [
-    "F21",
-    "H21"
+    "F21"
    ],
    "centreBlocks": [],
    "timeEligible": false,
