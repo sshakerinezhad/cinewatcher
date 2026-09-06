@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-06T04:29:55+00:00",
+ "generatedAt": "2026-09-06T05:28:16+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -527,7 +527,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-21T12:35:00",
    "soldOut": false,
-   "seatsRemaining": 82,
+   "seatsRemaining": 84,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388031&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388031&dbox=False",
@@ -1416,7 +1416,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-28T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 109,
+   "seatsRemaining": 108,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540757&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540757&dbox=False",
@@ -2516,7 +2516,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-07T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 203,
+   "seatsRemaining": 204,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388098&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388098&dbox=False",
@@ -2771,7 +2771,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-09T15:05:00",
    "soldOut": false,
-   "seatsRemaining": 125,
+   "seatsRemaining": 123,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388104&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388104&dbox=False",
@@ -3395,9 +3395,7 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388122&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388122&dbox=False",
-   "goodSeatsFree": [
-    "F21"
-   ],
+   "goodSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
