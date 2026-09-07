@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-07T04:16:13+00:00",
+ "generatedAt": "2026-09-07T05:20:22+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -182,7 +182,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-18T15:05:00",
    "soldOut": false,
-   "seatsRemaining": 48,
+   "seatsRemaining": 50,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540722&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540722&dbox=False",
@@ -887,7 +887,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-24T12:35:00",
    "soldOut": false,
-   "seatsRemaining": 115,
+   "seatsRemaining": 114,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388043&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388043&dbox=False",
@@ -1052,7 +1052,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-25T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 106,
+   "seatsRemaining": 104,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540745&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540745&dbox=False",
@@ -2499,7 +2499,9 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540794&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540794&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "I13"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
