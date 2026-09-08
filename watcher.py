@@ -103,11 +103,13 @@ DISPLAY_RADIUS = float(os.environ.get("CENTRE_DISPLAY_RADIUS", "3"))
 GROUP_SIZE = int(os.environ.get("GROUP_SIZE", "4"))
 CENTRE_TOL = float(os.environ.get("GROUP_CENTRE_TOLERANCE", "2"))
 
-# Showtimes worth going to. Weekdays must be post-work and not too late;
-# Sundays just not too late; Saturdays anything goes. Sessions outside these
-# windows are tracked and shown on the site but never alert — not for new
-# dates, not for freed seats. Times compare against the showtime's local
-# start, HH:MM.
+# Showtimes worth going to: weekend tickets, or weekday tickets outside work
+# hours that don't run super late on a WORK NIGHT. Work nights are Sun-Thu
+# (the night before a work day) — Friday is a weekday for the start bound
+# (no matinees) but Friday NIGHT is not a work night, so it has no late cap.
+# Sessions outside these windows are tracked and shown on the site but never
+# alert — not for new dates, not for freed seats. Times compare against the
+# showtime's local start, HH:MM.
 WEEKDAY_EARLIEST = os.environ.get("WEEKDAY_EARLIEST_START", "17:30")
 LATEST_START = os.environ.get("LATEST_START", "21:00")
 
@@ -119,11 +121,13 @@ def time_eligible(start_iso):
         return True  # unparseable start: never silently drop an alert
     hhmm = d.strftime("%H:%M")
     wd = d.weekday()  # Mon=0 .. Sun=6
-    if wd == 5:  # Saturday
+    if wd == 5:  # Saturday: anything goes
         return True
-    if wd == 6:  # Sunday: matinees fine, just not too late
+    if wd == 6:  # Sunday: matinees fine, but Sunday night is a work night
         return hhmm <= LATEST_START
-    return WEEKDAY_EARLIEST <= hhmm <= LATEST_START
+    if wd == 4:  # Friday: post-work start, but no late cap — not a work night
+        return hhmm >= WEEKDAY_EARLIEST
+    return WEEKDAY_EARLIEST <= hhmm <= LATEST_START  # Mon-Thu
 
 SWEEP_INTERVAL = int(os.environ.get("SWEEP_INTERVAL_SECONDS", "120"))
 RUN_MINUTES = float(os.environ.get("RUN_MINUTES", "25"))

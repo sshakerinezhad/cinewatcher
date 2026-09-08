@@ -18,9 +18,11 @@ are not obvious from the code.
 Checked in a sweep every **~2 minutes**, around the clock — but only for showtimes worth
 going to:
 
-- **Weekdays (Mon–Fri):** start between **5:30 PM and 9:00 PM** (post-work, not too late)
-- **Sunday:** start by **9:00 PM** (matinees fine)
+- **Mon–Thu:** start between **5:30 PM and 9:00 PM** (post-work, and the night before a
+  work day can't run late)
+- **Friday:** start **5:30 PM or later**, no late cap — Friday night is not a work night
 - **Saturday:** any time
+- **Sunday:** start by **9:00 PM** (matinees fine; Sunday night is a work night)
 
 Two events alert (anything else is tracked on the status site, silently):
 
