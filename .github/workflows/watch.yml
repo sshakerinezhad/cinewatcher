@@ -46,8 +46,12 @@ env:
   # in [WEEKDAY_EARLIEST_START, LATEST_START]; Sundays by LATEST_START;
   # Saturdays unrestricted. Changing any of these re-baselines seat
   # snapshots without alerting.
-  GOOD_ROWS: "FGHIJ"
+  # E included: its centre seats are open only on off-hours shows (verified
+  # 2026-09-04), i.e. scarce on eligible showtimes. A-D are wide open on
+  # nearly every show — not scarce, not watched.
+  GOOD_ROWS: "EFGHIJ"
   GOOD_RADIUS: "6"
+  CENTRE_DISPLAY_RADIUS: "3"
   GROUP_SIZE: "4"
   GROUP_CENTRE_TOLERANCE: "2"
   WEEKDAY_EARLIEST_START: "17:30"

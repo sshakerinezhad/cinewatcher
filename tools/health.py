@@ -139,8 +139,10 @@ def check_state(problems, lines):
         else:
             free = sum(len(v) for v in state.get("goodSeats", {}).values())
             with_free = sum(1 for v in state.get("goodSeats", {}).values() if v)
+            n_blocks = sum(len(v) for v in state.get("centreBlocks", {}).values())
             lines.append(f"state: {len(state.get('sessions', {}))} sessions tracked, "
-                         f"{free} good-zone seats free across {with_free} showtimes")
+                         f"{n_blocks} dead-centre blocks (the alert condition), "
+                         f"{free} zone seats free across {with_free} showtimes")
     except Exception as e:  # noqa: BLE001
         problems.append(f"state.json unreadable: {e}")
 

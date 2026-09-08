@@ -1,10 +1,10 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-08T05:59:28+00:00",
+ "generatedAt": "2026-09-08T12:41:07+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
-  "rows": "FGHIJ",
+  "rows": "EFGHIJ",
   "radius": 6,
   "group": 4,
   "centreTol": 2.0,
@@ -37,6 +37,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388123&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388123&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -52,6 +53,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388124&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388124&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -67,6 +69,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=541300&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=541300&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -82,6 +85,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388016&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388016&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -97,6 +101,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=530758&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=530758&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -112,6 +117,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388017&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388017&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -127,6 +133,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388018&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388018&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -142,6 +149,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=531220&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=531220&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -157,6 +165,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540721&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540721&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -172,6 +181,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388022&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388022&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -187,6 +197,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540722&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540722&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -202,6 +213,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388021&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388021&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -217,6 +229,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=530759&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=530759&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -232,6 +245,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388020&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388020&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -247,6 +261,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388019&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388019&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -262,6 +277,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=531221&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=531221&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -277,6 +293,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540724&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540724&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -292,6 +309,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388023&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388023&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -307,6 +325,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540723&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540723&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -322,6 +341,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388026&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388026&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -337,6 +357,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=530760&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=530760&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -352,6 +373,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388025&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388025&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -367,6 +389,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388024&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388024&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -382,6 +405,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=531222&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=531222&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -397,6 +421,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540725&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540725&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -412,6 +437,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388030&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388030&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -427,6 +453,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540726&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540726&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -442,6 +469,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388027&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388027&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -457,6 +485,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=530761&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=530761&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -472,6 +501,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388028&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388028&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -487,6 +517,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388029&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388029&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -502,6 +533,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=531223&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=531223&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -517,6 +549,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540728&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540728&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -532,6 +565,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388031&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388031&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -547,6 +581,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540727&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540727&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -562,6 +597,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388034&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388034&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -577,6 +613,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540729&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540729&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -592,6 +629,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388033&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388033&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -607,6 +645,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540730&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540730&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -622,6 +661,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388032&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388032&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -637,6 +677,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540734&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540734&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -652,6 +693,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388038&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388038&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -667,6 +709,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540733&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540733&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -682,6 +725,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388035&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388035&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -697,6 +741,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540732&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540732&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -712,6 +757,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388036&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388036&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -727,6 +773,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540731&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540731&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -742,6 +789,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388037&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388037&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -757,6 +805,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540735&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540735&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -772,6 +821,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388042&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388042&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -787,6 +837,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540736&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540736&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -802,6 +853,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388039&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388039&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -817,6 +869,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540737&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540737&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -832,6 +885,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388040&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388040&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -847,6 +901,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540738&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540738&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -862,6 +917,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388041&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388041&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -876,7 +932,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540742&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540742&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -891,7 +950,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388043&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388043&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -907,6 +971,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540741&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540741&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -921,7 +986,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388046&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388046&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -937,6 +1007,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540740&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540740&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -952,6 +1023,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388045&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388045&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -966,7 +1038,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540739&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540739&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -981,7 +1056,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388044&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388044&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -997,6 +1076,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540743&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540743&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1011,7 +1091,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388049&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388049&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1027,6 +1112,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540744&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540744&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1041,7 +1127,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388048&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388048&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1057,6 +1147,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540745&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540745&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1072,6 +1163,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388047&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388047&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1087,6 +1179,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540746&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540746&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1101,7 +1194,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388050&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388050&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1117,6 +1213,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540750&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540750&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1132,6 +1229,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388052&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388052&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1147,6 +1245,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540749&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540749&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1162,6 +1261,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388053&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388053&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1177,6 +1277,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540748&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540748&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1192,6 +1293,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388054&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388054&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1207,6 +1309,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540747&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540747&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1222,6 +1325,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388051&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388051&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1237,6 +1341,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540751&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540751&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1252,6 +1357,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388056&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388056&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1267,6 +1373,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540752&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540752&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1282,6 +1389,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388057&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388057&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1297,6 +1405,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540753&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540753&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1312,6 +1421,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388058&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388058&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1327,6 +1437,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540754&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540754&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1341,7 +1452,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388055&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388055&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1356,7 +1474,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540756&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540756&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1371,7 +1492,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388059&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388059&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1386,7 +1511,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540755&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540755&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1402,6 +1530,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388062&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388062&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1417,6 +1546,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540757&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540757&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1432,6 +1562,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388061&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388061&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1446,7 +1577,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540758&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540758&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1461,7 +1597,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388060&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388060&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1477,6 +1617,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540761&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540761&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1491,7 +1632,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388066&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388066&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1506,7 +1650,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540762&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540762&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1522,6 +1672,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388063&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388063&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1537,6 +1688,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540760&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540760&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1552,6 +1704,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388064&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388064&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1567,6 +1720,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540759&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540759&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1581,7 +1735,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388065&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388065&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1596,7 +1754,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540764&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540764&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1611,7 +1772,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388070&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388070&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1626,7 +1793,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540763&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540763&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1641,7 +1813,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388067&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388067&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1657,6 +1837,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540765&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540765&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1671,7 +1852,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388068&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388068&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1686,7 +1870,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540766&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540766&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1697,11 +1885,16 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-30T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 133,
+   "seatsRemaining": 131,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388069&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388069&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1716,7 +1909,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540769&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540769&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1731,7 +1929,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388074&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388074&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1746,7 +1950,16 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540770&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540770&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1761,7 +1974,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388071&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388071&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1776,7 +1996,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540768&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540768&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1791,7 +2018,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388072&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388072&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1806,7 +2039,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540767&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540767&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E14",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1821,7 +2069,26 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388073&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388073&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1836,7 +2103,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388077&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388077&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1851,7 +2121,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540772&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540772&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1866,7 +2143,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388076&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388076&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1881,7 +2161,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540771&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540771&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1896,7 +2182,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388075&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388075&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1911,7 +2202,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540773&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540773&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1926,7 +2224,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540774&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540774&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1941,7 +2246,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388078&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388078&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -1956,7 +2267,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388080&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388080&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1971,7 +2288,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540777&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540777&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -1986,7 +2308,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388081&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388081&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2002,6 +2328,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540778&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540778&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2016,7 +2343,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388082&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388082&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2032,6 +2362,7 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540776&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540776&dbox=False",
    "goodSeatsFree": [],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2046,7 +2377,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540775&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540775&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2061,7 +2398,20 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388079&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388079&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [
+    "E14",
+    "E8"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2076,7 +2426,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388084&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388084&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2091,7 +2446,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540780&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540780&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2106,7 +2466,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388085&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388085&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2121,7 +2486,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540779&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540779&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2136,7 +2507,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388086&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388086&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2151,7 +2527,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540781&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540781&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2166,7 +2545,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540782&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540782&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2181,7 +2575,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388083&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388083&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14",
+    "E8"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2196,7 +2605,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540783&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540783&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2212,9 +2629,27 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388087&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388087&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F21",
     "F9",
     "I21"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2230,7 +2665,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540784&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540784&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2245,7 +2688,20 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388088&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388088&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2260,7 +2716,24 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540785&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540785&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2276,8 +2749,22 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388089&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388089&dbox=False",
    "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
     "F9",
     "J21"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14",
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2293,7 +2780,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540788&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540788&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2309,8 +2811,18 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388092&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388092&dbox=False",
    "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
     "F21",
     "G21"
+   ],
+   "centreSeatsFree": [
+    "E14"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2326,7 +2838,18 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540787&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540787&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2341,7 +2864,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388091&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388091&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2356,7 +2886,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540786&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540786&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2371,7 +2916,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388090&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388090&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14",
+    "E8"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2387,9 +2947,29 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540789&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540789&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F20",
     "F21",
     "G21"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E14",
+    "E15",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2406,13 +2986,37 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388095&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388095&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F9",
     "G9",
     "H9",
     "I21",
     "J21"
    ],
-   "centreBlocks": [],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
+   "centreBlocks": [
+    "E:8-20"
+   ],
    "timeEligible": false,
    "seatCheckError": null
   },
@@ -2426,7 +3030,21 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540790&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540790&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2442,10 +3060,26 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388094&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388094&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
     "F20",
     "F21",
     "F9",
     "H11"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": true,
@@ -2462,7 +3096,21 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540791&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540791&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F21"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2479,6 +3127,19 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388093&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388093&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F19",
     "F20",
     "F21",
@@ -2486,7 +3147,18 @@
     "G21",
     "J9"
    ],
-   "centreBlocks": [],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
+   "centreBlocks": [
+    "E:8-20"
+   ],
    "timeEligible": false,
    "seatCheckError": null
   },
@@ -2500,7 +3172,24 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540794&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540794&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2516,6 +3205,18 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388098&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388098&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F10",
     "F20",
     "F21",
@@ -2525,6 +3226,14 @@
     "G9",
     "H20",
     "H9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2540,7 +3249,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540793&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540793&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2556,8 +3273,20 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388097&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388097&dbox=False",
    "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
     "F21",
     "F9"
+   ],
+   "centreSeatsFree": [
+    "E14",
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": true,
@@ -2573,7 +3302,26 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540792&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540792&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E14",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2589,6 +3337,13 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388096&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388096&dbox=False",
    "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
     "F20",
     "F21",
     "G10",
@@ -2597,6 +3352,9 @@
     "H21",
     "I9",
     "J9"
+   ],
+   "centreSeatsFree": [
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2613,6 +3371,19 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388100&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388100&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F20",
     "F21",
     "G19",
@@ -2623,7 +3394,18 @@
     "H9",
     "J21"
    ],
-   "centreBlocks": [],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
+   "centreBlocks": [
+    "E:8-20"
+   ],
    "timeEligible": false,
    "seatCheckError": null
   },
@@ -2637,7 +3419,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540807&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540807&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2653,12 +3450,30 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388101&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388101&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F20",
     "F21",
     "F9",
     "G20",
     "G21",
     "G9"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2674,7 +3489,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540810&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540810&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2689,7 +3510,16 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388102&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388102&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [
+    "E14"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2704,7 +3534,18 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540809&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540809&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2719,7 +3560,19 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388099&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388099&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E8",
+    "E9"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2734,7 +3587,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388105&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388105&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2749,7 +3609,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540813&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540813&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2764,7 +3629,11 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388104&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388104&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2779,7 +3648,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540814&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540814&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2794,7 +3671,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388103&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388103&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2809,7 +3691,10 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540811&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540811&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2824,7 +3709,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540812&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540812&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2839,7 +3730,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388106&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388106&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2854,7 +3752,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388110&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388110&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E5"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2869,7 +3773,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540816&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540816&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2884,7 +3794,12 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388109&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388109&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E5",
+    "E6"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2899,7 +3814,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540815&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540815&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2914,7 +3835,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388108&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388108&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17"
+   ],
+   "centreSeatsFree": [
+    "E14"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2929,7 +3858,13 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540818&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540818&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -2944,7 +3879,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540817&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540817&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -2960,9 +3903,27 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388107&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388107&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F19",
     "F20",
     "F21"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2979,9 +3940,25 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540795&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540795&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F21",
     "F9",
     "J9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2998,6 +3975,19 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388112&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388112&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F10",
     "F20",
     "F21",
@@ -3011,7 +4001,18 @@
     "J20",
     "J21"
    ],
-   "centreBlocks": [],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
+   "centreBlocks": [
+    "E:8-20"
+   ],
    "timeEligible": false,
    "seatCheckError": null
   },
@@ -3021,11 +4022,23 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-11T18:00:00",
    "soldOut": false,
-   "seatsRemaining": 157,
+   "seatsRemaining": 155,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540796&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540796&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8"
+   ],
+   "centreSeatsFree": [
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3040,7 +4053,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388111&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388111&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E14",
+    "E8",
+    "E9"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3056,10 +4084,24 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540797&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540797&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F10",
     "F9",
     "G21",
     "G9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3076,12 +4118,30 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388113&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388113&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F19",
     "F20",
     "F21",
     "G19",
     "G20",
     "G21"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3097,7 +4157,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540800&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540800&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -3113,11 +4188,25 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388115&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388115&dbox=False",
    "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
     "F20",
     "F21",
     "F9",
     "G20",
     "G21"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14",
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3133,7 +4222,18 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540799&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540799&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3148,7 +4248,14 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388116&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388116&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7"
+   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3163,7 +4270,18 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540798&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540798&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -3178,7 +4296,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388114&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388114&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E14",
+    "E8",
+    "E9"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -3194,8 +4327,24 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540801&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540801&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F21",
     "G9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E15",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3212,6 +4361,18 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388118&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388118&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F19",
     "F20",
     "F21",
@@ -3227,6 +4388,14 @@
     "J21",
     "J9"
    ],
+   "centreSeatsFree": [
+    "E10",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -3241,7 +4410,15 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540802&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540802&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E16",
+    "E17",
+    "E18",
+    "E19"
+   ],
+   "centreSeatsFree": [
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3257,9 +4434,25 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388119&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388119&dbox=False",
    "goodSeatsFree": [
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F20",
     "F21",
     "G21"
+   ],
+   "centreSeatsFree": [
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": true,
@@ -3276,9 +4469,19 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540803&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540803&dbox=False",
    "goodSeatsFree": [
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
     "F9",
     "G21",
     "G9"
+   ],
+   "centreSeatsFree": [
+    "E15",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3295,11 +4498,29 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388117&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388117&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F10",
     "F21",
     "F9",
     "I20",
     "I21"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3316,8 +4537,26 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540806&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540806&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9",
     "F21",
     "H21"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E14",
+    "E15",
+    "E16"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3329,11 +4568,22 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-14T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 209,
+   "seatsRemaining": 207,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388121&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388121&dbox=False",
    "goodSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F19",
     "F20",
     "F21",
@@ -3346,6 +4596,13 @@
     "I9",
     "J21",
     "J9"
+   ],
+   "centreSeatsFree": [
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -3361,7 +4618,17 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540805&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540805&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3377,7 +4644,17 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388122&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388122&dbox=False",
    "goodSeatsFree": [
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F21"
+   ],
+   "centreSeatsFree": [
+    "E8",
+    "E9"
    ],
    "centreBlocks": [],
    "timeEligible": true,
@@ -3393,7 +4670,22 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540804&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540804&dbox=False",
-   "goodSeatsFree": [],
+   "goodSeatsFree": [
+    "E10",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E7",
+    "E8",
+    "E9"
+   ],
+   "centreSeatsFree": [
+    "E10",
+    "E15",
+    "E16"
+   ],
    "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
@@ -3409,10 +4701,34 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388120&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388120&dbox=False",
    "goodSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
     "F20",
     "F21"
    ],
-   "centreBlocks": [],
+   "centreSeatsFree": [
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E8",
+    "E9"
+   ],
+   "centreBlocks": [
+    "E:8-20"
+   ],
    "timeEligible": false,
    "seatCheckError": null
   }

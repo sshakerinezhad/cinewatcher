@@ -67,6 +67,11 @@
     border: 1px solid rgba(62,207,142,.4); border-radius: 6px;
     font-size: .78rem; font-weight: 700; padding: .15rem .5rem; margin-left: .4rem;
   }
+  .session.offhours { opacity: .45; }
+  .offhours-tag { color: var(--muted); font-size: .72rem; border: 1px solid var(--border);
+    border-radius: 6px; padding: .1rem .4rem; margin-left: .4rem; }
+  .empty-centre { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+  .empty-centre b { color: var(--text); }
   footer { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 1.5rem; line-height: 1.7; }
   footer a { color: var(--gold); }
   .dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); margin-right: .4rem; animation: blink 2s infinite; }
@@ -83,8 +88,8 @@
   <div id="banner" class="banner">Loading status…</div>
   <div id="notice" class="notice" hidden></div>
 
-  <section id="goodSeatsSection" hidden>
-    <h2 id="goodSeatsHead">Good seats available now</h2>
+  <section id="goodSeatsSection">
+    <h2 id="goodSeatsHead">Centre seats free right now</h2>
     <div id="goodSeats"></div>
   </section>
 
@@ -131,14 +136,19 @@ function short(theatre) {
 
 function sessionRow(s, highlight) {
   const row = document.createElement("div");
-  row.className = "session";
+  row.className = "session" + (s.timeEligible === false ? " offhours" : "");
   const seats = s.seatsRemaining != null ? `${s.seatsRemaining} seats` : "on sale";
-  const good = (s.goodSeatsFree || []).length && highlight
-    ? `<span class="seats-badge">${s.goodSeatsFree.join(" · ")}</span>` : "";
+  // Badge only true centre seats (within CENTRE_DISPLAY_RADIUS of dead
+  // centre) — the flank seats at the zone edge are not what anyone is
+  // waiting for and used to render here as if they were.
+  const centre = s.centreSeatsFree || [];
+  const good = centre.length && highlight
+    ? `<span class="seats-badge">${centre.join(" · ")}</span>` : "";
+  const offTag = s.timeEligible === false ? '<span class="offhours-tag">outside your hours</span>' : "";
   row.innerHTML = `
     <span class="time">${fmtTime(s.start)}</span>
-    <span class="meta">${short(s.theatre)} · ${seats}${good}</span>
-    ${s.soldOut && !(s.goodSeatsFree || []).length
+    <span class="meta">${short(s.theatre)} · ${seats}${good}${offTag}</span>
+    ${s.soldOut && !centre.length
       ? '<span class="soldout">SOLD OUT</span>'
       : `<a class="buy" href="${s.ticketingUrl}" target="_blank" rel="noopener">Buy</a>`}`;
   return row;
@@ -172,24 +182,29 @@ async function refresh() {
 
   const sessions = status.sessions || [];
   const dates = new Set(sessions.map(s => s.start.slice(0, 10)));
-  const withGood = sessions.filter(s => (s.goodSeatsFree || []).length);
-  const goodCount = withGood.reduce((n, s) => n + s.goodSeatsFree.length, 0);
+  const withCentre = sessions.filter(s => (s.centreSeatsFree || []).length);
+  const centreCount = withCentre.reduce((n, s) => n + s.centreSeatsFree.length, 0);
   const gz = status.goodZone || {};
-  const zone = gz.rows
-    ? `rows ${gz.rows[0]}–${gz.rows.at(-1)}, ≤${gz.radius} of centre` : "";
+  const rowsTxt = gz.rows ? `rows ${gz.rows[0]}–${gz.rows.at(-1)}` : "rear rows";
   const blockCount = sessions.reduce((n, s) => n + (s.centreBlocks || []).length, 0);
   const alertLine = gz.group
-    ? `Alerts on: ${gz.group}+ seats together at dead centre · ${blockCount} such block${blockCount === 1 ? "" : "s"} right now`
+    ? `Alerts on: ${gz.group}+ seats together at dead centre (${rowsTxt}) on showtimes in your hours · ${blockCount} such block${blockCount === 1 ? "" : "s"} exist${blockCount === 1 ? "s" : ""} right now`
     : "";
 
   banner.className = "banner";
   banner.innerHTML = `<span class="big">${sessions.length} showtimes · ${dates.size} dates</span>`
-    + `${goodCount} good-zone seat${goodCount === 1 ? "" : "s"} (${zone}) currently free across ${withGood.length} showtimes`
+    + `${centreCount} centre seat${centreCount === 1 ? "" : "s"} (${rowsTxt}, ≤3 of centre) currently free across ${withCentre.length} showtimes`
     + (alertLine ? `<br><small style="color:var(--muted);font-weight:400">${alertLine}</small>` : "");
 
-  if (withGood.length) {
-    document.getElementById("goodSeatsSection").hidden = false;
-    renderByDate(document.getElementById("goodSeats"), withGood, true);
+  const goodEl = document.getElementById("goodSeats");
+  if (withCentre.length) {
+    renderByDate(goodEl, withCentre, true);
+  } else {
+    goodEl.innerHTML = `<p class="empty-centre"><b>None, anywhere.</b> Every ${rowsTxt} seat
+      near centre is sold or held on all ${sessions.length} showtimes — the flank singles you
+      may see on seat maps are 4–6 seats off centre and not worth an alert.
+      The watcher re-checks every seat roughly every 2 minutes and fires the moment
+      ${gz.group || 4}+ open up together at dead centre on a showtime in your hours.</p>`;
   }
   document.getElementById("showtimes").hidden = !sessions.length;
   renderByDate(document.getElementById("sessions"), sessions, false);
