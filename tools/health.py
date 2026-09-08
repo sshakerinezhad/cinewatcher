@@ -251,6 +251,19 @@ def main():
     if tg != "delivered":
         problems.append(f"Telegram heartbeat could not be delivered: {tg}")
 
+    # Machine-readable heartbeat, committed by the workflow. The Claude
+    # watchdog's fresh sessions have no GitHub API access (verified
+    # 2026-09-04: its api.github.com calls are refused), but they CAN read
+    # raw.githubusercontent.com — this file is their API-free proof that the
+    # health system ran and what it concluded.
+    try:
+        with open(os.path.join(ROOT, "docs", "heartbeat.json"), "w") as f:
+            json.dump({"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                       "ok": not problems, "telegram": tg,
+                       "problems": problems, "detail": lines}, f, indent=1)
+    except OSError as e:
+        print(f"::warning::could not write heartbeat.json: {e}")
+
     if problems:
         text = "\n".join([f"• {p}" for p in problems] + [""] + lines)
         send_ntfy("cinewatcher health check FAILING", text)
