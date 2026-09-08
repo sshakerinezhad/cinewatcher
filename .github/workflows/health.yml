@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
   actions: read
 
@@ -30,3 +30,22 @@ jobs:
           CINEPLEX_API_KEY: ${{ secrets.CINEPLEX_API_KEY }}
           NTFY_TOPIC: odyssey-imax-70mm-88955e30
         run: python3 tools/health.py
+
+      # Publish docs/heartbeat.json so the Claude watchdog (whose sessions
+      # cannot reach the GitHub API) can verify via raw.githubusercontent.com
+      # that the health system ran today and what it found. Runs even when
+      # the health check exits non-zero — a red verdict is still a verdict.
+      - name: Publish machine-readable heartbeat
+        if: always()
+        run: |
+          [ -f docs/heartbeat.json ] || { echo "no heartbeat written (deduped run)"; exit 0; }
+          git config user.name "cinewatcher-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/heartbeat.json
+          git diff --cached --quiet && { echo "heartbeat unchanged"; exit 0; }
+          git commit -m "status: daily heartbeat"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((2 ** i))
+          done
+          echo "::warning::could not push heartbeat.json after 3 attempts"
