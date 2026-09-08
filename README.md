@@ -29,8 +29,10 @@ Two events alert (anything else is tracked on the status site, silently):
    fresh on-sale date is caught on the next sweep, whatever date it lands on.
 2. **A dead-centre block of 4+ seats opening up** — a group refund, or held inventory
    being released. Every tracked session's seat map is checked seat-by-seat; the alert
-   condition is **4 or more contiguous seats in one rear row (`F`–`J`) whose best 4-seat
-   window sits within 2 columns of the row's true centre**. Loose singles freeing up do
+   condition is **4 or more contiguous seats in one rear row (`E`–`J`) whose best 4-seat
+   window sits within 2 columns of the row's true centre**. Rows `A`–`D` are not watched:
+   they sit wide open on nearly every showtime (whole empty rows, verified 2026-09-04),
+   so a block there is not scarce and means nothing. Loose singles freeing up do
    not notify. The alert carries the exact seat range, block size, offset from centre,
    and the buy link. A row that keeps flickering re-alerts after a 90-minute cooldown.
    Wheelchair/companion spots don't count. As of 2026-09-01 **zero** such blocks exist

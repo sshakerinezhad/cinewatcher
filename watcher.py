@@ -86,8 +86,15 @@ THEATRES = {
 # scan across all 196+ showtimes found rows F-J nearly stripped while A-D sat
 # empty, and nothing within 4 columns of centre available anywhere. Radius 6
 # means "as good as or better than anything currently buyable".
-GOOD_ROWS = os.environ.get("GOOD_ROWS", "FGHIJ").upper()
+GOOD_ROWS = os.environ.get("GOOD_ROWS", "EFGHIJ").upper()
 GOOD_RADIUS = int(os.environ.get("GOOD_RADIUS", "6"))
+# The status site badges only seats this close to centre — the flank seats at
+# the zone edge (F9/F21-class, 5-6 off) kept rendering as if they were the
+# good stuff, which they are not. Rows A-D are excluded from the watch
+# entirely: they sit wide open on nearly every showtime (verified live
+# 2026-09-04: full row D empty on 96 shows), so they are not scarce and a
+# block there means nothing.
+DISPLAY_RADIUS = float(os.environ.get("CENTRE_DISPLAY_RADIUS", "3"))
 
 # What actually alerts: a contiguous block of GROUP_SIZE seats in one good row
 # whose best GROUP_SIZE-wide window sits within GROUP_CENTRE_TOLERANCE columns
@@ -699,6 +706,9 @@ def sweep(old_state, totals):
                                            "soldOut", "seatsRemaining", "experience",
                                            "ticketingUrl", "seatMapUrl")},
                   "goodSeatsFree": good_seats.get(s["id"], []),
+                  "centreSeatsFree": sorted(
+                      x["label"] for x in seat_results.get(s["id"], {"seats": []})["seats"]
+                      if x["offCentre"] <= DISPLAY_RADIUS),
                   "centreBlocks": blocks.get(s["id"], []),
                   "timeEligible": time_eligible(s["start"]),
                   "seatCheckError": seat_errors.get(s["id"])}
