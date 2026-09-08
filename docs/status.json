@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-08T13:45:10+00:00",
+ "generatedAt": "2026-09-08T14:50:38+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -263,7 +263,7 @@
    "goodSeatsFree": [],
    "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -279,7 +279,7 @@
    "goodSeatsFree": [],
    "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -1180,17 +1180,13 @@
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540746&dbox=False",
    "goodSeatsFree": [
     "G10",
-    "G11",
-    "G12",
     "G9",
     "H10",
     "H9"
    ],
-   "centreSeatsFree": [
-    "G12"
-   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -1208,7 +1204,7 @@
    ],
    "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -2242,7 +2238,7 @@
    ],
    "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -2263,7 +2259,7 @@
    ],
    "centreSeatsFree": [],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -3556,7 +3552,7 @@
     "E16"
    ],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
@@ -3583,7 +3579,7 @@
     "E9"
    ],
    "centreBlocks": [],
-   "timeEligible": false,
+   "timeEligible": true,
    "seatCheckError": null
   },
   {
