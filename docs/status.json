@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-09T20:57:27+00:00",
+ "generatedAt": "2026-09-09T21:28:36+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1270,7 +1270,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-26T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 87,
+   "seatsRemaining": 86,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540748&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540748&dbox=False",
@@ -3008,7 +3008,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-06T18:00:00",
    "soldOut": false,
-   "seatsRemaining": 152,
+   "seatsRemaining": 154,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540790&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540790&dbox=False",
@@ -3897,7 +3897,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-11T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 191,
+   "seatsRemaining": 189,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540795&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540795&dbox=False",
@@ -4451,7 +4451,6 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388117&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388117&dbox=False",
    "goodSeatsFree": [
-    "E10",
     "E13",
     "E14",
     "E15",
@@ -4469,7 +4468,6 @@
     "I21"
    ],
    "centreSeatsFree": [
-    "E10",
     "E13",
     "E14",
     "E8",
