@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-09T06:36:01+00:00",
+ "generatedAt": "2026-09-09T07:36:14+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1929,12 +1929,7 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388074&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388074&dbox=False",
-   "goodSeatsFree": [
-    "E15",
-    "E16",
-    "E17",
-    "E5"
-   ],
+   "goodSeatsFree": [],
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
@@ -2018,12 +2013,7 @@
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388072&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388072&dbox=False",
-   "goodSeatsFree": [
-    "E15",
-    "E16",
-    "E17",
-    "E5"
-   ],
+   "goodSeatsFree": [],
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
@@ -2082,16 +2072,10 @@
     "E8",
     "E9"
    ],
-   "centreSeatsFree": [
-    "E12",
-    "E13",
-    "E14",
-    "E8",
-    "E9"
-   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
-   "seatCheckError": null
+   "seatCheckError": "HTTPError: HTTP Error 500: Internal Server Error"
   },
   {
    "id": "388077",
@@ -2109,7 +2093,7 @@
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
-   "seatCheckError": null
+   "seatCheckError": "HTTPError: HTTP Error 500: Internal Server Error"
   },
   {
    "id": "540772",
@@ -2147,7 +2131,7 @@
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": false,
-   "seatCheckError": null
+   "seatCheckError": "HTTPError: HTTP Error 500: Internal Server Error"
   },
   {
    "id": "540771",
@@ -2188,7 +2172,7 @@
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
-   "seatCheckError": null
+   "seatCheckError": "HTTPError: HTTP Error 500: Internal Server Error"
   },
   {
    "id": "540773",
@@ -2253,7 +2237,7 @@
    "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
-   "seatCheckError": null
+   "seatCheckError": "HTTPError: HTTP Error 500: Internal Server Error"
   },
   {
    "id": "388080",
@@ -2738,7 +2722,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-04T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 188,
+   "seatsRemaining": 187,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388089&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388089&dbox=False",
