@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-10T01:20:48+00:00",
+ "generatedAt": "2026-09-10T01:31:53+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -2256,7 +2256,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-02T11:15:00",
    "soldOut": false,
-   "seatsRemaining": 130,
+   "seatsRemaining": 129,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388080&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388080&dbox=False",
@@ -2671,7 +2671,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-04T18:00:00",
    "soldOut": false,
-   "seatsRemaining": 162,
+   "seatsRemaining": 160,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388088&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388088&dbox=False",
@@ -3095,7 +3095,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-06T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 200,
+   "seatsRemaining": 199,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388093&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388093&dbox=False",
@@ -3348,6 +3348,9 @@
     "E9",
     "F20",
     "F21",
+    "G19",
+    "G20",
+    "G21",
     "H20",
     "H21",
     "H9",
@@ -3522,16 +3525,9 @@
    "goodSeatsFree": [
     "E16",
     "E17",
-    "E5",
-    "E6",
-    "E7",
-    "E8",
-    "E9"
+    "E5"
    ],
-   "centreSeatsFree": [
-    "E8",
-    "E9"
-   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
