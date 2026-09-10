@@ -801,9 +801,7 @@
    "E7",
    "E8",
    "E9",
-   "F10",
    "F21",
-   "F9",
    "I20",
    "I21"
   ],
@@ -2052,7 +2050,7 @@
   },
   "388123": {
    "auditorium": "IMAX",
-   "soldOut": false,
+   "soldOut": true,
    "start": "2026-12-14T18:00:00",
    "theatreId": 7420
   },
