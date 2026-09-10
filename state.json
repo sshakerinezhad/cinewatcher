@@ -2050,7 +2050,7 @@
   },
   "388123": {
    "auditorium": "IMAX",
-   "soldOut": true,
+   "soldOut": false,
    "start": "2026-12-14T18:00:00",
    "theatreId": 7420
   },
