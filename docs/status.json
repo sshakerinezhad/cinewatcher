@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-11T06:53:08+00:00",
+ "generatedAt": "2026-09-11T06:55:08+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -3899,6 +3899,7 @@
     "E7",
     "E8",
     "E9",
+    "F10",
     "F20",
     "F21",
     "F9",
