@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-12T13:08:11+00:00",
+ "generatedAt": "2026-09-12T13:27:15+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -2062,7 +2062,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-31T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 170,
+   "seatsRemaining": 168,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388073&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388073&dbox=False",
@@ -2800,18 +2800,22 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-05T18:00:00",
    "soldOut": false,
-   "seatsRemaining": 126,
+   "seatsRemaining": 124,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540787&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540787&dbox=False",
    "goodSeatsFree": [
+    "E10",
     "E17",
     "E18",
     "E19",
     "E7",
-    "E8"
+    "E8",
+    "E9"
    ],
-   "centreSeatsFree": [],
+   "centreSeatsFree": [
+    "E10"
+   ],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3521,7 +3525,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-09T12:35:00",
    "soldOut": false,
-   "seatsRemaining": 115,
+   "seatsRemaining": 117,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540813&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540813&dbox=False",
