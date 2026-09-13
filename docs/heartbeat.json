@@ -1,11 +1,14 @@
 {
- "generatedAt": "2026-09-12T12:31:15+00:00",
- "ok": true,
+ "generatedAt": "2026-09-13T16:25:46+00:00",
+ "ok": false,
  "telegram": "delivered",
- "problems": [],
+ "problems": [
+  "only 10 completed watch runs in 24h (expected ~48; chain may be limping on the cron backstop \u2014 check DISPATCH_PAT expiry)",
+  "last completed watch run was 1146 min ago (threshold 90)"
+ ],
  "detail": [
-  "checks (24h): 56 runs, last finished 0 min ago, chain ALIVE",
+  "checks (24h): 10 runs, last finished 1146 min ago, chain ALIVE",
   "Cineplex API: OK, 109 IMAX 70mm sessions listed at Square One",
-  "state: 215 sessions tracked, 4 dead-centre blocks (the alert condition), 793 zone seats free across 122 showtimes"
+  "state: 215 sessions tracked, 4 dead-centre blocks (the alert condition), 784 zone seats free across 122 showtimes"
  ]
 }
