@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-17T23:59:41+00:00",
+ "generatedAt": "2026-09-18T01:03:54+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1852,7 +1852,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-30T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 114,
+   "seatsRemaining": 121,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540766&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540766&dbox=False",
@@ -1862,22 +1862,16 @@
     "H11",
     "H12",
     "H13",
-    "H14",
-    "H15",
     "H16",
     "H17"
    ],
    "centreSeatsFree": [
     "H12",
     "H13",
-    "H14",
-    "H15",
     "H16",
     "H17"
    ],
-   "centreBlocks": [
-    "H:10-16"
-   ],
+   "centreBlocks": [],
    "timeEligible": false,
    "seatCheckError": null
   },
@@ -2282,7 +2276,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-02T15:05:00",
    "soldOut": false,
-   "seatsRemaining": 117,
+   "seatsRemaining": 115,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388081&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388081&dbox=False",
@@ -3512,7 +3506,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-09T15:05:00",
    "soldOut": false,
-   "seatsRemaining": 117,
+   "seatsRemaining": 115,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388104&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388104&dbox=False",
