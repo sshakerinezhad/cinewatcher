@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-19T13:29:13+00:00",
+ "generatedAt": "2026-09-19T16:42:11+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -3175,7 +3175,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-07T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 171,
+   "seatsRemaining": 170,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540792&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540792&dbox=False",
@@ -4163,12 +4163,11 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-13T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 203,
+   "seatsRemaining": 201,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388118&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388118&dbox=False",
    "goodSeatsFree": [
-    "E10",
     "E12",
     "E13",
     "E14",
@@ -4179,7 +4178,6 @@
     "E6",
     "E7",
     "E8",
-    "E9",
     "F21",
     "G20",
     "G21",
@@ -4190,12 +4188,10 @@
     "J21"
    ],
    "centreSeatsFree": [
-    "E10",
     "E12",
     "E13",
     "E14",
-    "E8",
-    "E9"
+    "E8"
    ],
    "centreBlocks": [],
    "timeEligible": false,
@@ -4440,7 +4436,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-14T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 166,
+   "seatsRemaining": 164,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540804&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540804&dbox=False",
