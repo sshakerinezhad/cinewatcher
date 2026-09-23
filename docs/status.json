@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-23T11:23:45+00:00",
+ "generatedAt": "2026-09-23T14:17:28+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1711,7 +1711,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-29T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 110,
+   "seatsRemaining": 108,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388065&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388065&dbox=False",
@@ -2159,7 +2159,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-01T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 108,
+   "seatsRemaining": 105,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540773&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540773&dbox=False",
@@ -2599,12 +2599,9 @@
     "E19",
     "E7",
     "E8",
-    "E9",
-    "J18"
+    "E9"
    ],
-   "centreSeatsFree": [
-    "J18"
-   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3126,7 +3123,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-07T18:00:00",
    "soldOut": false,
-   "seatsRemaining": 160,
+   "seatsRemaining": 156,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388097&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388097&dbox=False",
@@ -3607,7 +3604,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-10T14:50:00",
    "soldOut": false,
-   "seatsRemaining": 128,
+   "seatsRemaining": 125,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388109&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388109&dbox=False",
