@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-24T06:50:13+00:00",
+ "generatedAt": "2026-09-24T13:09:12+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -2040,7 +2040,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-31T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 163,
+   "seatsRemaining": 164,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388073&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388073&dbox=False",
@@ -3445,14 +3445,9 @@
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388104&dbox=False",
    "goodSeatsFree": [
     "E17",
-    "E5",
-    "F17",
-    "F18"
+    "E5"
    ],
-   "centreSeatsFree": [
-    "F17",
-    "F18"
-   ],
+   "centreSeatsFree": [],
    "centreBlocks": [],
    "timeEligible": true,
    "seatCheckError": null
@@ -3762,7 +3757,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-11T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 201,
+   "seatsRemaining": 199,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388112&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388112&dbox=False",
@@ -4401,7 +4396,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-14T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 182,
+   "seatsRemaining": 181,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388120&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388120&dbox=False",
