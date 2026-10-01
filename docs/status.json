@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-09-30T22:21:13+00:00",
+ "generatedAt": "2026-10-01T00:29:34+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -864,7 +864,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-23T19:25:00",
    "soldOut": false,
-   "seatsRemaining": 92,
+   "seatsRemaining": 90,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540737&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540737&dbox=False",
@@ -2387,7 +2387,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-03T14:50:00",
    "soldOut": false,
-   "seatsRemaining": 132,
+   "seatsRemaining": 128,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388085&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388085&dbox=False",
@@ -2891,8 +2891,7 @@
    "goodSeatsFree": [
     "E18",
     "E19",
-    "E7",
-    "F21"
+    "E7"
    ],
    "centreSeatsFree": [],
    "centreBlocks": [],
@@ -2995,7 +2994,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-07T14:00:00",
    "soldOut": false,
-   "seatsRemaining": 165,
+   "seatsRemaining": 164,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540794&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540794&dbox=False",
@@ -3352,7 +3351,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2027-01-09T11:15:00",
    "soldOut": false,
-   "seatsRemaining": 131,
+   "seatsRemaining": 132,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388105&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388105&dbox=False",
@@ -3952,7 +3951,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2027-01-12T22:00:00",
    "soldOut": false,
-   "seatsRemaining": 156,
+   "seatsRemaining": 155,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540798&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540798&dbox=False",
