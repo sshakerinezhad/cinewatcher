@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-10-02T02:11:05+00:00",
+ "generatedAt": "2026-10-02T02:17:05+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -1921,9 +1921,6 @@
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540770&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540770&dbox=False",
    "goodSeatsFree": [
-    "E17",
-    "E18",
-    "E19",
     "E7"
    ],
    "centreSeatsFree": [],
