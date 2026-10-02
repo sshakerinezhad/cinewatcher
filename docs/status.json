@@ -1,6 +1,6 @@
 {
  "schema": 2,
- "generatedAt": "2026-10-02T19:14:10+00:00",
+ "generatedAt": "2026-10-02T19:25:19+00:00",
  "movie": "Dune: Part 3",
  "format": "IMAX 70mm",
  "goodZone": {
@@ -944,7 +944,7 @@
    "theatre": "Cineplex Cinemas Mississauga Square One",
    "start": "2026-12-24T12:35:00",
    "soldOut": false,
-   "seatsRemaining": 104,
+   "seatsRemaining": 103,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=388043&VISTAHOCategoryCode=0000000001&LocationId=7420&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7420&showtimeId=388043&dbox=False",
@@ -1557,7 +1557,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-28T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 111,
+   "seatsRemaining": 110,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540758&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540758&dbox=False",
@@ -2005,7 +2005,7 @@
    "theatre": "Cineplex Cinemas Vaughan",
    "start": "2026-12-31T22:45:00",
    "soldOut": false,
-   "seatsRemaining": 146,
+   "seatsRemaining": 144,
    "experience": "IMAX 70mm",
    "ticketingUrl": "https://apis.cineplex.com/prod/ticketing/api/v1/routing/redirect-to-ticketing?VistaSessionId=540767&VISTAHOCategoryCode=0000000001&LocationId=7408&IsSeriesShowtime=False",
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540767&dbox=False",
@@ -2995,7 +2995,6 @@
    "seatMapUrl": "https://www.cineplex.com/en-Mobile/ticketing/preview?theatreId=7408&showtimeId=540794&dbox=False",
    "goodSeatsFree": [
     "E10",
-    "E11",
     "E16",
     "E17",
     "E18",
@@ -3006,7 +3005,6 @@
    ],
    "centreSeatsFree": [
     "E10",
-    "E11",
     "E16"
    ],
    "centreBlocks": [],
