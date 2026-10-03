@@ -1821,7 +1821,7 @@
   },
   "531220": {
    "auditorium": "IMAX",
-   "soldOut": false,
+   "soldOut": true,
    "start": "2026-12-17T22:55:00",
    "theatreId": 7408
   },
